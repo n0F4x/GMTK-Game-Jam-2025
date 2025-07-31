@@ -8,4 +8,5 @@ target_sources(${PROJECT_NAME} PRIVATE
         SoundBufferLoader.ixx
         TextureLoader.ixx
         Textures.ixx
+        Position.ixx
 )
