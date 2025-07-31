@@ -27,7 +27,7 @@ auto create_enemy(const Registry registry, const CachedTextureLoader texture_loa
     auto enemy_shape = sf::RectangleShape(sf::Vector2f{ 64, 64 });
     enemy_shape.setTexture(texture_handle.get());
 
-    registry->create(Enemy{}, Position{ sf::Vector2f{ 3, 7 } }, enemy_shape);
+    registry->create(Enemy{}, Position{ sf::Vector2f{ 30, 70 } }, enemy_shape);
     registry->create(Enemy{}, Position{ sf::Vector2f{ 1000, -72 } }, enemy_shape);
-    registry->create(Enemy{}, Position{ sf::Vector2f{ -300'000, -72'131 } }, enemy_shape);
+    registry->create(Enemy{}, Position{ sf::Vector2f{ -300, -721 } }, enemy_shape);
 }

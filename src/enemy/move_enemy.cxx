@@ -1,8 +1,8 @@
 module;
 
-#include <print>
-
 #include <SFML/System/Vector2.hpp>
+
+#include <fastgltf/util.hpp>
 
 import core.events;
 import core.ecs;
@@ -28,24 +28,15 @@ auto move_enemy(const Registry registry) -> void
         }
     );
 
-    core::ecs::query(
-        registry.get(),
-        [&playerPos](const core::ecs::ID id, core::ecs::With<Enemy>, Position& enemy) {
-            auto& enemyPos = enemy.underlying();
+    core::ecs::query(registry.get(), [&playerPos](core::ecs::With<Enemy>, Position& enemy) {
+        constexpr auto speed      = 10.f;
+        constexpr auto stopRadius = 50.f;
 
-            const auto diff = playerPos - enemyPos;
-            if (diff.length() < 0.005) {
-                enemyPos = playerPos;
-                return;
-            }
+        auto&      enemyPos = enemy.get();
+        const auto diff     = playerPos - enemyPos;
+        auto       velocity = diff.length() > stopRadius ? diff.normalized() : sf::Vector2f{ 0, 0 };
 
-            enemyPos += diff / 2.f;
-            std::println(
-                "Enemy #{} moved to position: ({}, {})",
-                id.underlying(),
-                enemyPos.x,
-                enemyPos.y
-            );
-        }
-    );
+        velocity *= fastgltf::min(speed, diff.length() - stopRadius);
+        enemyPos += velocity;
+    });
 }
