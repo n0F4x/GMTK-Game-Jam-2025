@@ -1,23 +1,32 @@
 module;
 
 #include <SFML/System/Vector2.hpp>
+#include <SFML/Graphics.hpp>
 
 export module enemy.create_enemy;
 
 import enemy.Enemy;
 import extensions.scheduler;
+import common.TextureLoader;
+import core.assets.Handle;
 
 using namespace extensions::scheduler::accessors::ecs;
 using namespace extensions::scheduler::accessors::resources;
 using namespace extensions::scheduler::accessors::states;
 
-export auto create_enemy(const Registry registry);
+using CachedTextureLoader = extensions::scheduler::accessors::assets::Cached<TextureLoader>;
+
+export auto create_enemy(const Registry registry, const CachedTextureLoader texture_loader);
 
 module :private;
 
-auto create_enemy(const Registry registry)
+auto create_enemy(const Registry registry, const CachedTextureLoader texture_loader)
 {
-    registry->create(Enemy{}, sf::Vector2f{ 3, 7 });
-    registry->create(Enemy{}, sf::Vector2f{ 1'000, -72 });
-    registry->create(Enemy{}, sf::Vector2f{ -300'000, -72'131 });
+    const core::assets::Handle texture_handle{ texture_loader->load("Demon.png") };
+    auto enemy_shape = sf::RectangleShape(sf::Vector2f{ 64, 64 });
+    enemy_shape.setTexture(texture_handle.get());
+
+    registry->create(Enemy{}, sf::Vector2f{ 3, 7 }, enemy_shape);
+    registry->create(Enemy{}, sf::Vector2f{ 1'000, -72 }, enemy_shape);
+    registry->create(Enemy{}, sf::Vector2f{ -300'000, -72'131 }, enemy_shape);
 }

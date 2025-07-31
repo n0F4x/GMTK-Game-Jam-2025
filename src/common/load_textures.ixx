@@ -26,4 +26,5 @@ export auto load_textures(const State<Textures> texturesState, const CachedTextu
     auto& textures = texturesState->textures;
 
     textures.push_back(std::move(texture_loader->load("MC.png")));
+    textures.push_back(std::move(texture_loader->load("Demon.png")));
 }
