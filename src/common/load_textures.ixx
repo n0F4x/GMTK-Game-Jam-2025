@@ -29,4 +29,5 @@ auto load_textures(
     auto& textures = texturesState->textures;
 
     textures.push_back(texture_loader->load("MC.png"));
+    textures.push_back(texture_loader->load("Demon.png"));
 }

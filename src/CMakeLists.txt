@@ -1,6 +1,7 @@
 add_subdirectory(common)
 add_subdirectory(events)
 add_subdirectory(player)
+add_subdirectory(enemy)
 add_subdirectory(window)
 
 target_sources(${PROJECT_NAME} PRIVATE
