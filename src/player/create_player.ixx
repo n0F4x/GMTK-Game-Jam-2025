@@ -11,6 +11,7 @@ import extensions.scheduler;
 import common.GlobalState;
 import common.TextureLoader;
 import core.assets.Handle;
+import common.Position;
 
 using namespace extensions::scheduler::accessors::ecs;
 using namespace extensions::scheduler::accessors::resources;
@@ -39,6 +40,6 @@ auto create_player(
 
     player_shape.setTexture(texture_handle.get());
 
-    const auto id = registry->create(Player{}, sf::Vector2f{ 0, 0 }, player_shape);
+    const auto id = registry->create(Player{}, Position{sf::Vector2f{ 0, 0 }}, player_shape);
     globalState.emplace(GlobalState{ .player_id = id });
 }

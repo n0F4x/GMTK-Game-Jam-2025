@@ -23,8 +23,8 @@ auto move_enemy(const Registry registry) -> void
     sf::Vector2f playerPos;
     core::ecs::query(
         registry.get(),
-        [&playerPos](core::ecs::With<Player>, const sf::Vector2f& position) {
-            playerPos = position;
+        [&playerPos](core::ecs::With<Player>, const Position& position) {
+            playerPos = position.get();
         }
     );
 

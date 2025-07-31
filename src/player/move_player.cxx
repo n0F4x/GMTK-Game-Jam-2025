@@ -46,7 +46,7 @@ auto extra_movement() -> sf::Vector2f
 
 auto move_player(const Registry registry) -> void
 {
-    core::ecs::query(registry.get(), [](sf::Vector2f& position, core::ecs::With<Player>) {
-        position += extra_movement();
+    core::ecs::query(registry.get(), [](Position& position, core::ecs::With<Player>) {
+        position.get() += extra_movement();
     });
 }
