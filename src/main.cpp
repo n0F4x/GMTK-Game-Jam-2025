@@ -1,27 +1,22 @@
-#include <string>
-#include <iostream>
-
 import app;
 
-import plugins.resources;
+import plugins;
 
-struct Message
-{
-    std::string message;
+import window.setup;
 
-    auto send() const -> void
-    {
-        std::cout << message;
-    }
-};
+import run;
 
 auto main() -> int
 {
-    auto message = app::create()
-                   .plug_in(plugins::resources)
-                   .insert_resource(Message{"Hello GMTK 2025!"})
-                   .build()
-                   .resource_manager.get<Message>();
-
-    message.send();
+    app::create()
+        .plug_in(plugins::scheduler)
+        .plug_in(plugins::resources)
+        .plug_in(plugins::states)
+        .plug_in(plugins::events)
+        .plug_in(plugins::messages)
+        .plug_in(plugins::ecs)
+        .plug_in(plugins::assets)
+        .plug_in(plugins::functional)
+        .transform(window::setup)
+        .run(run);
 }
