@@ -20,5 +20,5 @@ module :private;
 
 auto window::clear_window(const resources::Resource<Window> window) -> void
 {
-    window->clear(sf::Color{ 128, 0, 128 });
+    window->clear(sf::Color{ 100, 100, 100 });
 }
