@@ -1,16 +1,21 @@
 module;
 
+#include <utility>
+
 #include <SFML/System/Vector2.hpp>
 
 export module common.Position;
 
+import utility.meta.type_traits.forward_like;
 import utility.Strong;
 
 export struct Position : util::Strong<sf::Vector2f, Position> {
     using Strong::Strong;
 
-    sf::Vector2f& operator->()
+    template <typename Self_T>
+    auto operator->(this Self_T&& self) noexcept
+        -> util::meta::forward_like_t<sf::Vector2f, Self_T>
     {
-        return underlying();
+        return std::forward<Self_T>(self).underlying();
     }
 };
