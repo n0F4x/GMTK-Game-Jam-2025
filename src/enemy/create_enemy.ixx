@@ -19,4 +19,6 @@ module :private;
 auto create_enemy(const Registry registry)
 {
     registry->create(Enemy{}, sf::Vector2f{ 3, 7 });
+    registry->create(Enemy{}, sf::Vector2f{ 1'000, -72 });
+    registry->create(Enemy{}, sf::Vector2f{ -300'000, -72'131 });
 }

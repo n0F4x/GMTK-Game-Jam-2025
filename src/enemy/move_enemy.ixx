@@ -34,16 +34,20 @@ auto move_enemy(const extensions::scheduler::accessors::ecs::Registry registry)
 
     core::ecs::query(
         registry.get(),
-        [&playerPos](core::ecs::With<Enemy>, sf::Vector2f& enemyPos) {
+        [&playerPos](const core::ecs::ID id, core::ecs::With<Enemy>, sf::Vector2f& enemyPos) {
             const auto diff = playerPos - enemyPos;
-            if (diff.length() < 0.05) {
+            if (diff.length() < 0.005) {
                 enemyPos = playerPos;
                 return;
             }
 
             enemyPos += diff / 2.f;
-
-            std::println("Enemy moved to position: ({}, {})", enemyPos.x, enemyPos.y);
+            std::println(
+                "Enemy #{} moved to position: ({}, {})",
+                id.underlying(),
+                enemyPos.x,
+                enemyPos.y
+            );
         }
     );
 }
