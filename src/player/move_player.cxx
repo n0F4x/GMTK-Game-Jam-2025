@@ -41,7 +41,15 @@ auto extra_movement() -> sf::Vector2f
         result.y -= 4;
     }
 
-    return result;
+    if (result.x == 0 && result.y == 0) {
+        return result;
+    }
+    else {
+        return result.normalized() * 4.0f;
+    }
+
+
+
 }
 
 auto move_player(const Registry registry) -> void
