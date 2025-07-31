@@ -4,7 +4,6 @@ module;
 
 export module enemy.create_enemy;
 
-import common.Position;
 import enemy.Enemy;
 import extensions.scheduler;
 

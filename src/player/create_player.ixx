@@ -2,25 +2,37 @@
 // Created by gabor on 2025-07-31.
 //
 
+module;
+
+#include <memory>
+#include <SFML/Graphics.hpp>
+
 export module player.create_player;
 
 import player.Player;
 import extensions.scheduler;
 import common.GlobalState;
+import common.TextureLoader;
+import core.assets.Handle;
 
 using namespace extensions::scheduler::accessors::ecs;
 using namespace extensions::scheduler::accessors::resources;
 using namespace extensions::scheduler::accessors::states;
 
-export auto create_player(const Registry registry, const State<GlobalState> globalState);
+using CachedTextureLoader = extensions::scheduler::accessors::assets::Cached<TextureLoader>;
+
+export auto create_player(const Registry registry, const State<GlobalState> globalState, const CachedTextureLoader texture_loader);
 
 module :private;
 
-auto create_player(const Registry registry, const State<GlobalState> globalState)
+auto create_player(const Registry registry, const State<GlobalState> globalState, const CachedTextureLoader texture_loader)
 {
-    Player player;
-    player.position = { 0, 0 };
+    const core::assets::Handle texture_handle{ texture_loader->load("MC.png") };
 
-    const auto id = registry->create(player);
+    auto player_shape = sf::RectangleShape(sf::Vector2f{ 64, 64 });
+
+    player_shape.setTexture(texture_handle.get());
+
+    const auto id = registry->create(Player{}, sf::Vector2f{0, 0}, player_shape);
     globalState.emplace(GlobalState{ .player_id = id });
 }

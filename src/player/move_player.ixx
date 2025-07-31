@@ -2,10 +2,12 @@
 // Created by gabor on 2025-07-31.
 //
 module;
+
 #include <optional>
 #include <print>
 #include <span>
 
+#include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Keyboard.hpp>
 
 export module player.move_player;
@@ -32,11 +34,11 @@ auto move_player(
     const extensions::scheduler::accessors::ecs::Registry registry
 )
 {
-    util::OptionalRef<Player> player;
+    util::OptionalRef<sf::Vector2f> playerPosition;
     core::ecs::query(
         registry.get(),
-        [&player](const core::ecs::ID id, Player& playerComponent) {
-            player = playerComponent;
+        [&playerPosition](const core::ecs::ID id, sf::Vector2f& position, core::ecs::With<Player> player) {
+            playerPosition = position;
         }
     );
 
@@ -47,33 +49,33 @@ auto move_player(
                     case sf::Keyboard::Key::A:
                     case sf::Keyboard::Key::Left:
                         // Move player left
-                        player->position.x -= 1;
+                        playerPosition->x -= 4;
                         std::println("Player moved left to position: ({}, {})",
-                                  player->position.x, player->position.y);
+                                  playerPosition->x, playerPosition->y);
                         break;
 
                     case sf::Keyboard::Key::D:
                     case sf::Keyboard::Key::Right:
                         // Move player right
-                        player->position.x += 1;
+                        playerPosition->x += 4;
                         std::println("Player moved right to position: ({}, {})",
-                                  player->position.x, player->position.y);
+                                  playerPosition->x, playerPosition->y);
                         break;
 
                     case sf::Keyboard::Key::S:
                     case sf::Keyboard::Key::Down:
                         // Move player down
-                        player->position.y += 1;
+                        playerPosition->y += 4;
                         std::println("Player moved down to position: ({}, {})",
-                                  player->position.x, player->position.y);
+                                  playerPosition->x, playerPosition->y);
                         break;
 
                     case sf::Keyboard::Key::W:
                     case sf::Keyboard::Key::Up:
                         // Move player up
-                        player->position.y -= 1;
+                        playerPosition->y -= 4;
                         std::println("Player moved up to position: ({}, {})",
-                            player->position.x, player->position.y);
+                            playerPosition->x, playerPosition->y);
 
                     default:
                         break;

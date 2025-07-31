@@ -12,7 +12,6 @@ import core.resources;
 import extensions.scheduler;
 import utility.containers;
 
-import common.Position;
 import enemy.Enemy;
 import player.Player;
 
@@ -26,9 +25,8 @@ auto move_enemy(const extensions::scheduler::accessors::ecs::Registry registry)
     sf::Vector2f playerPos;
     core::ecs::query(
         registry.get(),
-        [&playerPos](core::ecs::With<Player>, const Position& position) {
-            playerPos.x = position.x;
-            playerPos.y = position.y;
+        [&playerPos](core::ecs::With<Player>, const sf::Vector2f& position) {
+            playerPos = position;
         }
     );
 
