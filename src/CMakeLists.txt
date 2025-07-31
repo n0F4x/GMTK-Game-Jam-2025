@@ -1,5 +1,7 @@
 add_subdirectory(events)
 add_subdirectory(window)
+add_subdirectory(player)
+add_subdirectory(common)
 
 target_sources(${PROJECT_NAME} PRIVATE
         FILE_SET private_cxx_modules
