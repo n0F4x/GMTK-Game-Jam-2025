@@ -6,8 +6,8 @@ add_executable(${PROJECT_NAME})
 find_package(engine CONFIG REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE engine::engine)
 
-find_package(SFML CONFIG REQUIRED COMPONENTS Graphics)
-target_link_libraries(${PROJECT_NAME} PRIVATE SFML::Graphics)
+find_package(SFML CONFIG REQUIRED COMPONENTS Graphics Audio)
+target_link_libraries(${PROJECT_NAME} PRIVATE SFML::Graphics SFML::Audio)
 
 add_subdirectory(src)
 

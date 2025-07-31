@@ -5,5 +5,6 @@ target_sources(${PROJECT_NAME} PRIVATE
         FILES
         GlobalState.ixx
         Position.ixx
+        SoundBufferLoader.ixx
         TextureLoader.ixx
 )

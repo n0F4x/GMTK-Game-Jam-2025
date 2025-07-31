@@ -1,6 +1,7 @@
 module;
 
 #include <utility>
+#include <memory>
 
 #include <SFML/Graphics.hpp>
 
@@ -13,6 +14,7 @@ import plugins.functional;
 import plugins.states;
 
 import common.GlobalState;
+import common.SoundBufferLoader;
 import common.TextureLoader;
 
 import window.setup;
@@ -26,5 +28,6 @@ export inline constexpr auto setup =
         return std::forward<Builder_T>(builder)
             .transform(window::setup)
             .template register_state<GlobalState>()
+            .insert_loader(SoundBufferLoader{})
             .insert_loader(TextureLoader{});
     };
