@@ -53,7 +53,6 @@ if you die once, character should be confused if he hasnt done this shit yet.
 ## Ideas
 - You plant a bomb or unlock a shortcut that pays off in future loops
 
-
 ## Questions
 - How many levels?
 - Draw sketch of the levels
