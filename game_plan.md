@@ -4,7 +4,7 @@
 Youre trying to make it past the demon waves, because you got cursed by some cigan, because youre so selfish and mean person. Each time you die, you will wake up again. Tomorrow you want to meet your daughter after a long time, but u cant because youre in loop. After all enemies defeated, youre having a boss fight with Satan, or some kind of Devil. At the end, you cant defeat him (you will still fight in the boss fight), so youre dying on purpose, but your bravery convinces the God and all holy spirits to revive you. The curse is broken just as that. Youre going to meet your daughter blah blah.
 
 ## Game idea
-Time loop adasdasdsa
+Time loop
 
 ## Main character
 single dad that has a daughter he loves with all of his heart. (mother died of cancer)
