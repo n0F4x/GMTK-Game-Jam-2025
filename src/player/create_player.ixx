@@ -1,10 +1,7 @@
-//
-// Created by gabor on 2025-07-31.
-//
-
 module;
 
 #include <memory>
+
 #include <SFML/Graphics.hpp>
 
 export module player.create_player;
@@ -19,13 +16,22 @@ using namespace extensions::scheduler::accessors::ecs;
 using namespace extensions::scheduler::accessors::resources;
 using namespace extensions::scheduler::accessors::states;
 
-using CachedTextureLoader = extensions::scheduler::accessors::assets::Cached<TextureLoader>;
+using CachedTextureLoader =
+    extensions::scheduler::accessors::assets::Cached<TextureLoader>;
 
-export auto create_player(const Registry registry, const State<GlobalState> globalState, const CachedTextureLoader texture_loader);
+export auto create_player(
+    Registry            registry,
+    State<GlobalState>  globalState,
+    CachedTextureLoader texture_loader
+) -> void;
 
 module :private;
 
-auto create_player(const Registry registry, const State<GlobalState> globalState, const CachedTextureLoader texture_loader)
+auto create_player(
+    const Registry            registry,
+    const State<GlobalState>  globalState,
+    const CachedTextureLoader texture_loader
+) -> void
 {
     const core::assets::Handle texture_handle{ texture_loader->load("MC.png") };
 
@@ -33,6 +39,6 @@ auto create_player(const Registry registry, const State<GlobalState> globalState
 
     player_shape.setTexture(texture_handle.get());
 
-    const auto id = registry->create(Player{}, sf::Vector2f{0, 0}, player_shape);
+    const auto id = registry->create(Player{}, sf::Vector2f{ 0, 0 }, player_shape);
     globalState.emplace(GlobalState{ .player_id = id });
 }

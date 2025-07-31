@@ -3,8 +3,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         TYPE CXX_MODULES
         BASE_DIRS ${PROJECT_SOURCE_DIR}
         FILES
+        create_player.ixx
         move_player.ixx
         Player.ixx
-        create_player.ixx
         update_player.ixx
 )

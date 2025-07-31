@@ -10,6 +10,6 @@ import draw;
 export inline constexpr auto render =                       //
     core::scheduler::at_fixed_rate<window::DisplayTimer>(   //
         core::scheduler::start_as(window::clear_window)     //
-            .then(draw_shapes)
+            .then(draw)
             .then(window::display)
     );
