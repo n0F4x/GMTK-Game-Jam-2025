@@ -8,6 +8,7 @@ export module enemy.create_enemy;
 import enemy.Enemy;
 import extensions.scheduler;
 import common.TextureLoader;
+import common.Position;
 import core.assets.Handle;
 
 using namespace extensions::scheduler::accessors::ecs;
@@ -26,7 +27,7 @@ auto create_enemy(const Registry registry, const CachedTextureLoader texture_loa
     auto enemy_shape = sf::RectangleShape(sf::Vector2f{ 64, 64 });
     enemy_shape.setTexture(texture_handle.get());
 
-    registry->create(Enemy{}, sf::Vector2f{ 3, 7 }, enemy_shape);
-    registry->create(Enemy{}, sf::Vector2f{ 1'000, -72 }, enemy_shape);
-    registry->create(Enemy{}, sf::Vector2f{ -300'000, -72'131 }, enemy_shape);
+    registry->create(Enemy{}, Position{ sf::Vector2f{ 3, 7 } }, enemy_shape);
+    registry->create(Enemy{}, Position{ sf::Vector2f{ 1000, -72 } }, enemy_shape);
+    registry->create(Enemy{}, Position{ sf::Vector2f{ -300'000, -72'131 } }, enemy_shape);
 }
