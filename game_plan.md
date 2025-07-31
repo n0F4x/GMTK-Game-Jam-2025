@@ -57,6 +57,13 @@ if you die once, character should be confused if he hasn't done this shit yet.
 - Difficulty chooser at the menu
 - Difficulty scales with game progress (enemies become harder and/or harder enemy types spawn)
 
+## Weapons
+- <p style="color: green">Ranged: Pistol, Uzi, Shotgun, M4A1</p>
+
+## Monsters
+- <p style="color: green">Final boss: Lucifer king of hell</p>
+- <p style="color: green">Miniboss (optional): Hell knight, Flesh (made up of demons) </p>
+- <p style="color: green">Enemies: Demon, Imp, Dreadfiend (sluggish, larger demon), ghost</p>
 
 ## Ideas
 - You plant a bomb or unlock a shortcut that pays off in future loops
