@@ -22,7 +22,7 @@ Undertale, pixelart
 monolog, dialog, text window on the bottom of the screen.
 
 ## Others
-if you die once, character should be confused if he hasnt done this shit yet.
+if you die once, character should be confused if he hasn't done this shit yet.
 
 ## View
 2D, top-down
@@ -52,7 +52,6 @@ if you die once, character should be confused if he hasnt done this shit yet.
 
 ## Ideas
 - You plant a bomb or unlock a shortcut that pays off in future loops
-
 
 ## Questions
 - How many levels?
