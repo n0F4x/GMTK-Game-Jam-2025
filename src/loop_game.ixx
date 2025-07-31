@@ -2,7 +2,6 @@ export module loop_game;
 
 import core.scheduler;
 import extensions.scheduler.accessors;
-import player.update_player;
 
 import render;
 import should_exit;
@@ -21,7 +20,6 @@ export inline constexpr auto loop_game = core::scheduler::loop_until(
             clear_messages
         )
     )
-        .then(update_player)
         .then(update)
         .then(render),
     app_is_running
