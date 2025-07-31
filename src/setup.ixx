@@ -1,7 +1,7 @@
 module;
 
-#include <utility>
 #include <memory>
+#include <utility>
 
 #include <SFML/Graphics.hpp>
 

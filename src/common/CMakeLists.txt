@@ -4,8 +4,9 @@ target_sources(${PROJECT_NAME} PRIVATE
         BASE_DIRS ${PROJECT_SOURCE_DIR}
         FILES
         GlobalState.ixx
+        load_textures.ixx
         SoundBufferLoader.ixx
         TextureLoader.ixx
         Textures.ixx
-        load_textures.ixx
+        Position.ixx
 )
