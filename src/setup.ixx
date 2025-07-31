@@ -16,6 +16,7 @@ import plugins.states;
 import common.GlobalState;
 import common.SoundBufferLoader;
 import common.TextureLoader;
+import common.Textures;
 
 import window.setup;
 
@@ -28,6 +29,7 @@ export inline constexpr auto setup =
         return std::forward<Builder_T>(builder)
             .transform(window::setup)
             .template register_state<GlobalState>()
+            .template register_state<Textures>()
             .insert_loader(SoundBufferLoader{})
             .insert_loader(TextureLoader{});
     };

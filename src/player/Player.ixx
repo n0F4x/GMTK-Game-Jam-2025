@@ -4,8 +4,4 @@
 
 export module player.Player;
 
-import common.Position;
-
-export struct Player {
-    Position position;
-};
+export struct Player {};
