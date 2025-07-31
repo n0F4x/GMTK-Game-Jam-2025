@@ -14,7 +14,7 @@ using namespace extensions::scheduler::accessors::states;
 
 export auto create_player(const Registry registry, const State<GlobalState> globalState);
 
-module: private;
+module :private;
 
 auto create_player(const Registry registry, const State<GlobalState> globalState)
 {
@@ -22,5 +22,5 @@ auto create_player(const Registry registry, const State<GlobalState> globalState
     player.position = { 0, 0 };
 
     const auto id = registry->create(player);
-    globalState.emplace(GlobalState{.player_id = id});
+    globalState.emplace(GlobalState{ .player_id = id });
 }

@@ -1,7 +1,7 @@
-add_subdirectory(events)
-add_subdirectory(window)
-add_subdirectory(player)
 add_subdirectory(common)
+add_subdirectory(events)
+add_subdirectory(player)
+add_subdirectory(window)
 
 target_sources(${PROJECT_NAME} PRIVATE
         FILE_SET private_cxx_modules
@@ -12,6 +12,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         loop_game.ixx
         render.ixx
         run.ixx
+        setup.ixx
         should_exit.ixx
         shutdown.ixx
         update.ixx

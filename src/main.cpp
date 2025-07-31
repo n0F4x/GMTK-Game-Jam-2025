@@ -1,11 +1,10 @@
 import app;
 
 import plugins;
-import window.setup;
+import setup;
 import run;
 import common.GlobalState;
 import core.ecs;
-
 
 auto main() -> int
 {
@@ -18,7 +17,6 @@ auto main() -> int
         .plug_in(plugins::ecs)
         .plug_in(plugins::assets)
         .plug_in(plugins::functional)
-        .register_state<GlobalState>()
-        .transform(window::setup)
+        .transform(setup)
         .run(run);
 }

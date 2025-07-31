@@ -3,6 +3,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         TYPE CXX_MODULES
         BASE_DIRS ${PROJECT_SOURCE_DIR}
         FILES
-        Position.ixx
         GlobalState.ixx
+        Position.ixx
+        TextureLoader.ixx
 )
