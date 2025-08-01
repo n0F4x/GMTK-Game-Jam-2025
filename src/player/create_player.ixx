@@ -5,6 +5,7 @@ module;
 export module player.create_player;
 
 import player.Player;
+import weapon.Weapon;
 import extensions.scheduler;
 import common.GlobalState;
 import common.TextureLoader;
@@ -38,5 +39,6 @@ auto create_player(
     constexpr auto player_texture = Texture::PlayerIdle[0];
 
     const auto id = registry->create(Player{}, Position{sf::Vector2f{ 0, 0 }}, Drawable{player_texture});
+
     globalState.emplace(GlobalState{ .player_id = id });
 }

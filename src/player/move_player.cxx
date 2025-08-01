@@ -47,9 +47,6 @@ auto extra_movement() -> sf::Vector2f
     else {
         return result.normalized() * 0.02f;
     }
-
-
-
 }
 
 auto move_player(const Registry registry) -> void
