@@ -31,7 +31,7 @@ export auto draw_world(
     State<GlobalState>        global_state,
     State<Shaders>            shaders,
     State<Textures>           textures,
-    Resource<VertexBufs>&     vertexBufs
+    const Resource<VertexBufs>&     vertexBufs
 ) -> void;
 
 export sf::Glsl::Mat4 calculate_MVP(const Window& window, const GlobalState& global_state);

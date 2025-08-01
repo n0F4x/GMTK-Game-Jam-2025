@@ -59,7 +59,7 @@ auto gl::draw_world(
     const State<GlobalState>        global_state,
     const State<Shaders>            shaders,
     const State<Textures>           textures,
-    Resource<VertexBufs>&           vertexBufs
+    const Resource<VertexBufs>&     vertexBufs
 ) -> void
 {
     if (!global_state.has_value()) {

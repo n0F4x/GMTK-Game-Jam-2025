@@ -12,6 +12,6 @@ layout(location = 1) in vec2 vuv;// vertex uv position
 void main() {
     vec4 p = MVP * vec4(vp.x, vp.y, vp.z, 1); // transform vp from modeling space to normalized device space
     float z = vp.z - (vp.y * 0.05);
-    gl_Position = vec4(p.x, p.y, z, p.w);
+    gl_Position = vec4(p.x, p.y, z*.1, p.w);
     uv = vuv / ATLAS_SIZE;
 }
