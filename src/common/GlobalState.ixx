@@ -12,5 +12,5 @@ export struct GlobalState {
 
     // smaller value more you see, larger value more zooom
     // zoom = 1 ~ around 2 tiles height
-    float zoom = 0.1;
+    float zoom = 0.15f;
 };

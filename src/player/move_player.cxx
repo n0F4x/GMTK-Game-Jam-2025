@@ -35,19 +35,19 @@ auto move_player(const Registry registry) -> void
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)
             || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
         {
-            movement.y += 1;
-            direction = sf::Vector2f{ 0, 1 };
+            movement.y -= 1;
+            direction = sf::Vector2f{ 0, -1 };
         }
 
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)
             || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
         {
-            movement.y -= 1;
-            direction = sf::Vector2f{ 0, -1 };
+            movement.y += 1;
+            direction = sf::Vector2f{ 0, 1 };
         }
 
         if (movement.x != 0 || movement.y != 0) {
-            movement = movement.normalized() * 4.0f;
+            movement = movement.normalized() * 0.1f;
         }
 
         position.get() += movement;

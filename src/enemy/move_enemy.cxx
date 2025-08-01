@@ -29,8 +29,8 @@ auto move_enemy(const Registry registry) -> void
     );
 
     core::ecs::query(registry.get(), [&playerPos](core::ecs::With<Enemy>, Position& enemy) {
-        constexpr auto speed      = 2.f;
-        constexpr auto stopRadius = 50.f;
+        constexpr auto speed      = 0.05f;
+        constexpr auto stopRadius = 0.5f;
 
         auto&      enemyPos = enemy.get();
         const auto diff     = playerPos - enemyPos;

@@ -2,7 +2,7 @@ add_subdirectory(common)
 add_subdirectory(events)
 add_subdirectory(player)
 add_subdirectory(enemy)
-add_subdirectory(window
+add_subdirectory(window)
 add_subdirectory(gl)
 add_subdirectory(weapon)
 
