@@ -19,6 +19,7 @@ import events.WindowEvent;
 
 import window.DisplayTimer;
 import window.Window;
+import gl.VertexBufs;
 
 namespace window {
 
@@ -28,8 +29,11 @@ export inline constexpr auto setup =
         static_assert(app::has_plugins_c<Builder_T, plugins::EventsTag>);
 
         return std::forward<Builder_T>(builder)
-            .insert_resource(Window{ sf::VideoMode::getDesktopMode(), "Title" })
+            .insert_resource(
+                Window{ sf::VideoMode::getDesktopMode(), "Title" }
+            )   // TODO window.setVerticalSyncEnabled(true);
             .insert_resource(DisplayTimer{})
+            .insert_resource(gl::VertexBufs{})
             .template register_event<WindowEvent>();
     };
 

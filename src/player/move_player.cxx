@@ -20,32 +20,32 @@ auto extra_movement() -> sf::Vector2f
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)
         || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
     {
-        result.x -= 1;
+        result.x -= 0.02;
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)
         || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
     {
-        result.x += 1;
+        result.x += 0.02;
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)
         || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
     {
-        result.y += 1;
+        result.y -= 0.02;
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)
         || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
     {
-        result.y -= 1;
+        result.y += 0.02;
     }
 
     if (result.x == 0 && result.y == 0) {
         return result;
     }
     else {
-        return result.normalized() * 4.0f;
+        return result.normalized() * 0.02f;
     }
 }
 

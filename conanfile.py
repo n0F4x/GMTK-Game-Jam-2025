@@ -23,6 +23,7 @@ class GMTK2025(ConanFile):
     def requirements(self):
         self.requires("data-driven_game_engine/0.0.1")
         self.requires("sfml/3.0.1")
+        self.requires("glew/2.2.0") # TODO make conan skip this if already installed on the system.
 
     def layout(self):
         cmake_layout(self)

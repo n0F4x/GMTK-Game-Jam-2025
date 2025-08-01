@@ -2,7 +2,8 @@ add_subdirectory(common)
 add_subdirectory(events)
 add_subdirectory(player)
 add_subdirectory(enemy)
-add_subdirectory(window)
+add_subdirectory(window
+add_subdirectory(gl)
 add_subdirectory(weapon)
 
 target_sources(${PROJECT_NAME} PRIVATE
@@ -18,7 +19,6 @@ target_sources(${PROJECT_NAME} PRIVATE
         should_exit.ixx
         shutdown.ixx
         update.ixx
-        draw.ixx
 )
 
 target_sources(${PROJECT_NAME} PRIVATE
