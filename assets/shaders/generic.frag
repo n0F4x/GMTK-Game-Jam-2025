@@ -9,11 +9,10 @@ out vec4 outColor;		// computed color of the current pixel
 void main() {
     vec4 texel = texture(textureUnit, uv); // no effects, just texture
 
-    if(texel.a == +0) {  // some alpha testing
-        outColor = vec4(uv.x, uv.y, abs(1-uv.x-uv.y), 1);
-        //discard;
+    if(texel.a < 0.05) {  // some alpha testing
+        //outColor = vec4(uv.x, uv.y, abs(1-uv.x-uv.y), 1);
+        discard;
     } else {
         outColor = texel;
     }
-    //outColor = vec4(uv.x, uv.y, abs(1-uv.x-uv.y), 1);
 }

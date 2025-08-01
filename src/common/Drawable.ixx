@@ -12,7 +12,7 @@ export struct Drawable {
     Textures::Texture texture;
 
     // Size of the drawable on-screen.
-    sf::Vector2f size{ 100, 100 };
+    sf::Vector2f size{ 1, 1 };
 
     // which layer this should be on.
     // larger number means higher priority. (can be negative)

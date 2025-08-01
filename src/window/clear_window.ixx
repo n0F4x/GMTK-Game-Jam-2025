@@ -22,10 +22,6 @@ module :private;
 
 auto window::clear_window(const resources::Resource<Window> window) -> void
 {
-    /*
-    window->pushGLStates();
-    window->clear(sf::Color{ 100, 100, 100 });
-    window->popGLStates();
-    */
+    glClearColor(100/256.f, 100/256.f, 100/256.f, 1);
     glClear(GL_COLOR_BUFFER_BIT);
 }

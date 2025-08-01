@@ -3,7 +3,8 @@ module;
 #include <iostream>
 
 #include <SFML/Graphics.hpp>
-#include <SFML/OpenGL.hpp>
+
+#include <GL/glew.h>
 
 export module gl.render;
 
@@ -46,15 +47,20 @@ auto gl::init_draw(Resource<VertexBufs>& bufs) -> void
     bufs->clear();
 }
 
-sf::Glsl::Mat3 calculate_MVP(const Window& window, const GlobalState& global_state)
+sf::Glsl::Mat4 calculate_MVP(const Window& window, const GlobalState& global_state)
 {
-    float unit = 1;// / 20;
+    // ~0.2, positive
 
-    float array[] = { unit, 0,    0,   // stuff (keep this comment here)
-                      0,    unit, 0,   // stuff
-                      0,    0,    unit };
+    float zoom = global_state.zoom;
 
-    sf::Glsl::Mat3 camera{ array };
+    auto scale = sf::Vector2f{ window.getSize() }.normalized();
+
+    sf::Transform transform;
+    transform.scale({scale.y, scale.x});
+    transform.scale({zoom, zoom});
+    transform.translate(-global_state.camera_position);
+
+    sf::Glsl::Mat4 camera{ transform.getMatrix() };
     // sf::Transform::translate() // TODO Camera transfrom (I'll do once I have render!)
     return camera;
 }
@@ -81,8 +87,6 @@ auto gl::draw_world(
         std::cerr << "Cannot bind window" << std::endl;
     }
 
-    shaders->generic_draw->setUniform("MVP", calculate_MVP(window.get(), *global_state));
-
     // GL config
     glEnable(GL_TEXTURE_2D);
     glEnable(GL_DEPTH_TEST);
@@ -91,12 +95,14 @@ auto gl::draw_world(
     glDisableClientState(GL_NORMAL_ARRAY);
     glDisableClientState(GL_COLOR_ARRAY);
 
+    /*
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     glMatrixMode(GL_TEXTURE);
     glLoadIdentity();
+    */
 
     // smooth downscaling (if ever needed)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -106,6 +112,7 @@ auto gl::draw_world(
 
 
     sf::Texture::bind(textures->atlas.get());
+
     shaders->generic_draw->setUniform(
         "ATLAS_SIZE", sf::Glsl::Vec2(textures->atlas->getSize())
     );
@@ -113,7 +120,7 @@ auto gl::draw_world(
 
 
     std::vector<sf::Vector3f>& vertexBuf  = vertexBufs->vertexArray;
-    std::vector<sf::Vector2i>& textureBuf = vertexBufs->textArray;
+    std::vector<sf::Vector2f>& textureBuf = vertexBufs->textArray;
     const int                  begin      = vertexBuf.size();
 
 
@@ -122,7 +129,7 @@ auto gl::draw_world(
                              - drawable.size.componentWiseMul({ .5, .5 });
 
 
-        const float layer = drawable.layer + 0.01 * zeroPos.y;
+        const float layer = drawable.layer;
 
         vertexBuf.emplace_back(zeroPos << layer);
         vertexBuf.emplace_back(zeroPos.x + drawable.size.x, zeroPos.y, layer);
@@ -133,12 +140,12 @@ auto gl::draw_world(
 
         const Textures::Texture texture = drawable.texture;
 
-        textureBuf.emplace_back(texture.pos);
-        textureBuf.emplace_back(texture.pos.x + texture.size.x, texture.pos.y);
-        textureBuf.emplace_back(texture.pos + texture.size);
-        textureBuf.emplace_back(texture.pos);
-        textureBuf.emplace_back(texture.pos + texture.size);
         textureBuf.emplace_back(texture.pos.x, texture.pos.y + texture.size.y);
+        textureBuf.emplace_back(texture.pos + texture.size);
+        textureBuf.emplace_back(texture.pos.x + texture.size.x, texture.pos.y);
+        textureBuf.emplace_back(texture.pos.x, texture.pos.y + texture.size.y);
+        textureBuf.emplace_back(texture.pos.x + texture.size.x, texture.pos.y);
+        textureBuf.emplace_back(texture.pos);
     });
 
     const int end  = vertexBuf.size();
@@ -146,8 +153,16 @@ auto gl::draw_world(
     assert(size % 6 == 0);
 
     // bind
-    glVertexPointer(3, GL_FLOAT, 3 * sizeof(GLfloat), vertexBuf.data());
-    glTexCoordPointer(2, GL_INT, 2 * sizeof(GLint), textureBuf.data());
+    glBindVertexArray(vertexBufs->vao);
+    glBindBuffer(GL_ARRAY_BUFFER, vertexBufs->vbo[0]);
+    glBufferData(
+        GL_ARRAY_BUFFER, sizeof(sf::Vector3f) * end, vertexBuf.data(), GL_DYNAMIC_DRAW
+    );
+
+    glBindBuffer(GL_ARRAY_BUFFER, vertexBufs->vbo[1]);
+    glBufferData(
+        GL_ARRAY_BUFFER, sizeof(sf::Vector2i) * end, textureBuf.data(), GL_DYNAMIC_DRAW
+    );
 
     glDrawArrays(GL_TRIANGLES, begin, size);
 

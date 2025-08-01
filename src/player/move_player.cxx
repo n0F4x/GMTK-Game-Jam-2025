@@ -32,13 +32,13 @@ auto extra_movement() -> sf::Vector2f
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)
         || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
     {
-        result.y += 0.02;
+        result.y -= 0.02;
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)
         || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
     {
-        result.y -= 0.02;
+        result.y += 0.02;
     }
 
     if (result.x == 0 && result.y == 0) {

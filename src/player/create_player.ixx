@@ -35,11 +35,6 @@ auto create_player(
 ) -> void
 {
     const core::assets::Handle texture_handle{ texture_loader->load("MC.png") };
-
-    //auto player_shape = sf::RectangleShape(sf::Vector2f{ 64, 64 });
-
-    // player_shape.setTexture(texture_handle.get());
-
     constexpr auto player_texture = Texture::PlayerIdle[0];
 
     const auto id = registry->create(Player{}, Position{sf::Vector2f{ 0, 0 }}, Drawable{player_texture});

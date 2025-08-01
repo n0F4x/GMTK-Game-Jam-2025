@@ -5,4 +5,5 @@ target_sources(${PROJECT_NAME} PRIVATE
         FILES
         render.ixx
         VertexBufs.ixx
+        initialize.ixx
 )
