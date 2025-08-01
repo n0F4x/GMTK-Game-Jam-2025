@@ -6,6 +6,7 @@ import extensions.scheduler.accessors;
 import render;
 import should_exit;
 import update;
+import window.resize;
 
 using namespace extensions::scheduler::accessors;
 
@@ -20,6 +21,7 @@ export inline constexpr auto loop_game = core::scheduler::loop_until(
             clear_messages
         )
     )
+        .then(window::resize_window)
         .then(update)
         .then(render),
     app_is_running
