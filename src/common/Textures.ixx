@@ -22,5 +22,12 @@ export constexpr Textures::Texture Demon{
     { 0, 0 }
 };
 
-export constexpr Textures::Texture PlayerIdle[2] = { { { 32, 0 } }, { { 64, 0 } } };
+export constexpr Textures::Texture PlayerIdle[2] = { { { 32, 0 } }, { { 2 * 32, 0 } } };
+
+export constexpr Textures::Texture Projectile{
+    { 3 * 32, 0 }
+};
+
+export constexpr Textures::Texture PlayerBack[2] = { { { 4 * 32, 0 } },
+                                                     { { 5 * 32, 0 } } };
 }   // namespace Texture
