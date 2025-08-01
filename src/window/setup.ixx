@@ -28,10 +28,15 @@ export inline constexpr auto setup =
         static_assert(app::has_plugins_c<Builder_T, plugins::ResourcesTag>);
         static_assert(app::has_plugins_c<Builder_T, plugins::EventsTag>);
 
+        constexpr sf::ContextSettings settings{
+            .depthBits = 24, .majorVersion = 4, .minorVersion = 6
+
+        };
+
         return std::forward<Builder_T>(builder)
             .insert_resource(
-                Window{ sf::VideoMode::getDesktopMode(), "Title" }
-            )   // TODO window.setVerticalSyncEnabled(true);
+                Window{ sf::VideoMode::getDesktopMode(), "Title", {}, settings }
+            )
             .insert_resource(DisplayTimer{})
             .insert_resource(gl::VertexBufs{})
             .template register_event<WindowEvent>();

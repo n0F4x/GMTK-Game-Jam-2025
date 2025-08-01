@@ -32,9 +32,11 @@ auto gl::initialize(const Resource<Window> window, const Resource<VertexBufs>& v
         std::exit(-1);
     }
 
-#ifndef NDEBUG
-    glEnable(GL_DEBUG_OUTPUT);
-#endif
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LEQUAL);
+    glDepthMask(GL_TRUE);
+    glDepthRange(-1.f, 1.f);
+
 
     vertexBufs->initialize();
 }
