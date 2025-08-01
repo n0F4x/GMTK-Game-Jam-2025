@@ -16,7 +16,9 @@ import plugins.states;
 import common.GlobalState;
 import common.SoundBufferLoader;
 import common.TextureLoader;
+import common.ShaderLoader;
 import common.Textures;
+import common.Shaders;
 
 import window.setup;
 
@@ -30,6 +32,8 @@ export inline constexpr auto setup =
             .transform(window::setup)
             .template register_state<GlobalState>()
             .template register_state<Textures>()
+            .template register_state<Shaders>()
             .insert_loader(SoundBufferLoader{})
-            .insert_loader(TextureLoader{});
+            .insert_loader(TextureLoader{})
+            .insert_loader(ShaderLoader{});
     };

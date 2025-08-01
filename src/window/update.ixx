@@ -2,8 +2,6 @@ module;
 
 #include <utility>
 
-#include <SFML/Window.hpp>
-
 export module window.update;
 
 import core.scheduler;

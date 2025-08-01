@@ -5,9 +5,13 @@ target_sources(${PROJECT_NAME} PRIVATE
         FILES
         GameTickTimer.ixx
         GlobalState.ixx
-        load_textures.ixx
         SoundBufferLoader.ixx
         TextureLoader.ixx
+        ShaderLoader.ixx
+        Drawable.ixx
         Textures.ixx
+        Shaders.ixx
+        load_textures.ixx
+        load_shaders.ixx
         Position.ixx
 )

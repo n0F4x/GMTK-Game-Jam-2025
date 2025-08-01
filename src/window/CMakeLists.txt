@@ -13,4 +13,5 @@ target_sources(${PROJECT_NAME} PRIVATE
         update.ixx
         Window.ixx
         window_should_close.ixx
+        resize.ixx
 )
