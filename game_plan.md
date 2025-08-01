@@ -1,5 +1,12 @@
 # Stuck in yesterday
 
+## Colour codes
+
+- Original Plans
+- <span style="color: green">Suggestions</span>
+- <span style="color: red">Final decision</span>
+- <span style="color: cyan">Added plan</span>
+
 ## Story
 Youre trying to make it past the demon waves, because you got cursed by some cigan, because youre so selfish and mean person. Each time you die, you will wake up again. Tomorrow you want to meet your daughter after a long time, but u cant because youre in loop. After all enemies defeated, youre having a boss fight with Satan, or some kind of Devil. At the end, you cant defeat him (you will still fight in the boss fight), so youre dying on purpose, but your bravery convinces the God and all holy spirits to revive you. The curse is broken just as that. Youre going to meet your daughter blah blah.
 
@@ -34,7 +41,7 @@ if you die once, character should be confused if he hasn't done this shit yet.
 - Wake up in the morning
 - Objective: Have to go through all levels by the end of the day without dying
 - Player will probably die or time out at least a few times before beating the game, need to balance
-- Roguelike or roguelite?
+- <span style="color: red">Roguelike</span> or roguelite?
 - Boss fight at the last level, need to kill the boss, but it will not actually die
 - <p style="color: green">Minibosses on some selected levels</p>
 - Next morning meet with daughter back in the overworld
@@ -43,9 +50,9 @@ if you die once, character should be confused if he hasn't done this shit yet.
   - Spawners
   - Specific spots where enemies spawn on level load
   - Some items on the ground
-  - Item drops from enemies
-  - <p style="color: green">Items and power ups dropped by barrels or at level up</p>
-  - <p style="color: green">Levelling up only increases HP by a minuscule amount</p>
+  - <span style="color: cyan">Enemies drop experience</span>
+  - <p style="color: cyan">Power ups dropped by barrels or at level up</p>
+  - <p style="color: cyan">Levelling up gives power up options</p>
   - <p style="color: green">Other variation: players acquire not just xp from slaying mobs, but some kind of token or currency as well which they can spend on upgrades (be it better weapon or power up in a shop after each level) [time consuming I think]</p>
   - Decorative stuff (crates, etc.)
 
@@ -57,8 +64,8 @@ if you die once, character should be confused if he hasn't done this shit yet.
 - Difficulty chooser at the menu
 - Difficulty scales with game progress (enemies become harder and/or harder enemy types spawn)
 
-## Weapons
-- <p style="color: green">Ranged: Pistol, Uzi, Shotgun, M4A1</p>
+## Weapon
+- <p style="color: green">Ranged: Pistol</p>
 
 ## Monsters
 - <p style="color: green">Final boss: Lucifer king of hell</p>
@@ -78,7 +85,7 @@ if you die once, character should be confused if he hasn't done this shit yet.
 - Draw sketch of the levels
 - How many enemy types?
 - <p style="color: green">Minibosses?</p>
-- Plan UI (health, weapon info, dialog box)
+- Plan UI (health, weapon info, character info, dialog box)
 
 ## Suggestions
 - <p style="color: green">If weapon rarities, power ups for both melee and ranged not possible within the given timeframe, then we could skip weapon rarities and focus more on power ups and a few gun types/ melee types</p>
