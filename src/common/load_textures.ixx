@@ -23,11 +23,6 @@ auto load_textures(
 ) -> void
 {
     if (!texturesState.has_value()) {
-        texturesState.emplace();
+        texturesState.emplace(texture_loader->load("atlas.png"));
     }
-
-    auto& textures = texturesState->textures;
-
-    textures.push_back(texture_loader->load("MC.png"));
-    textures.push_back(texture_loader->load("Demon.png"));
 }

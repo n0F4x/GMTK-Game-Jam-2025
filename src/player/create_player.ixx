@@ -1,7 +1,5 @@
 module;
 
-#include <memory>
-
 #include <SFML/Graphics.hpp>
 
 export module player.create_player;
@@ -12,6 +10,8 @@ import common.GlobalState;
 import common.TextureLoader;
 import core.assets.Handle;
 import common.Position;
+import common.Textures;
+import common.Drawable;
 
 using namespace extensions::scheduler::accessors::ecs;
 using namespace extensions::scheduler::accessors::resources;
@@ -36,10 +36,12 @@ auto create_player(
 {
     const core::assets::Handle texture_handle{ texture_loader->load("MC.png") };
 
-    auto player_shape = sf::RectangleShape(sf::Vector2f{ 64, 64 });
+    //auto player_shape = sf::RectangleShape(sf::Vector2f{ 64, 64 });
 
-    player_shape.setTexture(texture_handle.get());
+    // player_shape.setTexture(texture_handle.get());
 
-    const auto id = registry->create(Player{}, Position{sf::Vector2f{ 0, 0 }}, player_shape);
+    constexpr auto player_texture = Texture::PlayerIdle[0];
+
+    const auto id = registry->create(Player{}, Position{sf::Vector2f{ 0, 0 }}, Drawable{player_texture});
     globalState.emplace(GlobalState{ .player_id = id });
 }

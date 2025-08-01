@@ -18,6 +18,7 @@ export auto draw(
 ) -> void
 {
     entities.for_each([&window](const Position& position, sf::RectangleShape& shape) {
+        assert(false);
         shape.setPosition(position.underlying());
         window->draw(shape);
     });

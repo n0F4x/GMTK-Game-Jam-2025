@@ -2,6 +2,8 @@ module;
 
 #include <SFML/Graphics.hpp>
 
+#include <GL/gl.h>
+
 export module window.clear_window;
 
 import extensions.scheduler.accessors.resources;
@@ -20,5 +22,10 @@ module :private;
 
 auto window::clear_window(const resources::Resource<Window> window) -> void
 {
+    /*
+    window->pushGLStates();
     window->clear(sf::Color{ 100, 100, 100 });
+    window->popGLStates();
+    */
+    glClear(GL_COLOR_BUFFER_BIT);
 }
