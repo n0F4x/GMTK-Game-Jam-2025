@@ -12,46 +12,48 @@ module player.move_player;
 
 using namespace extensions::scheduler::accessors::ecs;
 
-[[nodiscard]]
-auto extra_movement() -> sf::Vector2f
-{
-    sf::Vector2f result;
-
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)
-        || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
-    {
-        result.x -= 1;
-    }
-
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)
-        || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
-    {
-        result.x += 1;
-    }
-
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)
-        || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
-    {
-        result.y += 1;
-    }
-
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)
-        || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
-    {
-        result.y -= 1;
-    }
-
-    if (result.x == 0 && result.y == 0) {
-        return result;
-    }
-    else {
-        return result.normalized() * 4.0f;
-    }
-}
-
 auto move_player(const Registry registry) -> void
 {
-    core::ecs::query(registry.get(), [](Position& position, core::ecs::With<Player>) {
-        position.get() += extra_movement();
+    core::ecs::query(registry.get(), [](Position& position, Player& player) {
+        sf::Vector2f movement;
+        sf::Vector2f direction;
+
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)
+            || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
+        {
+            movement.x -= 1;
+            direction = sf::Vector2f{ -1, 0 };
+        }
+
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)
+            || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
+        {
+            movement.x += 1;
+            direction = sf::Vector2f{ 1, 0 };
+        }
+
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)
+            || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
+        {
+            movement.y += 1;
+            direction = sf::Vector2f{ 0, 1 };
+        }
+
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)
+            || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
+        {
+            movement.y -= 1;
+            direction = sf::Vector2f{ 0, -1 };
+        }
+
+        if (movement.x != 0 || movement.y != 0) {
+            movement = movement.normalized() * 4.0f;
+        }
+
+        position.get() += movement;
+
+        if (direction != sf::Vector2f{ 0, 0 }) {
+            player.direction = direction;
+        }
     });
 }

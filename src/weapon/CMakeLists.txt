@@ -6,4 +6,5 @@ target_sources(${PROJECT_NAME} PRIVATE
         fire_weapon.ixx
         Weapon.ixx
         WeaponProjectile.ixx
+        move_projectiles.ixx
 )
