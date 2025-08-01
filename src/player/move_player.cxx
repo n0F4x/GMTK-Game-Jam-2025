@@ -20,25 +20,25 @@ auto extra_movement() -> sf::Vector2f
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)
         || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
     {
-        result.x -= 4;
+        result.x -= 1;
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)
         || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
     {
-        result.x += 4;
+        result.x += 1;
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)
         || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
     {
-        result.y += 4;
+        result.y += 1;
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)
         || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
     {
-        result.y -= 4;
+        result.y -= 1;
     }
 
     if (result.x == 0 && result.y == 0) {
@@ -47,9 +47,6 @@ auto extra_movement() -> sf::Vector2f
     else {
         return result.normalized() * 4.0f;
     }
-
-
-
 }
 
 auto move_player(const Registry registry) -> void

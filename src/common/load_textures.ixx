@@ -30,4 +30,5 @@ auto load_textures(
 
     textures.push_back(texture_loader->load("MC.png"));
     textures.push_back(texture_loader->load("Demon.png"));
+    textures.push_back(texture_loader->load("Ammo.png"));
 }

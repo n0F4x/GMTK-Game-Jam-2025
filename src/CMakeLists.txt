@@ -3,6 +3,7 @@ add_subdirectory(events)
 add_subdirectory(player)
 add_subdirectory(enemy)
 add_subdirectory(window)
+add_subdirectory(weapon)
 
 target_sources(${PROJECT_NAME} PRIVATE
         FILE_SET private_cxx_modules
