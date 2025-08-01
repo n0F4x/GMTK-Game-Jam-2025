@@ -22,6 +22,8 @@ module :private;
 
 auto window::clear_window(const resources::Resource<Window> window) -> void
 {
+    window->setActive(true);
     glClearColor(100/256.f, 100/256.f, 100/256.f, 1);
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    window->setActive(false);
 }
