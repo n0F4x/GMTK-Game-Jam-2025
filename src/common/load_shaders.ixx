@@ -15,11 +15,12 @@ using namespace extensions::scheduler::accessors::states;
 
 using CachedShaderLoader = extensions::scheduler::accessors::assets::Cached<ShaderLoader>;
 
-export auto load_shaders(const State<Shaders> shadersState, const CachedShaderLoader shader_loader) -> void
+export auto load_shaders(
+    const State<Shaders>     shadersState,
+    const CachedShaderLoader shader_loader
+) -> void
 {
     if (!shadersState.has_value()) {
-        shadersState.emplace(Shaders{
-            .generic_draw = shader_loader->load("generic")
-        });
+        shadersState.emplace(Shaders{ .generic_draw = shader_loader->load("generic") });
     }
 }

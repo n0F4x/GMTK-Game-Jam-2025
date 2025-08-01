@@ -19,9 +19,8 @@ using namespace extensions::scheduler::accessors::resources;
 
 namespace window {
 
-export auto
-    resize_window(Reader<WindowEvent> event_reader, Resource<Window> window)
-        -> void;
+export auto resize_window(Reader<WindowEvent> event_reader, Resource<Window> window)
+    -> void;
 
 }   // namespace window
 

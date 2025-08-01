@@ -17,7 +17,7 @@ export struct VertexBufs {
     // buffers for stuff contained in Atlas :)
     GLuint vao{};
     GLuint vbo[2]{};
-    bool init = false;
+    bool   init = false;
 
     // 3 coordinates: x/y are for position, z for depth
     std::vector<sf::Vector3f> vertexArray;

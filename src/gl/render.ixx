@@ -56,8 +56,8 @@ sf::Glsl::Mat4 calculate_MVP(const Window& window, const GlobalState& global_sta
     auto scale = sf::Vector2f{ window.getSize() }.normalized();
 
     sf::Transform transform;
-    transform.scale({scale.y, scale.x});
-    transform.scale({zoom, zoom});
+    transform.scale({ scale.y, scale.x });
+    transform.scale({ zoom, zoom });
     transform.translate(-global_state.camera_position);
 
     sf::Glsl::Mat4 camera{ transform.getMatrix() };

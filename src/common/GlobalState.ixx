@@ -8,7 +8,7 @@ import core.ecs;
 
 export struct GlobalState {
     core::ecs::ID player_id{};
-    sf::Vector2f camera_position{};
+    sf::Vector2f  camera_position{};
 
     // smaller value more you see, larger value more zooom
     // zoom = 1 ~ around 2 tiles height
