@@ -23,23 +23,26 @@ import gl.VertexBufs;
 
 namespace window {
 
-export inline constexpr auto setup =
-    []<app::decays_to_builder_c Builder_T>(Builder_T&& builder) {
-        static_assert(app::has_plugins_c<Builder_T, plugins::ResourcesTag>);
-        static_assert(app::has_plugins_c<Builder_T, plugins::EventsTag>);
+export inline constexpr auto setup = []<app::decays_to_builder_c Builder_T>(
+                                         Builder_T&& builder
+                                     ) {
+    static_assert(app::has_plugins_c<Builder_T, plugins::ResourcesTag>);
+    static_assert(app::has_plugins_c<Builder_T, plugins::EventsTag>);
 
-        constexpr sf::ContextSettings settings{
-            .depthBits = 24, .majorVersion = 4, .minorVersion = 6
+    constexpr sf::ContextSettings settings{ .depthBits    = 24,
+                                            .majorVersion = 4,
+                                            .minorVersion = 6,
+#ifndef NDEBUG
+                                            .attributeFlags = sf::ContextSettings::Debug
+#endif
 
-        };
-
-        return std::forward<Builder_T>(builder)
-            .insert_resource(
-                Window{ sf::VideoMode::getDesktopMode(), "Title", {}, settings }
-            )
-            .insert_resource(DisplayTimer{})
-            .insert_resource(gl::VertexBufs{})
-            .template register_event<WindowEvent>();
     };
+
+    return std::forward<Builder_T>(builder)
+        .insert_resource(Window{ sf::VideoMode::getDesktopMode(), "Title", {}, settings })
+        .insert_resource(DisplayTimer{})
+        .insert_resource(gl::VertexBufs{})
+        .template register_event<WindowEvent>();
+};
 
 }   // namespace window
