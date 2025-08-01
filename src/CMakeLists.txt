@@ -18,7 +18,6 @@ target_sources(${PROJECT_NAME} PRIVATE
         should_exit.ixx
         shutdown.ixx
         update.ixx
-        draw.ixx
 )
 
 target_sources(${PROJECT_NAME} PRIVATE

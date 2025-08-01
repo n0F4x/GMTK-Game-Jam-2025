@@ -5,7 +5,6 @@ import core.scheduler;
 import window.DisplayTimer;
 import window.clear_window;
 import window.display;
-import draw;
 import gl.render;
 
 export inline constexpr auto render =                       //
