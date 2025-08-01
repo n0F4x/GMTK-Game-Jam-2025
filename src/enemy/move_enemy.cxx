@@ -1,8 +1,8 @@
 module;
 
-#include <SFML/System/Vector2.hpp>
+#include <algorithm>
 
-#include <fastgltf/util.hpp>
+#include <SFML/System/Vector2.hpp>
 
 import core.events;
 import core.ecs;
@@ -36,7 +36,7 @@ auto move_enemy(const Registry registry) -> void
         const auto diff     = playerPos - enemyPos;
         auto       velocity = diff.length() > stopRadius ? diff.normalized() : sf::Vector2f{ 0, 0 };
 
-        velocity *= fastgltf::min(speed, diff.length() - stopRadius);
+        velocity *= std::min(speed, diff.length() - stopRadius);
         enemyPos += velocity;
     });
 }
