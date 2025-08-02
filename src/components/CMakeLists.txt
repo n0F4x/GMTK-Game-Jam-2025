@@ -7,11 +7,15 @@ target_sources(${PROJECT_NAME} PRIVATE
         Drawable.ixx
         Enemy.ixx
         Health.ixx
+        Hitbox.ixx
         MovementSpeed.ixx
         Player.ixx
         Position.ixx
         SFMLComponent.ixx
+        Spawner.ixx
+        Solid.ixx
+        Tile.ixx
+        Velocity.ixx
         Weapon.ixx
         WeaponProjectile.ixx
-        Tile.ixx
 )

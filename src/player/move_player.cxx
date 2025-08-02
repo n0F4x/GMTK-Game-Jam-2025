@@ -3,64 +3,63 @@ module;
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Keyboard.hpp>
 
+module player.move_player;
+
 import core.ecs;
 
 import common.GlobalState;
 import components.MovementSpeed;
 import components.Player;
 import components.Position;
-
-module player.move_player;
+import components.Velocity;
 
 using namespace extensions::scheduler::accessors;
 
-auto move_player(const Registry registry, State<GlobalState> global_state) -> void
+[[nodiscard]]
+auto velocity_from_input() -> Velocity
 {
-    core::ecs::query(
-        registry.get(),
-        [&global_state](Position& position, Player& player, const MovementSpeed movement_speed) {
-            sf::Vector2f movement;
-            sf::Vector2f direction;
+    Velocity result;
 
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)
-                || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
-            {
-                movement.x -= 1;
-                direction = sf::Vector2f{ -1, 0 };
-            }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)
+        || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
+    {
+        result->x -= 1;
+    }
 
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)
-                || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
-            {
-                movement.x += 1;
-                direction = sf::Vector2f{ 1, 0 };
-            }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)
+        || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
+    {
+        result->x += 1;
+    }
 
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)
-                || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
-            {
-                movement.y -= 1;
-                direction = sf::Vector2f{ 0, -1 };
-            }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)
+        || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
+    {
+        result->y -= 1;
+    }
 
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)
-                || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
-            {
-                movement.y += 1;
-                direction = sf::Vector2f{ 0, 1 };
-            }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)
+        || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
+    {
+        result->y += 1;
+    }
 
-            if (movement.x != 0 || movement.y != 0) {
-                movement = movement.normalized() * movement_speed.underlying();
-            }
+    return result;
+}
 
-            position.underlying() += movement;
+auto move_player(const Registry registry, const State<GlobalState> global_state) -> void
+{
+    Velocity velocity = velocity_from_input();
 
-            global_state->camera_position = position.underlying();
+    registry->get_single<Velocity>(global_state->player_id) = velocity;
 
-            if (direction != sf::Vector2f{ 0, 0 }) {
-                player.direction = direction;
-            }
-        }
+    if (velocity->x != 0) {
+        velocity->y = 0;
+    }
+    else if (velocity->y == 0) {
+        velocity->x = 1;
+    }
+
+    registry->get_single<Player>(global_state->player_id).direction = velocity.underlying(
     );
 }

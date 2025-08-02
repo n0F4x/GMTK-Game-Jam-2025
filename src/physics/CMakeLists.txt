@@ -1,6 +1,6 @@
 target_sources(${PROJECT_NAME} PRIVATE
-        create_enemy.cxx
-        move_enemy.cxx
+        physics.cxx
+        collider.cxx
 )
 
 target_sources(${PROJECT_NAME} PRIVATE
@@ -8,7 +8,6 @@ target_sources(${PROJECT_NAME} PRIVATE
         TYPE CXX_MODULES
         BASE_DIRS ${PROJECT_SOURCE_DIR}
         FILES
-        create_enemy.ixx
-        move_enemy.ixx
-        update_enemy.ixx
+        physics.ixx
+        collider.ixx
 )
