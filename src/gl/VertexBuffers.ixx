@@ -13,7 +13,7 @@ export module gl.VertexBufs;
 namespace gl {
 
 
-export struct VertexBufs {
+export struct VertexBuffers {
     // buffers for stuff contained in Atlas :)
     GLuint vao{};
     GLuint vbo[2]{};
@@ -41,13 +41,13 @@ export struct VertexBufs {
         glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, nullptr);
     }
 
-    VertexBufs() = default;
+    VertexBuffers() = default;
 
-    VertexBufs(const VertexBufs&)            = delete;
-    VertexBufs& operator=(const VertexBufs&) = delete;
+    VertexBuffers(const VertexBuffers&)            = delete;
+    VertexBuffers& operator=(const VertexBuffers&) = delete;
 
-    VertexBufs(VertexBufs&&)            = default;
-    VertexBufs& operator=(VertexBufs&&) = default;
+    VertexBuffers(VertexBuffers&&)            = default;
+    VertexBuffers& operator=(VertexBuffers&&) = default;
 
     void clear()
     {
@@ -55,7 +55,7 @@ export struct VertexBufs {
         textArray.clear();
     }
 
-    ~VertexBufs()
+    ~VertexBuffers()
     {
         if (init) {
             glDeleteBuffers(2, vbo);

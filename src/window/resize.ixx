@@ -47,6 +47,16 @@ auto window::resize_window(
                 static_cast<GLsizei>(resizeEvent->size.x),
                 static_cast<GLsizei>(resizeEvent->size.y)
             );
+
+            window->setView(
+                sf::View{
+                    sf::FloatRect{ {}, sf::Vector2f(resizeEvent->size) }
+            }
+            );
+
+            if (!window->setActive(false)) {
+                std::cerr << "Failed release window" << std::endl;
+            }
         }
     }
 }

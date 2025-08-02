@@ -14,13 +14,13 @@ using namespace extensions::scheduler::accessors::resources;
 using namespace window;
 
 namespace gl {
-export auto initialize(Resource<Window> window, const Resource<VertexBufs>& vertexBufs)
+export auto initialize(Resource<Window> window, const Resource<VertexBuffers>& vertexBufs)
     -> void;
 }   // namespace gl
 
 module :private;
 
-auto gl::initialize(const Resource<Window> window, const Resource<VertexBufs>& vertexBufs)
+auto gl::initialize(const Resource<Window> window, const Resource<VertexBuffers>& vertexBufs)
     -> void
 {
     if (!window->setActive(true)) {
@@ -33,7 +33,7 @@ auto gl::initialize(const Resource<Window> window, const Resource<VertexBufs>& v
     }
 
     glEnable(GL_DEPTH_TEST);
-    glDepthFunc(GL_LEQUAL);
+    glDepthFunc(GL_LESS);
     glDepthMask(GL_TRUE);
     glDepthRange(-1.f, 1.f);
 

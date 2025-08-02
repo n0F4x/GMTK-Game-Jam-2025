@@ -23,15 +23,15 @@ using namespace window;
 
 namespace gl {
 
-export auto init_draw(Resource<VertexBufs>& bufs) -> void;
+export auto init_draw(Resource<VertexBuffers>& bufs) -> void;
 
 export auto draw_world(
-    Query<Position, Drawable> drawable_query,
-    Resource<Window>          window,
-    State<GlobalState>        global_state,
-    State<Shaders>            shaders,
-    State<Textures>           textures,
-    const Resource<VertexBufs>&     vertexBufs
+    Query<Position, Drawable>      drawable_query,
+    Resource<Window>               window,
+    State<GlobalState>             global_state,
+    State<Shaders>                 shaders,
+    State<Textures>                textures,
+    const Resource<VertexBuffers>& vertexBufs
 ) -> void;
 
 export sf::Glsl::Mat4 calculate_MVP(const Window& window, const GlobalState& global_state);

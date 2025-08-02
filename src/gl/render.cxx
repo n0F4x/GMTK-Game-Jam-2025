@@ -27,7 +27,7 @@ using namespace extensions::scheduler::accessors::resources;
 using namespace extensions::scheduler::accessors::states;
 using namespace window;
 
-auto gl::init_draw(Resource<VertexBufs>& bufs) -> void
+auto gl::init_draw(Resource<VertexBuffers>& bufs) -> void
 {
     bufs->clear();
 }
@@ -59,7 +59,7 @@ auto gl::draw_world(
     const State<GlobalState>        global_state,
     const State<Shaders>            shaders,
     const State<Textures>           textures,
-    const Resource<VertexBufs>&     vertexBufs
+    const Resource<VertexBuffers>&  vertexBufs
 ) -> void
 {
     if (!global_state.has_value()) {

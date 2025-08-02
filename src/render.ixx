@@ -6,6 +6,7 @@ import window.DisplayTimer;
 import window.clear_window;
 import window.display;
 import gl.render;
+import gl.render_extra;
 
 export inline constexpr auto render =                       //
     core::scheduler::at_fixed_rate<window::DisplayTimer>(   //
@@ -13,5 +14,6 @@ export inline constexpr auto render =                       //
                                                             //.then(draw)
             .then(gl::init_draw)
             .then(gl::draw_world)
+            .then(gl::render_extra)
             .then(window::display)
     );

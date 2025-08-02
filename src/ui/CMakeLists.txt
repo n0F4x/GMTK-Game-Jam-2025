@@ -1,6 +1,5 @@
 target_sources(${PROJECT_NAME} PRIVATE
-        render.cxx
-        render_extra.cxx
+        initUI.cxx
 )
 
 target_sources(${PROJECT_NAME} PRIVATE
@@ -8,8 +7,5 @@ target_sources(${PROJECT_NAME} PRIVATE
         TYPE CXX_MODULES
         BASE_DIRS ${PROJECT_SOURCE_DIR}
         FILES
-        initialize.ixx
-        render.ixx
-        render_extra.ixx
-        VertexBuffers.ixx
+        initUI.ixx
 )

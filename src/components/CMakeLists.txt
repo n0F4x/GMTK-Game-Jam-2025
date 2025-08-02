@@ -7,6 +7,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         Enemy.ixx
         Player.ixx
         Position.ixx
+        SFMLComponent.ixx
         Weapon.ixx
         WeaponProjectile.ixx
 )
