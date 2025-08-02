@@ -11,6 +11,8 @@ import enemy.update_enemy;
 import window.update;
 import weapon.fire_weapon;
 import weapon.move_projectiles;
+import update_timers;
+import physics.physics;
 
 export inline constexpr auto update =           //
     core::scheduler::start_as(window::update)   //
@@ -18,4 +20,6 @@ export inline constexpr auto update =           //
         .then(core::scheduler::at_fixed_rate<GameTimer>(move_projectiles))
         .then(core::scheduler::at_fixed_rate<GameTimer>(update_player))
         .then(core::scheduler::at_fixed_rate<GameTimer>(update_enemy))
-        .then(core::scheduler::at_fixed_rate<AnimationTimer>(progress_animations));
+        .then(core::scheduler::at_fixed_rate<AnimationTimer>(progress_animations))
+        .then(core::scheduler::at_fixed_rate<GameTimer>(physics::cap_velocities))
+        .then(core::scheduler::at_fixed_rate<GameTimer>(physics::move_moveables));

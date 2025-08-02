@@ -15,6 +15,8 @@ import components.MovementSpeed;
 import components.Player;
 import components.Position;
 import components.Weapon;
+import components.Moveable;
+import components.Hitbox;
 
 import player.idle_animation;
 
@@ -30,13 +32,15 @@ auto create_player(const Registry registry, const State<GlobalState> globalState
         Health{ 100 },
         MovementSpeed{ 0.1f },
         Weapon{},
+        Hitbox{},
+        Moveable{},
         idle_animation()
     );
 
     if (!globalState.has_value()) {
         globalState.emplace(GlobalState{ .player_id = id });
-    } else {
+    }
+    else {
         globalState->player_id = id;
     }
-
 }
