@@ -4,6 +4,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         BASE_DIRS ${PROJECT_SOURCE_DIR}
         FILES
         Animation.ixx
+        AttackAttributes.ixx
         Drawable.ixx
         Enemy.ixx
         Health.ixx

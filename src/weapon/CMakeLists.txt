@@ -1,6 +1,6 @@
 target_sources(${PROJECT_NAME} PRIVATE
         fire_weapon.cxx
-        move_projectiles.cxx
+        update_projectiles.cxx
 )
 
 target_sources(${PROJECT_NAME} PRIVATE
@@ -9,5 +9,5 @@ target_sources(${PROJECT_NAME} PRIVATE
         BASE_DIRS ${PROJECT_SOURCE_DIR}
         FILES
         fire_weapon.ixx
-        move_projectiles.ixx
+        update_projectiles.ixx
 )

@@ -1,11 +1,7 @@
-module;
-
-#include <SFML/System/Vector2.hpp>
-
 export module components.WeaponProjectile;
 
+import core.ecs;
+
 export struct WeaponProjectile {
-    float        damage;
-    float        range;
-    sf::Vector2f direction;
+    core::ecs::ID owner_id;
 };

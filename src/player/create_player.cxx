@@ -17,6 +17,7 @@ import components.Player;
 import components.Position;
 import components.Velocity;
 import components.Weapon;
+import components.AttackAttributes;
 
 import player.idle_animation;
 
@@ -32,6 +33,7 @@ auto create_player(const Registry registry, const State<GlobalState> globalState
         Health{ 100 },
         MovementSpeed{ 0.1f },
         Weapon{},
+        AttackAttributes{},
         Hitbox{},
         Velocity{},
         idle_animation()

@@ -18,8 +18,8 @@ import physics.physics;
 
 export inline constexpr auto update =           //
     core::scheduler::start_as(window::update)   //
-        .then(fire_weapon)
-        .then(core::scheduler::at_fixed_rate<GameTimer>(move_projectiles))
+        .then(weapon::fire_player_weapon)
+        .then(core::scheduler::at_fixed_rate<GameTimer>(weapon::update_projectiles))
         .then(core::scheduler::at_fixed_rate<GameTimer>(update_player))
         .then(core::scheduler::at_fixed_rate<GameTimer>(update_enemy))
         .then(core::scheduler::at_fixed_rate<AnimationTimer>(progress_animations))
