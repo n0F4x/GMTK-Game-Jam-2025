@@ -46,4 +46,9 @@ export constexpr Textures::Texture nothing{
             { 127 * 32, 127 * 32 }
 };
 
+export constexpr std::array player_with_weapon {
+    Textures::Texture {{443, 0}, {38, 38}},
+    Textures::Texture {{487, 0}, {38, 38}}
+};
+
 }   // namespace textures
