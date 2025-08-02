@@ -93,7 +93,7 @@ auto gl::draw_world(
                              - drawable.size.componentWiseMul({ .5, .5 });
 
 
-        const float layer = drawable.layer + position->y * 0.05;
+        const float layer = -drawable.layer + position->y * 0.05;
 
         vertexBuf.emplace_back(zeroPos << layer);
         vertexBuf.emplace_back(zeroPos.x + drawable.size.x, zeroPos.y, layer);
