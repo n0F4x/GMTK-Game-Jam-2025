@@ -13,7 +13,7 @@ export struct Textures {
         // size in pixels
         sf::Vector2i size = { 32, 32 };
 
-        Texture mirror_horizontal() const
+        constexpr Texture mirror_horizontal() const
         {
             return {
                 { pos.x + size.x,  pos.y },
