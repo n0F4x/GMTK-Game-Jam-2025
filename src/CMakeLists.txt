@@ -16,11 +16,13 @@ target_sources(${PROJECT_NAME} PRIVATE
         initialize.ixx
         loop_game.ixx
         render.ixx
+        reset_timers.ixx
         run.ixx
         setup.ixx
         should_exit.ixx
         shutdown.ixx
         update.ixx
+        update_timers.ixx
 )
 
 target_sources(${PROJECT_NAME} PRIVATE

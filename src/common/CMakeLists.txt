@@ -8,7 +8,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         BASE_DIRS ${PROJECT_SOURCE_DIR}
         FILES
         AnimationTimer.ixx
-        GameTickTimer.ixx
+        GameTimer.ixx
         GlobalState.ixx
         FontLoader.ixx
         Fonts.ixx

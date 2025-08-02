@@ -8,7 +8,6 @@ target_sources(${PROJECT_NAME} PRIVATE
         close_window.ixx
         display.ixx
         DisplayTimer.ixx
-        initialize.ixx
         setup.ixx
         update.ixx
         Window.ixx

@@ -19,6 +19,7 @@ import common.FontLoader;
 import common.Fonts;
 import common.Textures;
 import common.Shaders;
+import window.DisplayTimer;
 
 import window.setup;
 
@@ -31,6 +32,7 @@ export inline constexpr auto setup =
         return std::forward<Builder_T>(builder)
             .transform(window::setup)
             .insert_resource(AnimationTimer{})
+            .insert_resource(window::DisplayTimer{})
             .template register_state<GlobalState>()
             .template register_state<Textures>()
             .template register_state<Shaders>()

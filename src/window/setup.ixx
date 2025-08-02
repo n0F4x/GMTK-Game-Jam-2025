@@ -17,7 +17,6 @@ import plugins.resources;
 
 import events.WindowEvent;
 
-import window.DisplayTimer;
 import window.Window;
 import gl.VertexBufs;
 
@@ -40,7 +39,6 @@ export inline constexpr auto setup = []<app::decays_to_builder_c Builder_T>(
 
     return std::forward<Builder_T>(builder)
         .insert_resource(Window{ sf::VideoMode::getDesktopMode(), "Title", {}, settings })
-        .insert_resource(DisplayTimer{})
         .insert_resource(gl::VertexBuffers{})
         .template register_event<WindowEvent>();
 };

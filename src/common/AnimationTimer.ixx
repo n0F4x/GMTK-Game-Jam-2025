@@ -9,7 +9,8 @@ import core.time.FixedTimer;
 
 using namespace std::chrono_literals;
 
-inline constexpr std::chrono::duration game_tick_time{ 1s / 12.0 };
+inline constexpr std::chrono::duration animation_tick_time{ 1s / 12.0 };
 
-export using AnimationTimer = core::time::
-    FixedTimer<std::remove_cvref_t<decltype(game_tick_time)>, game_tick_time.count()>;
+export using AnimationTimer = core::time::FixedTimer<
+    std::remove_cvref_t<decltype(animation_tick_time)>,
+    animation_tick_time.count()>;

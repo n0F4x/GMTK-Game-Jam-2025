@@ -27,7 +27,8 @@ export constexpr Position& operator+=(Position& left, Position right)
     return left;
 }
 
-export constexpr Position operator-(Position left, Position right)
+export [[nodiscard]]
+constexpr Position operator-(Position left, Position right)
 {
     return Position{ left.underlying() - right.underlying() };
 }
