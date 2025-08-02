@@ -14,17 +14,20 @@ export struct Position : util::Strong<sf::Vector2f, Position> {
     using Strong::Strong;
 
     template <typename Self_T>
-    auto operator->(this Self_T& self) noexcept
+    constexpr auto operator->(this Self_T& self) noexcept
         -> util::meta::const_like_t<sf::Vector2f, Self_T>*
     {
         return std::addressof(self.underlying());
     }
-
-    template <typename Self_T>
-    [[nodiscard]]
-    auto get(this Self_T&& self) noexcept
-        -> util::meta::forward_like_t<sf::Vector2f, Self_T>
-    {
-        return std::forward<Self_T>(self).underlying();
-    }
 };
+
+export constexpr Position& operator+=(Position& left, Position right)
+{
+    left.underlying() += right.underlying();
+    return left;
+}
+
+export constexpr Position operator-(Position left, Position right)
+{
+    return Position{ left.underlying() - right.underlying() };
+}

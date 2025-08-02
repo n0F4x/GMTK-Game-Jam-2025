@@ -4,40 +4,47 @@ module;
 
 #include <SFML/System/Vector2.hpp>
 
+module enemy.move_enemy;
+
 import core.events;
 import core.ecs;
 import core.resources;
 import extensions.scheduler;
 import utility.containers;
 
-import components.Position;
 import components.Enemy;
+import components.MovementSpeed;
 import components.Player;
-
-module enemy.move_enemy;
+import components.Position;
 
 using namespace extensions::scheduler::accessors::ecs;
 
 auto move_enemy(const Registry registry) -> void
 {
-    sf::Vector2f playerPos;
+    Position player_position;
     core::ecs::query(
         registry.get(),
-        [&playerPos](core::ecs::With<Player>, const Position& position) {
-            playerPos = position.get();
+        [&player_position](core::ecs::With<Player>, const Position position) {
+            player_position = position;
         }
     );
 
-    core::ecs::query(registry.get(), [&playerPos](core::ecs::With<Enemy>, Position& enemy) {
-        constexpr auto speed      = 0.05f;
-        constexpr auto stopRadius = 0.5f;
+    core::ecs::query(
+        registry.get(),
+        [player_position](
+            core::ecs::With<Enemy>,
+            Position&           enemy_position,
+            const MovementSpeed movement_speed
+        ) {
+            constexpr auto stop_radius = 0.5f;
 
-        auto&      enemyPos = enemy.get();
-        const auto diff     = playerPos - enemyPos;
-        auto       velocity = diff.length() > stopRadius ? diff.normalized()
-                                                         : sf::Vector2f{ 0, 0 };
+            const auto diff     = player_position - enemy_position;
+            auto       velocity = diff->length() > stop_radius ? diff->normalized()
+                                                               : sf::Vector2f{ 0, 0 };
 
-        velocity *= std::min(speed, diff.length() - stopRadius);
-        enemyPos += velocity;
-    });
+            velocity *=
+                std::min(movement_speed.underlying(), diff->length() - stop_radius);
+            enemy_position.underlying() += velocity;
+        }
+    );
 }

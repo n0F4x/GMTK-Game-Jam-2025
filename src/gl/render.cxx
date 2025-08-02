@@ -91,7 +91,7 @@ auto gl::draw_world(
 
 
     drawable_query.for_each([&](const Position position, const Drawable& drawable) {
-        sf::Vector2f zeroPos = position.get()
+        sf::Vector2f zeroPos = position.underlying()
                              - drawable.size.componentWiseMul({ .5, .5 });
 
 

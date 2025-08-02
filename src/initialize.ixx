@@ -5,7 +5,7 @@ import window.initialize;
 import common.load_textures;
 import common.load_shaders;
 import player.create_player;
-import enemy.create_enemy;
+import enemy.create_enemies;
 import gl.initialize;
 import ui.initUI;
 
@@ -16,4 +16,4 @@ export inline constexpr auto initialize =
         .then(load_shaders)
         .then(ui::createUI)
         .then(create_player)
-        .then(create_enemy);
+        .then(create_enemies);

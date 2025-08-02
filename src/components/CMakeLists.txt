@@ -5,6 +5,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         FILES
         Drawable.ixx
         Enemy.ixx
+        Health.ixx
+        MovementSpeed.ixx
         Player.ixx
         Position.ixx
         SFMLComponent.ixx

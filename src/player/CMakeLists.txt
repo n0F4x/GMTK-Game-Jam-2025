@@ -1,4 +1,5 @@
 target_sources(${PROJECT_NAME} PRIVATE
+        create_player.cxx
         move_player.cxx
 )
 
