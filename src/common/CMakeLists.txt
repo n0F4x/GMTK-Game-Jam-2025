@@ -9,6 +9,9 @@ target_sources(${PROJECT_NAME} PRIVATE
         FILES
         GameTickTimer.ixx
         GlobalState.ixx
+        FontLoader.ixx
+        Fonts.ixx
+        load_fonts.ixx
         load_textures.ixx
         load_shaders.ixx
         ShaderLoader.ixx
