@@ -6,7 +6,7 @@ export module components.Animation;
 
 import utility.Strong;
 
-import common.Textures;
+import states.Textures;
 
 export struct Animation {
     std::vector<Textures::Texture> textures;

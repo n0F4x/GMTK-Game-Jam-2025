@@ -6,13 +6,13 @@ module ui.initUI;
 
 import extensions.scheduler.accessors.ecs.Registry;
 import extensions.scheduler.accessors.states.State;
-import common.Fonts;
+import states.Fonts;
 import components.SFMLComponent;
 import window.Window;
 
 using namespace extensions::scheduler::accessors;
 
-struct HealthBarStuff : SFDrawable {
+struct HealthBarStuff final : SFDrawable {
     sf::CircleShape shape{ 50.f };
     sf::Text        text;
 

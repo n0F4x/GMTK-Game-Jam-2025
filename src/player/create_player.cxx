@@ -6,8 +6,8 @@ module player.create_player;
 
 import extensions.scheduler;
 
-import common.GlobalState;
-import common.Textures;
+import states.GlobalState;
+import states.Textures;
 
 import components.Drawable;
 import components.Health;

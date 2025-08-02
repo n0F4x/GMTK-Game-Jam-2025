@@ -7,7 +7,7 @@ module player.move_player;
 
 import core.ecs;
 
-import common.GlobalState;
+import states.GlobalState;
 import components.MovementSpeed;
 import components.Player;
 import components.Position;

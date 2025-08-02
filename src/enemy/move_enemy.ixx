@@ -2,7 +2,7 @@ export module enemy.move_enemy;
 
 import extensions.scheduler;
 
-import common.GlobalState;
+import states.GlobalState;
 
 using namespace extensions::scheduler::accessors;
 

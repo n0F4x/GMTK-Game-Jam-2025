@@ -2,7 +2,7 @@ module;
 
 #include <SFML/Graphics/Font.hpp>
 
-export module common.Fonts;
+export module states.Fonts;
 
 import core.assets;
 

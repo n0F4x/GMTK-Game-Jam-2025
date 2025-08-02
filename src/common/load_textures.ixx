@@ -1,6 +1,6 @@
 export module common.load_textures;
 
-import common.Textures;
+import states.Textures;
 import common.TextureLoader;
 import extensions.scheduler;
 

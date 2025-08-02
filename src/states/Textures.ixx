@@ -4,7 +4,7 @@ module;
 
 #include <SFML/Graphics/Texture.hpp>
 
-export module common.Textures;
+export module states.Textures;
 
 import core.assets;
 
@@ -49,22 +49,6 @@ export constexpr std::array player_idle_back{
 
 export constexpr Textures::Texture debug_tile{
     { 7 * 32, 0 }
-};
-
-export constexpr Textures::Texture vertical_door{
-    { 8 * 32, 0 }
-};
-
-export constexpr Textures::Texture horizontal_door{
-    { 9 * 32, 0 }
-};
-
-export constexpr Textures::Texture trapdoor{
-    { 10 * 32, 0 }
-};
-
-export constexpr Textures::Texture nothing{
-        { 127 * 32, 127 * 32 }
 };
 
 }   // namespace textures

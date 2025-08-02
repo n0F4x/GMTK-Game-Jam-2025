@@ -6,7 +6,7 @@ module;
 
 #include <SFML/Graphics/Shader.hpp>
 
-export module common.Shaders;
+export module states.Shaders;
 
 import core.assets;
 

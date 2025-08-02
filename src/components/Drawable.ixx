@@ -5,7 +5,7 @@ module;
 export module components.Drawable;
 
 import core.assets.Handle;
-import common.Textures;
+import states.Textures;
 
 export struct Drawable {
     // pls make all textures be part of one atlas.

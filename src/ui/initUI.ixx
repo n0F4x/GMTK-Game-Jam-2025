@@ -5,7 +5,7 @@ export module ui.initUI;
 
 import extensions.scheduler.accessors.ecs.Registry;
 import extensions.scheduler.accessors.states.State;
-import common.Fonts;
+import states.Fonts;
 
 
 using namespace extensions::scheduler::accessors;

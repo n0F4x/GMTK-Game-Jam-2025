@@ -4,7 +4,7 @@ module enemy.create_enemy;
 
 import extensions.scheduler;
 
-import common.Textures;
+import states.Textures;
 
 import components.Drawable;
 import components.Enemy;

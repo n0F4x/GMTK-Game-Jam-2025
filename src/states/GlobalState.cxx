@@ -5,7 +5,7 @@ module;
 #include <SFML/Graphics/Transform.hpp>
 #include <SFML/Window/Mouse.hpp>
 
-module common.GlobalState;
+module states.GlobalState;
 
 import extensions.scheduler.accessors.resources.Resource;
 import window.Window;

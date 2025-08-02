@@ -3,7 +3,7 @@ import app;
 import plugins;
 import setup;
 import run;
-import common.GlobalState;
+import states.GlobalState;
 import core.ecs;
 
 auto main() -> int

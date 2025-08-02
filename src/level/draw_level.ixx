@@ -4,11 +4,11 @@ module;
 
 export module level.draw_level;
 
+import extensions.scheduler.accessors;
+
 import components.Drawable;
-import extensions.scheduler.accessors.ecs.Registry;
-import extensions.scheduler.accessors.states.State;
-import common.GlobalState;
-import common.Textures;
+import states.GlobalState;
+import states.Textures;
 
 auto get_texture_from_char(char tile_char, int level_index)
 {

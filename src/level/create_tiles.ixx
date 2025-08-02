@@ -4,13 +4,13 @@ module;
 
 export module level.create_tiles;
 
+import extensions.scheduler.accessors;
+
 import components.Position;
 import components.Tile;
 import components.Drawable;
-import common.Textures;
-import common.GlobalState;
-import extensions.scheduler.accessors.ecs.Registry;
-import extensions.scheduler.accessors.states.State;
+import states.Textures;
+import states.GlobalState;
 
 export auto create_tiles(const extensions::scheduler::accessors::Registry& registry,
     extensions::scheduler::accessors::State<GlobalState> global_state)

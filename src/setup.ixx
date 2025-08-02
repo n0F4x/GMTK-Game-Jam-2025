@@ -11,15 +11,15 @@ import plugins.functional;
 import plugins.states;
 
 import common.AnimationTimer;
-import common.GlobalState;
 import common.SoundBufferLoader;
 import common.TextureLoader;
 import common.ShaderLoader;
 import common.FontLoader;
 import common.LevelLoader;
-import common.Fonts;
-import common.Textures;
-import common.Shaders;
+import states.GlobalState;
+import states.Fonts;
+import states.Textures;
+import states.Shaders;
 import window.DisplayTimer;
 import spawner.SpawnerTimer;
 

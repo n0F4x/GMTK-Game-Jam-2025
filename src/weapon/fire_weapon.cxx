@@ -12,7 +12,7 @@ import core.ecs;
 
 import extensions.scheduler;
 
-import common.Textures;
+import states.Textures;
 
 import components.Drawable;
 import components.MovementSpeed;
@@ -21,7 +21,7 @@ import components.Position;
 import components.Weapon;
 import components.WeaponProjectile;
 import components.Velocity;
-import common.GlobalState;
+import states.GlobalState;
 import components.AttackAttributes;
 import window.Window;
 import core.ecs;

@@ -6,7 +6,7 @@ module;
 
 export module common.load_shaders;
 
-import common.Shaders;
+import states.Shaders;
 import common.ShaderLoader;
 import extensions.scheduler;
 

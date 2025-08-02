@@ -1,7 +1,7 @@
 export module player.create_player;
 
 import extensions.scheduler;
-import common.GlobalState;
+import states.GlobalState;
 
 using namespace extensions::scheduler::accessors;
 

@@ -5,7 +5,7 @@ module;
 export module weapon.fire_weapon;
 
 import extensions.scheduler;
-import common.GlobalState;
+import states.GlobalState;
 import window.Window;
 import components.Weapon;
 import components.Position;

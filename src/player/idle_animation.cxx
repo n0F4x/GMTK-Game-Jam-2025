@@ -1,7 +1,7 @@
 module player.idle_animation;
 
 import components.Animation;
-import common.Textures;
+import states.Textures;
 
 [[nodiscard]]
 auto idle_animation() noexcept -> const Animation&

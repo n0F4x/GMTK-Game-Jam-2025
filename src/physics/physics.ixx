@@ -14,5 +14,5 @@ namespace physics {
 
 export auto move_moveables(Registry registry, Query<Position, Hitbox, Solid> solids_query)
     -> void;
-}   // namespace physics
 
+}   // namespace physics

@@ -1,6 +1,6 @@
 export module common.load_fonts;
 
-import common.Fonts;
+import states.Fonts;
 import common.FontLoader;
 import extensions.scheduler;
 

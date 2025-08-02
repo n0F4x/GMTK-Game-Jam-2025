@@ -5,7 +5,7 @@ module;
 
 export module common.LevelLoader;
 
-import common.GlobalState;
+import states.GlobalState;
 import extensions.scheduler;
 import core.assets.Handle;
 

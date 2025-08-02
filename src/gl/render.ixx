@@ -11,9 +11,9 @@ import extensions.scheduler.accessors.states.State;
 import components.Drawable;
 import components.Position;
 import window.Window;
-import common.GlobalState;
-import common.Shaders;
-import common.Textures;
+import states.GlobalState;
+import states.Shaders;
+import states.Textures;
 import gl.VertexBufs;
 
 using namespace extensions::scheduler::accessors;

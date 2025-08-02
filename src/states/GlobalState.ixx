@@ -5,7 +5,7 @@ module;
 
 #include <SFML/System/Vector2.hpp>
 
-export module common.GlobalState;
+export module states.GlobalState;
 
 import extensions.scheduler.accessors.resources.Resource;
 import window.Window;
@@ -26,6 +26,4 @@ export struct GlobalState {
     auto worldSpaceCursor(Resource<Window> window) const -> std::optional<sf::Vector2f>;
 
     std::vector<core::assets::Handle<std::string>> levels;
-    int current_level_index = 0;
-    core::ecs::ID tile_array[40][40];
 };
