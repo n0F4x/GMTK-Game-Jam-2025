@@ -40,7 +40,6 @@ export auto fire_weapon(const extensions::scheduler::accessors::ecs::Registry re
                 auto now = std::chrono::steady_clock::now();
                 if (now - player.last_firing_time > std::chrono::milliseconds{ weapon.firing_rate_ms }) {
                     player.last_firing_time = now;
-                    weapon.ammo -= 1;
                     spawn_projectile(registry, playerPos, player, weapon);
                 }
             }

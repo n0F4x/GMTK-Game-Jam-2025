@@ -47,7 +47,7 @@ auto move_player(const Registry registry) -> void
         }
 
         if (movement.x != 0 || movement.y != 0) {
-            movement = movement.normalized() * 0.1f;
+            movement = movement.normalized() * player.movement_speed;
         }
 
         position.get() += movement;

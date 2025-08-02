@@ -81,7 +81,7 @@ if you die once, character should be confused if he hasn't done this shit yet.
   - <p style="color: green">passives for melee for possible playthrough with only melee</p>
 
 ## Questions
-- How many levels?
+- How many levels? 5
 - Draw sketch of the levels
 - How many enemy types?
 - <p style="color: green">Minibosses?</p>
@@ -89,3 +89,34 @@ if you die once, character should be confused if he hasn't done this shit yet.
 
 ## Suggestions
 - <p style="color: green">If weapon rarities, power ups for both melee and ranged not possible within the given timeframe, then we could skip weapon rarities and focus more on power ups and a few gun types/ melee types</p>
+
+## Levels
+- Level 0: Home
+- Level 1: Earthlike (dirt), unsettling - brown
+- Level 2: Cold yet not icy (full of gold and treasures) - gray
+- Level 3: dry rocky swamp - dark green
+- Level 4: vulcan, lava, fire - red
+- Level 5: frozen ice - light blue
+- Single wood-iron like door and trapdoor
+
+## Power ups (buy at the end of level with xp)
+- Increase Movement speed
+- Increase max health
+- Increase Damage
+- Increase firing rate
+- Increase crit chance
+- Increase crit multiplier
+- Increase life steal chance
+
+## Healing
+- Life steal (chance of stealing some health from enemy when killed)
+- Set health to max at start of new level
+
+## Get XP
+- by killing enemies
+
+## Needed textures
+- Main character looking to the left
+- Floor tile, Straight wall tile, Inner wall corner tile, Outer wall corner tile for all 5 levels
+  - possibly some alternate floor tiles with small variations so it is not as repetitive
+- Power up textures
