@@ -12,6 +12,14 @@ export struct Textures {
         sf::Vector2i pos;
         // size in pixels
         sf::Vector2i size = { 32, 32 };
+
+        Texture mirror_horizontal() const
+        {
+            return {
+                { pos.x + size.x,  pos.y },
+                {        -size.x, size.y }
+            };
+        }
     };
 
     core::assets::Handle<sf::Texture> atlas;
