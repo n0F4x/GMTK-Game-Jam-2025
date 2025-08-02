@@ -33,5 +33,10 @@ auto create_player(const Registry registry, const State<GlobalState> globalState
         idle_animation()
     );
 
-    globalState.emplace(GlobalState{ .player_id = id });
+    if (!globalState.has_value()) {
+        globalState.emplace(GlobalState{ .player_id = id });
+    } else {
+        globalState->player_id = id;
+    }
+
 }

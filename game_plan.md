@@ -121,3 +121,22 @@ if you die once, character should be confused if he hasn't done this shit yet.
   - possibly some alternate floor tiles with small variations so it is not as repetitive
 - Power up textures
 - Single wood-iron like door and trapdoor
+
+## Level.txt format
+-  : nothing
+- 0: floor tile
+- T: top wall
+- B: bottom wall
+- L: left wall
+- R: right wall
+- 1: top-left outer wall corner
+- 2: top-right outer wall corner
+- 3: bottom-left outer wall corner
+- 4: bottom-right outer wall corner
+- 5: top-left inner wall corner
+- 6: top-right inner wall corner
+- 7: bottom-left inner wall corner
+- 8: bottom-right inner wall corner
+- D: door
+- I: floor tile (player start position)
+- O: trapdoor (player exit position)

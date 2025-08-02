@@ -5,8 +5,10 @@ import core.scheduler;
 import common.load_textures;
 import common.load_shaders;
 import common.load_fonts;
+import common.LevelLoader;
 import player.create_player;
 import enemy.create_enemies;
+import level.create_tiles;
 import gl.initialize;
 import ui.initUI;
 import reset_timers;
@@ -16,6 +18,8 @@ export inline constexpr auto initialize =
         .then(load_textures)
         .then(load_shaders)
         .then(load_fonts)
+        .then(load_levels)
+        .then(create_tiles)
         .then(ui::createUI)
         .then(create_player)
         .then(create_enemies)

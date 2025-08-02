@@ -16,6 +16,7 @@ import common.SoundBufferLoader;
 import common.TextureLoader;
 import common.ShaderLoader;
 import common.FontLoader;
+import common.LevelLoader;
 import common.Fonts;
 import common.Textures;
 import common.Shaders;
@@ -40,5 +41,6 @@ export inline constexpr auto setup =
             .insert_loader(SoundBufferLoader{})
             .insert_loader(TextureLoader{})
             .insert_loader(ShaderLoader{})
+            .insert_loader(LevelLoader{})
             .insert_loader(FontLoader{});
     };

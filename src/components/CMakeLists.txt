@@ -13,4 +13,5 @@ target_sources(${PROJECT_NAME} PRIVATE
         SFMLComponent.ixx
         Weapon.ixx
         WeaponProjectile.ixx
+        Tile.ixx
 )

@@ -1,6 +1,7 @@
 module;
 
 #include <optional>
+#include <vector>
 
 #include <SFML/System/Vector2.hpp>
 
@@ -9,6 +10,7 @@ export module common.GlobalState;
 import extensions.scheduler.accessors.resources.Resource;
 import window.Window;
 import core.ecs;
+import core.assets;
 
 using namespace extensions::scheduler::accessors;
 using namespace window;
@@ -22,4 +24,6 @@ export struct GlobalState {
     float zoom = 0.15f;
 
     auto worldSpaceCursor(Resource<Window> window) const -> std::optional<sf::Vector2f>;
+
+    std::vector<core::assets::Handle<std::string>> levels;
 };

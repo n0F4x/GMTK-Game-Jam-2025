@@ -8,6 +8,7 @@ add_subdirectory(ui)
 add_subdirectory(player)
 add_subdirectory(weapon)
 add_subdirectory(window)
+add_subdirectory(level)
 
 target_sources(${PROJECT_NAME} PRIVATE
         FILE_SET private_cxx_modules

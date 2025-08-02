@@ -47,4 +47,8 @@ export constexpr std::array player_idle_back{
     Textures::Texture{ { 5 * 32, 0 } },
 };
 
+export constexpr Textures::Texture debug_tile{
+    { 7 * 32, 0 }
+};
+
 }   // namespace textures
