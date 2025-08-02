@@ -6,8 +6,7 @@ module player.create_player;
 
 import extensions.scheduler;
 
-import states.GlobalState;
-import states.Textures;
+import common.textures;
 
 import components.Drawable;
 import components.Health;
@@ -18,6 +17,8 @@ import components.Position;
 import components.Velocity;
 import components.Weapon;
 import components.AttackAttributes;
+
+import states.GlobalState;
 
 import player.idle_animation;
 

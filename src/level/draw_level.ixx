@@ -6,6 +6,7 @@ export module level.draw_level;
 
 import extensions.scheduler.accessors;
 
+import common.textures;
 import components.Drawable;
 import states.GlobalState;
 import states.Textures;

@@ -11,6 +11,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         load_shaders.ixx
         ShaderLoader.ixx
         SoundBufferLoader.ixx
-        TextureLoader.ixx
         LevelLoader.ixx
+        TextureLoader.ixx
+        textures.ixx
 )

@@ -26,29 +26,3 @@ export struct Textures {
 
     core::assets::Handle<sf::Texture> atlas;
 };
-
-namespace textures {
-
-export constexpr Textures::Texture demon{
-    { 0, 0 }
-};
-
-export constexpr std::array player_idle{
-    Textures::Texture{ { 32, 0 } },
-    Textures::Texture{ { 2 * 32, 0 } },
-};
-
-export constexpr Textures::Texture projectile{
-    { 3 * 32, 0 }
-};
-
-export constexpr std::array player_idle_back{
-    Textures::Texture{ { 4 * 32, 0 } },
-    Textures::Texture{ { 5 * 32, 0 } },
-};
-
-export constexpr Textures::Texture debug_tile{
-    { 7 * 32, 0 }
-};
-
-}   // namespace textures

@@ -12,7 +12,7 @@ import core.ecs;
 
 import extensions.scheduler;
 
-import states.Textures;
+import common.textures;
 
 import components.Drawable;
 import components.MovementSpeed;
@@ -71,7 +71,6 @@ auto weapon::fire_weapon(
             // did not I ask you guys NOT TO DO THIS??? - kosmx
             .texture = textures::projectile,
             .size    = { 0.25f, 0.25f },
-
         },
         MovementSpeed{ weapon.projectile_speed }
     );
