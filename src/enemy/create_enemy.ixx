@@ -20,9 +20,24 @@ module :private;
 
 auto create_enemy(const Registry registry)
 {
-    auto enemy_drawable = Drawable(Texture::Demon);
+    auto enemy_drawable = Drawable(texture::Demon);
 
-    registry->create(Enemy{}, Position{ sf::Vector2f{ 7.f, 5.f } }, enemy_drawable);
-    registry->create(Enemy{}, Position{ sf::Vector2f{ -5.f, -7.f } }, enemy_drawable);
-    registry->create(Enemy{}, Position{ sf::Vector2f{ 14.f, 6.f } }, enemy_drawable);
+    registry->create(
+        Enemy{
+    },
+        Position{ sf::Vector2f{ 7.f, 5.f } },
+        enemy_drawable
+    );
+    registry->create(
+        Enemy{
+    },
+        Position{ sf::Vector2f{ -5.f, -7.f } },
+        enemy_drawable
+    );
+    registry->create(
+        Enemy{
+    },
+        Position{ sf::Vector2f{ 14.f, 6.f } },
+        enemy_drawable
+    );
 }

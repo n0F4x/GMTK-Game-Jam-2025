@@ -5,8 +5,8 @@ module;
 export module weapon.WeaponProjectile;
 
 export struct WeaponProjectile {
-    float damage;
-    float range;
-    float speed;
+    float        damage;
+    float        range;
+    float        speed;
     sf::Vector2f direction;
 };

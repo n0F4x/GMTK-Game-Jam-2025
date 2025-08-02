@@ -15,6 +15,6 @@ export struct Drawable {
     sf::Vector2f size{ 1, 1 };
 
     // which layer this should be on.
-    // larger number means higher priority. (can be negative)
+    // larger number means higher priority. (range: -10 < x < 10)
     int layer = 0;
 };

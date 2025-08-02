@@ -17,7 +17,8 @@ export struct Textures {
     core::assets::Handle<sf::Texture> atlas;
 };
 
-namespace Texture {
+namespace texture {
+
 export constexpr Textures::Texture Demon{
     { 0, 0 }
 };
@@ -30,4 +31,5 @@ export constexpr Textures::Texture Projectile{
 
 export constexpr Textures::Texture PlayerBack[2] = { { { 4 * 32, 0 } },
                                                      { { 5 * 32, 0 } } };
-}   // namespace Texture
+
+}   // namespace texture

@@ -34,7 +34,8 @@ auto move_enemy(const Registry registry) -> void
 
         auto&      enemyPos = enemy.get();
         const auto diff     = playerPos - enemyPos;
-        auto       velocity = diff.length() > stopRadius ? diff.normalized() : sf::Vector2f{ 0, 0 };
+        auto       velocity = diff.length() > stopRadius ? diff.normalized()
+                                                         : sf::Vector2f{ 0, 0 };
 
         velocity *= std::min(speed, diff.length() - stopRadius);
         enemyPos += velocity;
