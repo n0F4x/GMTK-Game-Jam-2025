@@ -11,10 +11,10 @@ import common.Textures;
 import components.Drawable;
 import components.Enemy;
 import components.Health;
+import components.Hitbox;
 import components.MovementSpeed;
 import components.Position;
-import components.Moveable;
-import components.Hitbox;
+import components.Velocity;
 
 using namespace extensions::scheduler::accessors;
 
@@ -31,7 +31,7 @@ auto create_enemies(const Registry registry) -> void
             enemy_drawable,
             Health{ 100 },
             MovementSpeed{ 0.05f },
-            Moveable{},
+            Velocity{},
             Hitbox{}
         );
     };

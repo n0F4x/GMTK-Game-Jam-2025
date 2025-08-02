@@ -3,63 +3,63 @@ module;
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Window/Keyboard.hpp>
 
+module player.move_player;
+
 import core.ecs;
 
 import common.GlobalState;
 import components.MovementSpeed;
 import components.Player;
 import components.Position;
-import components.Moveable;
-
-module player.move_player;
+import components.Velocity;
 
 using namespace extensions::scheduler::accessors;
 
-auto checkInput()
+[[nodiscard]]
+auto velocity_from_input() -> Velocity
 {
-    sf::Vector2f movement;
+    Velocity result;
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)
         || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
     {
-        movement.x -= 1;
+        result->x -= 1;
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)
         || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
     {
-        movement.x += 1;
+        result->x += 1;
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)
         || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
     {
-        movement.y -= 1;
+        result->y -= 1;
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)
         || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
     {
-        movement.y += 1;
+        result->y += 1;
     }
 
-    return movement;
-
+    return result;
 }
 
-auto move_player(const Registry registry, State<GlobalState> global_state) -> void
+auto move_player(const Registry registry, const State<GlobalState> global_state) -> void
 {
-    sf::Vector2f mov = checkInput();
+    Velocity velocity = velocity_from_input();
 
-    Moveable& player_vecolity = registry->get_single<Moveable>(global_state->player_id);
-    Player& player = registry->get_single<Player>(global_state->player_id);
+    registry->get_single<Velocity>(global_state->player_id) = velocity;
 
-    player_vecolity.velocity = mov;
-
-    if (mov.x != 0) {
-        mov.y = 0;
-    } else if (mov.y == 0) {
-        mov.x = 1;
+    if (velocity->x != 0) {
+        velocity->y = 0;
     }
-    player.direction = mov;
+    else if (velocity->y == 0) {
+        velocity->x = 1;
+    }
+
+    registry->get_single<Player>(global_state->player_id).direction = velocity.underlying(
+    );
 }

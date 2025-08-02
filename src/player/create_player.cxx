@@ -11,12 +11,12 @@ import common.Textures;
 
 import components.Drawable;
 import components.Health;
+import components.Hitbox;
 import components.MovementSpeed;
 import components.Player;
 import components.Position;
+import components.Velocity;
 import components.Weapon;
-import components.Moveable;
-import components.Hitbox;
 
 import player.idle_animation;
 
@@ -33,7 +33,7 @@ auto create_player(const Registry registry, const State<GlobalState> globalState
         MovementSpeed{ 0.1f },
         Weapon{},
         Hitbox{},
-        Moveable{},
+        Velocity{},
         idle_animation()
     );
 

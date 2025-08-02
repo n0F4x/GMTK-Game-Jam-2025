@@ -16,7 +16,7 @@ import components.Enemy;
 import components.MovementSpeed;
 import components.Player;
 import components.Position;
-import components.Moveable;
+import components.Velocity;
 
 using namespace extensions::scheduler::accessors;
 
@@ -28,16 +28,15 @@ auto move_enemy(const Registry registry, const State<GlobalState> global_state) 
     core::ecs::query(
         registry.get(),
         [player_position](
-            core::ecs::With<Enemy>, Moveable& moveable, const Position enemy_position
+            core::ecs::With<Enemy>, Velocity& velocity, const Position enemy_position
         ) {
-            constexpr auto stop_radius = 0.5f;
+            constexpr static auto stop_radius = 0.5f;
 
-            const auto diff     = player_position - enemy_position;
-            auto       velocity = diff->length() > stop_radius ? diff->normalized()
-                                                               : sf::Vector2f{ 0, 0 };
+            const auto diff = player_position - enemy_position;
+            velocity = diff->length() > stop_radius ? Velocity{ diff->normalized() }
+                                                    : Velocity{};
 
             velocity *= diff->length() - stop_radius;
-            moveable.velocity = velocity;
         }
     );
 }

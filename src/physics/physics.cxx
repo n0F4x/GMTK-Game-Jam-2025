@@ -1,15 +1,15 @@
 module;
 
-#include <optional>
+#include <cassert>
 
 #include <SFML/System/Vector2.hpp>
 
 module physics.physics;
 
 import components.Position;
-import components.Moveable;
 import components.MovementSpeed;
 import components.Position;
+import components.Velocity;
 import physics.collider;
 
 auto physics::move_moveables(
@@ -22,22 +22,22 @@ auto physics::move_moveables(
         [solids_query](
             Position&                                position,
             const core::ecs::Optional<Hitbox>        hitbox,
-            Moveable&                                moveable,
+            Velocity&                                velocity,
             const core::ecs::Optional<MovementSpeed> max_speed
         ) {
-            if (moveable.velocity == sf::Vector2f{}) {
+            if (velocity == Velocity{}) {
                 return;
             }
 
-            sf::Vector2f velocity = moveable.velocity;
             if (max_speed.has_value()) {
                 const float square = max_speed->underlying() * max_speed->underlying();
-                if (velocity.lengthSquared() > square) {
-                    velocity = velocity.normalized() * max_speed->underlying();
+                if (velocity->lengthSquared() > square) {
+                    velocity = Velocity{ velocity->normalized()
+                                         * max_speed->underlying() };
                 }
             }
 
-            sf::Vector2f nextPos = position.underlying() + velocity;
+            sf::Vector2f nextPos = position.underlying() + velocity.underlying();
 
             if (hitbox.has_value()) {
                 solids_query.for_each(
@@ -52,7 +52,6 @@ auto physics::move_moveables(
             }
 
             // update this moveable
-            moveable.lastStep     = nextPos - position.underlying();
             position.underlying() = nextPos;
         }
     );
