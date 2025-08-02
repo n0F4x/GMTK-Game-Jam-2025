@@ -11,7 +11,6 @@ import components.Solid;
 using namespace extensions::scheduler::accessors::ecs;
 
 namespace physics {
-export auto cap_velocities(Registry registry) -> void;
 
 export auto move_moveables(Registry registry, Query<Position, Hitbox, Solid> solids_query)
     -> void;

@@ -21,5 +21,4 @@ export inline constexpr auto update =           //
         .then(core::scheduler::at_fixed_rate<GameTimer>(update_player))
         .then(core::scheduler::at_fixed_rate<GameTimer>(update_enemy))
         .then(core::scheduler::at_fixed_rate<AnimationTimer>(progress_animations))
-        .then(core::scheduler::at_fixed_rate<GameTimer>(physics::cap_velocities))
         .then(core::scheduler::at_fixed_rate<GameTimer>(physics::move_moveables));
