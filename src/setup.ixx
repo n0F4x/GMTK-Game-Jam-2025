@@ -10,6 +10,7 @@ import plugins.assets;
 import plugins.functional;
 import plugins.states;
 
+import common.AnimationTimer;
 import common.GlobalState;
 import common.SoundBufferLoader;
 import common.TextureLoader;
@@ -29,6 +30,7 @@ export inline constexpr auto setup =
 
         return std::forward<Builder_T>(builder)
             .transform(window::setup)
+            .insert_resource(AnimationTimer{})
             .template register_state<GlobalState>()
             .template register_state<Textures>()
             .template register_state<Shaders>()
