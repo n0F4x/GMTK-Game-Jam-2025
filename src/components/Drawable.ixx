@@ -2,7 +2,7 @@ module;
 
 #include <SFML/System/Vector2.hpp>
 
-export module common.Drawable;
+export module components.Drawable;
 
 import core.assets.Handle;
 import common.Textures;

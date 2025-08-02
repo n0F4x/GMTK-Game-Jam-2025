@@ -1,10 +1,11 @@
 add_subdirectory(common)
-add_subdirectory(events)
-add_subdirectory(player)
+add_subdirectory(components)
 add_subdirectory(enemy)
-add_subdirectory(window)
+add_subdirectory(events)
 add_subdirectory(gl)
+add_subdirectory(player)
 add_subdirectory(weapon)
+add_subdirectory(window)
 
 target_sources(${PROJECT_NAME} PRIVATE
         FILE_SET private_cxx_modules

@@ -9,6 +9,5 @@ target_sources(${PROJECT_NAME} PRIVATE
         FILES
         create_player.ixx
         move_player.ixx
-        Player.ixx
         update_player.ixx
 )

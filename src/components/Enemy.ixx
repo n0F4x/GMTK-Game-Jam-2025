@@ -1,4 +1,4 @@
-export module enemy.Enemy;
+export module components.Enemy;
 
 export struct Enemy {
     int   health{ 100 };

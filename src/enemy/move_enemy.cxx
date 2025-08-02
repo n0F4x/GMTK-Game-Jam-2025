@@ -10,9 +10,9 @@ import core.resources;
 import extensions.scheduler;
 import utility.containers;
 
-import common.Position;
-import enemy.Enemy;
-import player.Player;
+import components.Position;
+import components.Enemy;
+import components.Player;
 
 module enemy.move_enemy;
 

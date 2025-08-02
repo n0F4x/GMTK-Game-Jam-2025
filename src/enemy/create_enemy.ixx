@@ -4,11 +4,11 @@ module;
 
 export module enemy.create_enemy;
 
-import enemy.Enemy;
+import components.Enemy;
 import extensions.scheduler;
-import common.Position;
+import components.Position;
 import common.Textures;
-import common.Drawable;
+import components.Drawable;
 
 using namespace extensions::scheduler::accessors::ecs;
 using namespace extensions::scheduler::accessors::resources;

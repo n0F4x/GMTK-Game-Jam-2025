@@ -5,8 +5,8 @@ module;
 
 import core.ecs;
 
-import player.Player;
-import common.Position;
+import components.Player;
+import components.Position;
 
 module player.move_player;
 

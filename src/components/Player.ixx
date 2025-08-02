@@ -4,7 +4,7 @@ module;
 
 #include <SFML/System/Vector2.hpp>
 
-export module player.Player;
+export module components.Player;
 
 export struct Player {
     int                                   health{ 100 };

@@ -1,4 +1,4 @@
-export module weapon.Weapon;
+export module components.Weapon;
 
 export struct Weapon {
     float damage{ 10 };

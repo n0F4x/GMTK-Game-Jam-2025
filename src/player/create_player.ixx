@@ -4,13 +4,13 @@ module;
 
 export module player.create_player;
 
-import player.Player;
-import weapon.Weapon;
+import components.Player;
+import components.Weapon;
 import extensions.scheduler;
 import common.GlobalState;
-import common.Position;
+import components.Position;
 import common.Textures;
-import common.Drawable;
+import components.Drawable;
 
 using namespace extensions::scheduler::accessors::ecs;
 using namespace extensions::scheduler::accessors::resources;

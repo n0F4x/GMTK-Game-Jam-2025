@@ -7,13 +7,13 @@ module;
 
 export module weapon.fire_weapon;
 
-import common.Position;
-import weapon.Weapon;
-import weapon.WeaponProjectile;
-import player.Player;
+import components.Position;
+import components.Weapon;
+import components.WeaponProjectile;
+import components.Player;
 import core.ecs;
 import extensions.scheduler;
-import common.Drawable;
+import components.Drawable;
 import common.Textures;
 
 auto spawn_projectile(

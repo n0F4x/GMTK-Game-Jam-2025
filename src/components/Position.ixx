@@ -4,7 +4,7 @@ module;
 
 #include <SFML/System/Vector2.hpp>
 
-export module common.Position;
+export module components.Position;
 
 import utility.meta.type_traits.const_like;
 import utility.meta.type_traits.forward_like;

@@ -8,8 +8,8 @@ export module gl.render;
 import extensions.scheduler.accessors.ecs.Query;
 import extensions.scheduler.accessors.resources.Resource;
 import extensions.scheduler.accessors.states.State;
-import common.Drawable;
-import common.Position;
+import components.Drawable;
+import components.Position;
 import window.Window;
 import common.GlobalState;
 import common.Shaders;
@@ -38,4 +38,3 @@ export sf::Glsl::Mat4 calculate_MVP(const Window& window, const GlobalState& glo
 }   // namespace gl
 
 export auto initialize() -> void;
-

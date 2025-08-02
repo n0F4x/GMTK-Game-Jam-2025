@@ -3,6 +3,10 @@ target_sources(${PROJECT_NAME} PRIVATE
         TYPE CXX_MODULES
         BASE_DIRS ${PROJECT_SOURCE_DIR}
         FILES
-        fire_weapon.ixx
-        move_projectiles.ixx
+        Drawable.ixx
+        Enemy.ixx
+        Player.ixx
+        Position.ixx
+        Weapon.ixx
+        WeaponProjectile.ixx
 )

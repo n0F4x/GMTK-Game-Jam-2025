@@ -4,8 +4,8 @@ module;
 export module weapon.move_projectiles;
 
 import core.ecs;
-import common.Position;
-import weapon.WeaponProjectile;
+import components.Position;
+import components.WeaponProjectile;
 import extensions.scheduler;
 using namespace extensions::scheduler::accessors::ecs;
 

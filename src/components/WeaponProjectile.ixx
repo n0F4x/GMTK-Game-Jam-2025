@@ -2,7 +2,7 @@ module;
 
 #include <SFML/System/Vector2.hpp>
 
-export module weapon.WeaponProjectile;
+export module components.WeaponProjectile;
 
 export struct WeaponProjectile {
     float        damage;
