@@ -8,7 +8,7 @@ using namespace extensions::scheduler::accessors;
 
 namespace window {
 
-export auto display(resources::Resource<Window> window) -> void;
+export auto display(Resource<Window> window) -> void;
 
 }   // namespace window
 

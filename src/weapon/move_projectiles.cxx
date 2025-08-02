@@ -11,7 +11,7 @@ import extensions.scheduler;
 import components.Position;
 import components.WeaponProjectile;
 
-using namespace extensions::scheduler::accessors::ecs;
+using namespace extensions::scheduler::accessors;
 
 auto move_projectiles(
     const Registry                                                              registry,

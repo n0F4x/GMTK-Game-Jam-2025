@@ -14,7 +14,7 @@ import components.Health;
 import components.MovementSpeed;
 import components.Position;
 
-using namespace extensions::scheduler::accessors::ecs;
+using namespace extensions::scheduler::accessors;
 
 auto create_enemies(const Registry registry) -> void
 {

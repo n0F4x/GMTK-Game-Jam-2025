@@ -16,14 +16,12 @@ import common.Shaders;
 import common.Textures;
 import gl.VertexBufs;
 
-using namespace extensions::scheduler::accessors::ecs;
-using namespace extensions::scheduler::accessors::resources;
-using namespace extensions::scheduler::accessors::states;
+using namespace extensions::scheduler::accessors;
 using namespace window;
 
 namespace gl {
 
-export auto init_draw(Resource<VertexBuffers>& bufs) -> void;
+export auto init_draw(const Resource<VertexBuffers>& vertex_buffers) -> void;
 
 export auto draw_world(
     Query<Position, Drawable>      drawable_query,
@@ -35,6 +33,7 @@ export auto draw_world(
 ) -> void;
 
 export sf::Glsl::Mat4 calculate_MVP(const Window& window, const GlobalState& global_state);
+
 }   // namespace gl
 
 export auto initialize() -> void;

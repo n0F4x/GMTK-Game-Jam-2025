@@ -8,7 +8,7 @@ import components.Position;
 import components.MovementSpeed;
 import components.WeaponProjectile;
 
-using namespace extensions::scheduler::accessors::ecs;
+using namespace extensions::scheduler::accessors;
 
 export auto move_projectiles(
     Registry                                         registry,

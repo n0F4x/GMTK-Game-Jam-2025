@@ -4,10 +4,9 @@ import common.Fonts;
 import common.FontLoader;
 import extensions.scheduler;
 
-using namespace extensions::scheduler::accessors::resources;
-using namespace extensions::scheduler::accessors::states;
+using namespace extensions::scheduler::accessors;
 
-using CachedFontLoader = extensions::scheduler::accessors::assets::Cached<FontLoader>;
+using CachedFontLoader = Cached<FontLoader>;
 
 export auto load_fonts(
     State<Fonts>     fontsState,   //

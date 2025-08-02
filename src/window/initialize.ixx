@@ -10,7 +10,7 @@ using namespace extensions::scheduler::accessors;
 
 namespace window {
 
-export auto initialize(resources::Resource<DisplayTimer> display_timer) -> void;
+export auto initialize(Resource<DisplayTimer> display_timer) -> void;
 
 }   // namespace window
 

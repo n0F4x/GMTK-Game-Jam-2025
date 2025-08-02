@@ -10,8 +10,7 @@ import common.Fonts;
 import components.SFMLComponent;
 import window.Window;
 
-using namespace extensions::scheduler::accessors::ecs;
-using namespace extensions::scheduler::accessors::states;
+using namespace extensions::scheduler::accessors;
 
 struct HealthBarStuff : SFDrawable {
     sf::CircleShape shape{ 50.f };
@@ -38,4 +37,3 @@ auto ui::createUI(const Registry registry, State<Fonts> fonts) -> void
     // const sf::Font& font = *(fonts->std_font.get());
     // registry->create(SFMLComponent{ std::make_shared<HealthBarStuff>(font) });
 }
-

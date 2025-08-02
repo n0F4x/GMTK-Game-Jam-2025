@@ -4,7 +4,6 @@ import extensions.scheduler;
 
 import common.GlobalState;
 
-using namespace extensions::scheduler::accessors::ecs;
-using namespace extensions::scheduler::accessors::states;
+using namespace extensions::scheduler::accessors;
 
 export auto move_enemy(Registry registry, State<GlobalState> global_state) -> void;

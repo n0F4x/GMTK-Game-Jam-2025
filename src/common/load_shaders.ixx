@@ -10,10 +10,9 @@ import common.Shaders;
 import common.ShaderLoader;
 import extensions.scheduler;
 
-using namespace extensions::scheduler::accessors::resources;
-using namespace extensions::scheduler::accessors::states;
+using namespace extensions::scheduler::accessors;
 
-using CachedShaderLoader = extensions::scheduler::accessors::assets::Cached<ShaderLoader>;
+using CachedShaderLoader = Cached<ShaderLoader>;
 
 export auto load_shaders(
     const State<Shaders>     shadersState,

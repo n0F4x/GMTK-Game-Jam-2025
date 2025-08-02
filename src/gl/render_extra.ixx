@@ -16,9 +16,7 @@ import common.Textures;
 import gl.VertexBufs;
 import core.ecs;
 
-using namespace extensions::scheduler::accessors::ecs;
-using namespace extensions::scheduler::accessors::resources;
-using namespace extensions::scheduler::accessors::states;
+using namespace extensions::scheduler::accessors;
 using namespace window;
 
 namespace gl {
@@ -26,4 +24,3 @@ namespace gl {
 export auto render_extra(Registry registry, Resource<Window> window) -> void;
 
 }   // namespace gl
-

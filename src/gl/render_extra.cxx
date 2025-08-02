@@ -24,12 +24,10 @@ import gl.VertexBufs;
 import components.SFMLComponent;
 
 
-using namespace extensions::scheduler::accessors::ecs;
-using namespace extensions::scheduler::accessors::resources;
-using namespace extensions::scheduler::accessors::states;
+using namespace extensions::scheduler::accessors;
 using namespace window;
 
-auto gl::render_extra(Registry registry, const Resource<Window> window) -> void
+auto gl::render_extra(const Registry registry, const Resource<Window> window) -> void
 {
     if (window->setActive(true)) {
         glBindVertexArray(0);

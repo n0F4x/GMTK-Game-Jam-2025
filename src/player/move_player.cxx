@@ -11,7 +11,7 @@ import components.Position;
 
 module player.move_player;
 
-using namespace extensions::scheduler::accessors::ecs;
+using namespace extensions::scheduler::accessors;
 
 auto move_player(const Registry registry) -> void
 {

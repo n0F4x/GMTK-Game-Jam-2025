@@ -16,9 +16,7 @@ import components.Player;
 import components.Position;
 import components.Weapon;
 
-using namespace extensions::scheduler::accessors::ecs;
-using namespace extensions::scheduler::accessors::resources;
-using namespace extensions::scheduler::accessors::states;
+using namespace extensions::scheduler::accessors;
 
 auto create_player(const Registry registry, const State<GlobalState> globalState) -> void
 {

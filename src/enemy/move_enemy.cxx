@@ -17,7 +17,7 @@ import components.MovementSpeed;
 import components.Player;
 import components.Position;
 
-using namespace extensions::scheduler::accessors::ecs;
+using namespace extensions::scheduler::accessors;
 
 auto move_enemy(const Registry registry, const State<GlobalState> global_state) -> void
 {

@@ -20,9 +20,9 @@ using namespace extensions::scheduler::accessors;
 namespace window {
 
 export auto update(
-    resources::Resource<Window>          window,
-    const events::Recorder<WindowEvent>& event_recorder,
-    resources::Resource<DisplayTimer>    display_timer
+    Resource<Window>          window,
+    const Recorder<WindowEvent>& event_recorder,
+    Resource<DisplayTimer>    display_timer
 ) -> void;
 
 }   // namespace window
@@ -30,9 +30,9 @@ export auto update(
 module :private;
 
 auto window::update(
-    const resources::Resource<Window>       window,
-    const events::Recorder<WindowEvent>&    event_recorder,
-    const resources::Resource<DisplayTimer> display_timer
+    const Resource<Window>       window,
+    const Recorder<WindowEvent>&    event_recorder,
+    const Resource<DisplayTimer> display_timer
 ) -> void
 {
     window->handleEvents([&event_recorder]<typename Event>(Event&& event) -> void {

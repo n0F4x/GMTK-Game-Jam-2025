@@ -4,11 +4,10 @@ import common.Textures;
 import common.TextureLoader;
 import extensions.scheduler;
 
-using namespace extensions::scheduler::accessors::resources;
-using namespace extensions::scheduler::accessors::states;
+using namespace extensions::scheduler::accessors;
 
 using CachedTextureLoader =
-    extensions::scheduler::accessors::assets::Cached<TextureLoader>;
+    Cached<TextureLoader>;
 
 export auto load_textures(
     State<Textures>     texturesState,   //

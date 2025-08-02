@@ -20,7 +20,7 @@ import components.Position;
 import components.Weapon;
 import components.WeaponProjectile;
 
-using namespace extensions::scheduler::accessors::ecs;
+using namespace extensions::scheduler::accessors;
 
 auto spawn_projectile(
     const Registry  registry,

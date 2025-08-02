@@ -22,14 +22,12 @@ import common.Shaders;
 import common.Textures;
 import gl.VertexBufs;
 
-using namespace extensions::scheduler::accessors::ecs;
-using namespace extensions::scheduler::accessors::resources;
-using namespace extensions::scheduler::accessors::states;
+using namespace extensions::scheduler::accessors;
 using namespace window;
 
-auto gl::init_draw(Resource<VertexBuffers>& bufs) -> void
+auto gl::init_draw(const Resource<VertexBuffers>& vertex_buffers) -> void
 {
-    bufs->clear();
+    vertex_buffers->clear();
 }
 
 sf::Glsl::Mat4 gl::calculate_MVP(const Window& window, const GlobalState& global_state)

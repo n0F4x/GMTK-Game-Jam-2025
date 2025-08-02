@@ -13,14 +13,14 @@ using namespace extensions::scheduler::accessors;
 
 namespace window {
 
-export auto window_should_close(const events::Reader<WindowEvent>& closed_event_reader)
+export auto window_should_close(const Reader<WindowEvent>& closed_event_reader)
     -> bool;
 
 }   // namespace window
 
 module :private;
 
-auto window::window_should_close(const events::Reader<WindowEvent>& closed_event_reader)
+auto window::window_should_close(const Reader<WindowEvent>& closed_event_reader)
     -> bool
 {
     for (const WindowEvent& event : closed_event_reader.read()) {

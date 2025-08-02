@@ -10,7 +10,7 @@ import extensions.scheduler.accessors.resources.Resource;
 import window.Window;
 import core.ecs;
 
-using namespace extensions::scheduler::accessors::resources;
+using namespace extensions::scheduler::accessors;
 using namespace window;
 
 export struct GlobalState {

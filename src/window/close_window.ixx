@@ -8,7 +8,7 @@ using namespace extensions::scheduler::accessors;
 
 namespace window {
 
-export auto close_window(resources::Resource<Window> window) -> void;
+export auto close_window(Resource<Window> window) -> void;
 
 }   // namespace window
 

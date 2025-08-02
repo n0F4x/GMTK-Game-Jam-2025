@@ -10,7 +10,7 @@ import extensions.scheduler.accessors.resources.Resource;
 import window.Window;
 import gl.VertexBufs;
 
-using namespace extensions::scheduler::accessors::resources;
+using namespace extensions::scheduler::accessors;
 using namespace window;
 
 namespace gl {

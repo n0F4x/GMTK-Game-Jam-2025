@@ -14,8 +14,7 @@ import extensions.scheduler.accessors.events.Reader;
 import window.Window;
 
 
-using namespace extensions::scheduler::accessors::events;
-using namespace extensions::scheduler::accessors::resources;
+using namespace extensions::scheduler::accessors;
 
 namespace window {
 
@@ -60,4 +59,3 @@ auto window::resize_window(
         }
     }
 }
-

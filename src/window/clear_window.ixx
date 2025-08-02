@@ -16,7 +16,7 @@ using namespace extensions::scheduler::accessors;
 
 namespace window {
 
-export auto clear_window(resources::Resource<Window> window) -> void;
+export auto clear_window(Resource<Window> window) -> void;
 
 }   // namespace window
 
