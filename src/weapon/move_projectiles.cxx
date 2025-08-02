@@ -22,7 +22,7 @@ auto move_projectiles(
 
     entities.for_each(
         [&toRemove](
-            core::ecs::ID       id,
+            const core::ecs::ID id,
             Position&           position,
             WeaponProjectile&   projectile,
             const MovementSpeed speed

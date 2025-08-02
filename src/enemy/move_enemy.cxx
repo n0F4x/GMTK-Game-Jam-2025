@@ -19,15 +19,10 @@ import components.Position;
 
 using namespace extensions::scheduler::accessors::ecs;
 
-auto move_enemy(const Registry registry) -> void
+auto move_enemy(const Registry registry, const State<GlobalState> global_state) -> void
 {
-    Position player_position;
-    core::ecs::query(
-        registry.get(),
-        [&player_position](core::ecs::With<Player>, const Position position) {
-            player_position = position;
-        }
-    );
+    const Position player_position =
+        registry->get_single<Position>(global_state->player_id);
 
     core::ecs::query(
         registry.get(),
