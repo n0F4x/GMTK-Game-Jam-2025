@@ -60,6 +60,5 @@ auto move_player(const Registry registry, const State<GlobalState> global_state)
         velocity->x = 1;
     }
 
-    registry->get_single<Player>(global_state->player_id).direction = velocity.underlying(
-    );
+    registry->get_single<Player>(global_state->player_id).direction = velocity.underlying();
 }

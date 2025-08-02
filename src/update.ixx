@@ -13,6 +13,7 @@ import spawner.update_spawner;
 import window.update;
 import weapon.fire_weapon;
 import weapon.move_projectiles;
+import player.follow_player;
 import update_timers;
 import physics.physics;
 
@@ -24,4 +25,5 @@ export inline constexpr auto update =           //
         .then(core::scheduler::at_fixed_rate<GameTimer>(update_enemy))
         .then(core::scheduler::at_fixed_rate<AnimationTimer>(progress_animations))
         .then(core::scheduler::at_fixed_rate<GameTimer>(physics::move_moveables))
+        .then(core::scheduler::at_fixed_rate<GameTimer>(follow_player))
         .then(core::scheduler::at_fixed_rate<SpawnerTimer>(update_spawner));

@@ -13,4 +13,5 @@ target_sources(${PROJECT_NAME} PRIVATE
         idle_animation.ixx
         move_player.ixx
         update_player.ixx
+        follow_player.ixx
 )
