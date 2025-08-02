@@ -1,7 +1,5 @@
 target_sources(${PROJECT_NAME} PRIVATE
-        create_player.cxx
-        idle_animation.cxx
-        move_player.cxx
+        progress_animations.cxx
 )
 
 target_sources(${PROJECT_NAME} PRIVATE
@@ -9,8 +7,5 @@ target_sources(${PROJECT_NAME} PRIVATE
         TYPE CXX_MODULES
         BASE_DIRS ${PROJECT_SOURCE_DIR}
         FILES
-        create_player.ixx
-        idle_animation.ixx
-        move_player.ixx
-        update_player.ixx
+        progress_animations.ixx
 )

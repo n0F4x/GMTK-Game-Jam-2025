@@ -39,7 +39,7 @@ auto spawn_projectile(
             .direction = sf::Vector2f{ player.direction.x, player.direction.y }
     },
         Position{ projectile_position },
-        Drawable{ .texture = texture::Projectile, .size = { 0.25f, 0.25f } },
+        Drawable{ .texture = textures::projectile, .size = { 0.25f, 0.25f } },
         MovementSpeed{ weapon.projectile_speed }
     );
 }

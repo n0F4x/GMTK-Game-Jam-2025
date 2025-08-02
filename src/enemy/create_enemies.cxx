@@ -18,7 +18,7 @@ using namespace extensions::scheduler::accessors;
 
 auto create_enemies(const Registry registry) -> void
 {
-    auto enemy_drawable = Drawable(texture::Demon);
+    auto enemy_drawable = Drawable(textures::demon);
 
     const auto spawn_enemy =                                                 //
         [&registry, &enemy_drawable](const sf::Vector2f& position) -> void   //

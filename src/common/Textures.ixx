@@ -1,5 +1,7 @@
 module;
 
+#include <array>
+
 #include <SFML/Graphics/Texture.hpp>
 
 export module common.Textures;
@@ -25,19 +27,24 @@ export struct Textures {
     core::assets::Handle<sf::Texture> atlas;
 };
 
-namespace texture {
+namespace textures {
 
-export constexpr Textures::Texture Demon{
+export constexpr Textures::Texture demon{
     { 0, 0 }
 };
 
-export constexpr Textures::Texture PlayerIdle[2] = { { { 32, 0 } }, { { 2 * 32, 0 } } };
+export constexpr std::array player_idle{
+    Textures::Texture{ { 32, 0 } },
+    Textures::Texture{ { 2 * 32, 0 } },
+};
 
-export constexpr Textures::Texture Projectile{
+export constexpr Textures::Texture projectile{
     { 3 * 32, 0 }
 };
 
-export constexpr Textures::Texture PlayerBack[2] = { { { 4 * 32, 0 } },
-                                                     { { 5 * 32, 0 } } };
+export constexpr std::array player_idle_back{
+    Textures::Texture{ { 4 * 32, 0 } },
+    Textures::Texture{ { 5 * 32, 0 } },
+};
 
-}   // namespace texture
+}   // namespace textures

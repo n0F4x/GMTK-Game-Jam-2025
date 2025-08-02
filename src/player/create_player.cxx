@@ -16,6 +16,8 @@ import components.Player;
 import components.Position;
 import components.Weapon;
 
+import player.idle_animation;
+
 using namespace extensions::scheduler::accessors;
 
 auto create_player(const Registry registry, const State<GlobalState> globalState) -> void
@@ -24,10 +26,11 @@ auto create_player(const Registry registry, const State<GlobalState> globalState
         Player{
     },
         Position{ sf::Vector2f{ 0, 0 } },
-        Drawable{ texture::PlayerIdle[0] },
+        Drawable{ textures::player_idle[0] },
         Health{ 100 },
         MovementSpeed{ 0.1f },
-        Weapon{}
+        Weapon{},
+        idle_animation()
     );
 
     globalState.emplace(GlobalState{ .player_id = id });

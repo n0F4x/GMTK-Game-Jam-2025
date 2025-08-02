@@ -10,5 +10,5 @@ import common.Textures;
 
 export struct Animation {
     std::vector<Textures::Texture> textures;
-    size_t                         current_texture_index;
+    size_t                         current_texture_index{};
 };
