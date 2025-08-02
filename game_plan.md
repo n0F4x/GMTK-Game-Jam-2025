@@ -120,3 +120,4 @@ if you die once, character should be confused if he hasn't done this shit yet.
 - Floor tile, Straight wall tile, Inner wall corner tile, Outer wall corner tile for all 5 levels
   - possibly some alternate floor tiles with small variations so it is not as repetitive
 - Power up textures
+- Single wood-iron like door and trapdoor
