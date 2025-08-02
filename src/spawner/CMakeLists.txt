@@ -1,6 +1,6 @@
 target_sources(${PROJECT_NAME} PRIVATE
-        create_enemy.cxx
-        move_enemy.cxx
+        create_spawners.cxx
+        tick_spawner.cxx
 )
 
 target_sources(${PROJECT_NAME} PRIVATE
@@ -8,7 +8,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         TYPE CXX_MODULES
         BASE_DIRS ${PROJECT_SOURCE_DIR}
         FILES
-        create_enemy.ixx
-        move_enemy.ixx
-        update_enemy.ixx
+        create_spawners.ixx
+        tick_spawner.ixx
+        SpawnerTimer.ixx
+        update_spawner.ixx
 )

@@ -21,6 +21,7 @@ import common.Fonts;
 import common.Textures;
 import common.Shaders;
 import window.DisplayTimer;
+import spawner.SpawnerTimer;
 
 import window.setup;
 
@@ -34,6 +35,7 @@ export inline constexpr auto setup =
             .transform(window::setup)
             .insert_resource(AnimationTimer{})
             .insert_resource(window::DisplayTimer{})
+            .insert_resource(SpawnerTimer{})
             .template register_state<GlobalState>()
             .template register_state<Textures>()
             .template register_state<Shaders>()

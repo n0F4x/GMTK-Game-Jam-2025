@@ -12,6 +12,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         Player.ixx
         Position.ixx
         SFMLComponent.ixx
+        Spawner.ixx
         Solid.ixx
         Tile.ixx
         Velocity.ixx

@@ -7,7 +7,7 @@ import common.load_shaders;
 import common.load_fonts;
 import common.LevelLoader;
 import player.create_player;
-import enemy.create_enemies;
+import spawner.create_spawners;
 import level.create_tiles;
 import gl.initialize;
 import ui.initUI;
@@ -22,5 +22,5 @@ export inline constexpr auto initialize =
         .then(create_tiles)
         .then(ui::createUI)
         .then(create_player)
-        .then(create_enemies)
+        .then(create_spawners)
         .then(reset_timers);
