@@ -4,4 +4,5 @@ target_sources(${PROJECT_NAME} PRIVATE
         BASE_DIRS ${PROJECT_SOURCE_DIR}
         FILES
         create_tiles.ixx
+        draw_level.ixx
 )

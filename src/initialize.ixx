@@ -12,6 +12,7 @@ import level.create_tiles;
 import gl.initialize;
 import ui.initUI;
 import reset_timers;
+import level.draw_level;
 
 export inline constexpr auto initialize =
     core::scheduler::start_as(gl::initialize)   //
@@ -20,6 +21,7 @@ export inline constexpr auto initialize =
         .then(load_fonts)
         .then(load_levels)
         .then(create_tiles)
+        .then(draw_level)
         .then(ui::createUI)
         .then(create_player)
         .then(create_enemies)

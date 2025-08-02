@@ -137,6 +137,7 @@ if you die once, character should be confused if he hasn't done this shit yet.
 - 6: top-right inner wall corner
 - 7: bottom-left inner wall corner
 - 8: bottom-right inner wall corner
-- D: door
-- I: floor tile (player start position)
-- O: trapdoor (player exit position)
+- V: vertical door
+- H: horizontal door
+- S floor tile (player start position)
+- E: trapdoor (player exit position)
