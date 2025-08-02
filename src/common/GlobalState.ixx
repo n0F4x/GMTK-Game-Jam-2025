@@ -10,7 +10,6 @@ import extensions.scheduler.accessors.resources.Resource;
 import window.Window;
 import core.ecs;
 
-
 using namespace extensions::scheduler::accessors::resources;
 using namespace window;
 

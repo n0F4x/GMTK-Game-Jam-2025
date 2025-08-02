@@ -2,6 +2,9 @@ export module enemy.move_enemy;
 
 import extensions.scheduler;
 
-using namespace extensions::scheduler::accessors::ecs;
+import common.GlobalState;
 
-export auto move_enemy(Registry registry) -> void;
+using namespace extensions::scheduler::accessors::ecs;
+using namespace extensions::scheduler::accessors::states;
+
+export auto move_enemy(Registry registry, State<GlobalState> global_state) -> void;
