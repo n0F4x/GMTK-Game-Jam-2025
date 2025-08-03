@@ -1,5 +1,6 @@
 target_sources(${PROJECT_NAME} PRIVATE
-        GlobalState.cxx
+        despawn_dialog.cxx
+        spawn_dialog.cxx
 )
 
 target_sources(${PROJECT_NAME} PRIVATE
@@ -7,10 +8,8 @@ target_sources(${PROJECT_NAME} PRIVATE
         TYPE CXX_MODULES
         BASE_DIRS ${PROJECT_SOURCE_DIR}
         FILES
-        DialogState.ixx
-        Fonts.ixx
-        GamePausedState.ixx
-        GlobalState.ixx
-        Shaders.ixx
-        Textures.ixx
+        despawn_dialog.ixx
+        Dialog.ixx
+        spawn_dialog.ixx
+        update_dialogs.ixx
 )

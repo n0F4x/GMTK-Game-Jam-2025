@@ -7,7 +7,7 @@ export module components.SFMLComponent;
 import window.Window;
 
 export struct SFDrawable {
-    virtual void draw(window::Window& window) = 0;
+    virtual void draw(window::Window& window) const = 0;
 
     virtual ~SFDrawable() = default;
 };

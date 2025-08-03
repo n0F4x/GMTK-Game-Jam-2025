@@ -1,0 +1,47 @@
+module;
+
+#include <span>
+#include <stack>
+#include <print>
+
+#include <SFML/Window.hpp>
+
+module logic.dialog.despawn_dialog;
+
+import core.ecs;
+import extensions.scheduler.accessors;
+
+import events.WindowEvent;
+
+import states.DialogState;
+
+using namespace extensions::scheduler::accessors;
+
+auto pop_dialog(core::ecs::Registry& registry, DialogState& dialog_state) -> void
+{
+    const core::ecs::ID id{ dialog_state.dialog_ids.top() };
+    registry.destroy(id);
+    dialog_state.dialog_ids.pop();
+}
+
+auto despawn_dialog(
+    const Reader<WindowEvent> window_event_reader,
+    const Registry            registry,
+    const State<DialogState>  dialog_state
+) -> void
+{
+    for (const sf::Event& window_event : window_event_reader.read()) {
+        if (const auto* mouse_button_released{
+                window_event.getIf<sf::Event::MouseButtonReleased>() };
+            mouse_button_released != nullptr)
+        {
+            std::println("Dialog popped");
+            if (dialog_state.has_value()) {
+                pop_dialog(registry.get(), *dialog_state);
+                if (dialog_state->dialog_ids.empty()) {
+                    dialog_state.reset();
+                }
+            }
+        }
+    }
+}

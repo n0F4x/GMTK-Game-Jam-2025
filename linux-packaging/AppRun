@@ -1,0 +1,13 @@
+#!/bin/sh
+
+LIBS_PATH="lib/"
+
+if [ -z "$LD_LIBRARY_PATH" ]; then
+  LD_LIBRARY_PATH="$LIBS_PATH"
+else
+  LD_LIBRARY_PATH="$LIBS_PATH:$LD_LIBRARY_PATH"
+fi
+
+export LD_LIBRARY_PATH
+cd "$(dirname "$0")"
+exec ./game

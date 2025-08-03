@@ -1,3 +1,4 @@
+add_subdirectory(dialog)
 add_subdirectory(event_handlers)
 
 target_sources(${PROJECT_NAME} PRIVATE

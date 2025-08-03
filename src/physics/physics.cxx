@@ -14,7 +14,7 @@ import physics.collider;
 import common.GameTimer;
 
 // because time lib is still junk, i have no better idea.
-constexpr auto tick_length = 1/120.f;
+constexpr auto tick_length = 1 / 120.f;
 
 auto physics::move_moveables(
     Registry                       registry,
@@ -26,7 +26,7 @@ auto physics::move_moveables(
         [solids_query](
             Position&                                position,
             const core::ecs::Optional<Hitbox>        hitbox,
-            Velocity&                                velocity,
+            Velocity                                 velocity,
             const core::ecs::Optional<MovementSpeed> max_speed
         ) {
             if (velocity == Velocity{}) {
@@ -41,13 +41,16 @@ auto physics::move_moveables(
                 }
             }
 
-            velocity.underlying() = velocity.underlying().componentWiseMul({tick_length, tick_length});
+            velocity.underlying(
+            ) = velocity.underlying().componentWiseMul({ tick_length, tick_length });
 
             sf::Vector2f nextPos;
 
             if (hitbox.has_value()) {
-                const int    count    = std::ceil(velocity.underlying().length() / 0.12);
-                if (count == 0) return; // no update
+                const int count = std::ceil(velocity.underlying().length() / 0.12);
+                if (count == 0) {
+                    return;   // no update
+                }
 
                 sf::Vector2f stepSize = velocity.underlying().componentWiseDiv(
                     sf::Vector2f{ static_cast<float>(count), static_cast<float>(count) }

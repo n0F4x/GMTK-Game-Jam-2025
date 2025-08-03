@@ -24,4 +24,6 @@ export struct Textures {
     };
 
     core::assets::Handle<sf::Texture> atlas;
+    core::assets::Handle<sf::Texture> overworld_dialog;
+    core::assets::Handle<sf::Texture> hell_dialog;
 };

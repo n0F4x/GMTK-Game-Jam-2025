@@ -6,8 +6,7 @@ import extensions.scheduler;
 
 using namespace extensions::scheduler::accessors;
 
-using CachedTextureLoader =
-    Cached<TextureLoader>;
+using CachedTextureLoader = Cached<TextureLoader>;
 
 export auto load_textures(
     State<Textures>     texturesState,   //
@@ -22,6 +21,12 @@ auto load_textures(
 ) -> void
 {
     if (!texturesState.has_value()) {
-        texturesState.emplace(texture_loader->load("atlas.png"));
+        texturesState.emplace(
+            Textures{
+                .atlas            = texture_loader->load("atlas.png"),
+                .overworld_dialog = texture_loader->load("Dialog-overworld.png"),
+                .hell_dialog      = texture_loader->load("Dialog-hell.png"),
+            }
+        );
     }
 }

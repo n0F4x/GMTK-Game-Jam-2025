@@ -22,9 +22,11 @@ import common.FontLoader;
 import common.LevelLoader;
 
 import events.GamePauseEvent;
+import events.SpawnDialogEvent;
 
 import messages.CurrentTimeMessage;
 
+import states.DialogState;
 import states.GamePausedState;
 import states.GlobalState;
 import states.Fonts;
@@ -52,6 +54,8 @@ export inline constexpr auto setup =
             .insert_resource(window::DisplayTimer{})
             .insert_resource(SpawnerTimer{})
             .template register_event<GamePauseEvent>()
+            .template register_event<SpawnDialogEvent>()
+            .template register_state<DialogState>()
             .template register_state<GamePausedState>()
             .template register_state<GlobalState>()
             .template register_state<Textures>()
