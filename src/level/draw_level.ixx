@@ -8,6 +8,8 @@ import extensions.scheduler.accessors;
 
 import common.textures;
 import components.Drawable;
+import components.Hitbox;
+import components.Solid;
 import states.GlobalState;
 import states.Textures;
 
@@ -62,6 +64,12 @@ export auto draw_level(const extensions::scheduler::accessors::Registry& registr
         auto tile_texture = get_texture_from_char(tile_char, global_state->current_level_index);
         auto tile_id = tile_array[x][y];
         registry->get_single<Drawable>(tile_id).texture = tile_texture;
+
+        if (tile_char != ' ' && tile_char != '0' && tile_char != 'S' && tile_char != 'V'
+            && tile_char != 'H' && tile_char != 'E') {
+            registry->insert(tile_id, Hitbox{}, Solid{});
+        }
+
         x++;
     }
 }
