@@ -4,5 +4,6 @@ target_sources(${PROJECT_NAME} PRIVATE
         BASE_DIRS ${PROJECT_SOURCE_DIR}
         FILES
         GamePauseEvent.ixx
+        SpawnDialogEvent.ixx
         WindowEvent.ixx
 )

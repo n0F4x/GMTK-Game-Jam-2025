@@ -18,13 +18,19 @@ import components.Velocity;
 import components.Weapon;
 import components.AttackAttributes;
 
+import events.SpawnDialogEvent;
+
 import states.GlobalState;
 
 import player.animations;
 
 using namespace extensions::scheduler::accessors;
 
-auto create_player(const Registry registry, const State<GlobalState> globalState) -> void
+auto create_player(
+    const Registry             registry,
+    const State<GlobalState>   globalState,
+    Recorder<SpawnDialogEvent> dialog_recorder
+) -> void
 {
     const auto id = registry->create(
         Player{
@@ -46,4 +52,11 @@ auto create_player(const Registry registry, const State<GlobalState> globalState
     else {
         globalState->player_id = id;
     }
+
+    dialog_recorder.record(
+        SpawnDialogEvent{
+            .text  = "Player has spawned",
+            .style = SpawnDialogEvent::Style::eOverworld,
+        }
+    );
 }

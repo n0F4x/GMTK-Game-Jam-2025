@@ -25,7 +25,7 @@ struct HealthBarStuff final : SFDrawable {
         text.setPosition({ 50, 200 });
     }
 
-    void draw(window::Window& window) override
+    void draw(window::Window& window) const override
     {
         window.draw(shape);
         window.draw(text);
