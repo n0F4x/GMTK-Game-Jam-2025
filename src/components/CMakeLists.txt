@@ -19,4 +19,5 @@ target_sources(${PROJECT_NAME} PRIVATE
         Velocity.ixx
         Weapon.ixx
         WeaponProjectile.ixx
+        Home.ixx
 )

@@ -70,7 +70,7 @@ auto weapon::fire_weapon(
         Drawable{
             // did not I ask you guys NOT TO DO THIS??? - kosmx
             .texture = textures::projectile,
-            .size    = { 0.25f, 0.25f },
+            .size    = { 0.5f, 0.5f },
         },
         MovementSpeed{ weapon.projectile_speed }
     );

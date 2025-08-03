@@ -25,7 +25,7 @@ export inline constexpr std::array player_idle{
 };
 
 export inline constexpr Textures::Texture projectile{
-    { 3 * 32, 0 }
+    { 11 * 32, 0 }
 };
 
 export inline constexpr Textures::Texture fireball{
@@ -109,5 +109,9 @@ export inline constexpr std::array boss_attack{
     Textures::Texture{ { 1152, 0 }, { 64, 64 } }
 };
 
+export inline constexpr std::array home{
+    Textures::Texture{ { 0, 1936 }, { 1920, 1080 } },
+    Textures::Texture{ { 0, 3016 }, { 1920, 1080 } }
+};
 
 }   // namespace textures

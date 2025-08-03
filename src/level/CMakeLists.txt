@@ -5,4 +5,5 @@ target_sources(${PROJECT_NAME} PRIVATE
         FILES
         create_tiles.ixx
         draw_level.ixx
+        place_home.ixx
 )
