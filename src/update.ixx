@@ -8,7 +8,6 @@ import spawner.SpawnerTimer;
 
 import logic.dialog.update_dialogs;
 import logic.progress_animations;
-import logic.pause_or_resume_game_on_input;
 
 import player.update_player;
 import enemy.update_enemy;
@@ -23,7 +22,6 @@ import physics.physics;
 
 export inline constexpr auto update =           //
     core::scheduler::start_as(window::update)   //
-        .then(pause_or_resume_game_on_input)
         .then(update_dialogs)
         .then(weapon::fire_player_weapon)
         .then(core::scheduler::at_fixed_rate<GameTimer>(weapon::update_projectiles))

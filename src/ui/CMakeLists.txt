@@ -1,5 +1,5 @@
 target_sources(${PROJECT_NAME} PRIVATE
-        initUI.cxx
+        initialize.cxx
 )
 
 target_sources(${PROJECT_NAME} PRIVATE
@@ -7,5 +7,5 @@ target_sources(${PROJECT_NAME} PRIVATE
         TYPE CXX_MODULES
         BASE_DIRS ${PROJECT_SOURCE_DIR}
         FILES
-        initUI.ixx
+        initialize.ixx
 )

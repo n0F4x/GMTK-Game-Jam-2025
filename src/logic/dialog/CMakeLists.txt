@@ -1,5 +1,6 @@
 target_sources(${PROJECT_NAME} PRIVATE
         despawn_dialog.cxx
+        Dialog.cxx
         spawn_dialog.cxx
 )
 

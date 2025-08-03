@@ -11,7 +11,6 @@ target_sources(${PROJECT_NAME} PRIVATE
         BASE_DIRS ${PROJECT_SOURCE_DIR}
         FILES
         handle_events.ixx
-        pause_or_resume_game_on_input.ixx
         progress_animations.ixx
         destroy_dead_enemies.ixx
 )

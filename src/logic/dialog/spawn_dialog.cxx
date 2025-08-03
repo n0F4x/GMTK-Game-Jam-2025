@@ -2,6 +2,7 @@ module;
 
 #include <cassert>
 #include <memory>
+#include <ranges>
 #include <span>
 
 #include <SFML/Graphics.hpp>
@@ -38,7 +39,8 @@ auto spawn_dialog(
 
     const sf::Font& font{ *fonts->std_font };
 
-    for (const SpawnDialogEvent& spawn_dialog_event : reader.read()) {
+    for (const SpawnDialogEvent& spawn_dialog_event : std::views::reverse(reader.read()))
+    {
         const core::ecs::ID id = registry->create(
             SFMLComponent{ std::make_shared<Dialog>(
                 font,
