@@ -37,7 +37,7 @@ auto create_player(const Registry registry, const State<GlobalState> globalState
         AttackAttributes{},
         Hitbox{},
         Velocity{},
-        idle_animation_front()
+        idle_animation_front(true)
     );
 
     if (!globalState.has_value()) {

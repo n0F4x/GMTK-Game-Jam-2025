@@ -15,6 +15,7 @@ import components.MovementSpeed;
 import components.Player;
 import components.Position;
 import components.Velocity;
+import components.Weapon;
 
 import player.animations;
 
@@ -55,44 +56,47 @@ auto velocity_from_input() -> Velocity
 }
 
 [[nodiscard]]
-auto next_animation(const Velocity velocity, const Animation& previous_animation)
-    -> const Animation&
+auto next_animation(
+    const Velocity   velocity,
+    const Animation& previous_animation,
+    const bool       has_gun
+) -> const Animation&
 {
     const float velocity_y = velocity->y;
 
     if (velocity_y == 0) {
-        if (previous_animation.id() == idle_animation_front().id()
-            || previous_animation.id() == idle_animation_back().id())
+        if (previous_animation.id() == idle_animation_front(has_gun).id()
+            || previous_animation.id() == idle_animation_back(has_gun).id())
         {
             return previous_animation;
         }
 
-        if (previous_animation.id() == run_animation_front().id()) {
-            return idle_animation_front();
+        if (previous_animation.id() == run_animation_front(has_gun).id()) {
+            return idle_animation_front(has_gun);
         }
 
-        if (previous_animation.id() == run_animation_back().id()) {
-            return idle_animation_back();
+        if (previous_animation.id() == run_animation_back(has_gun).id()) {
+            return idle_animation_back(has_gun);
         }
 
         assert(false && "unhandled animation state change");
-        return idle_animation_front();
+        return idle_animation_front(has_gun);
     }
 
     if (velocity_y > 0) {
-        if (previous_animation.id() == run_animation_back().id()) {
+        if (previous_animation.id() == run_animation_back(has_gun).id()) {
             return previous_animation;
         }
 
-        return run_animation_back();
+        return run_animation_back(has_gun);
     }
 
     if (velocity_y < 0) {
-        if (previous_animation.id() == run_animation_front().id()) {
+        if (previous_animation.id() == run_animation_front(has_gun).id()) {
             return previous_animation;
         }
 
-        return run_animation_front();
+        return run_animation_front(has_gun);
     }
 
     std::unreachable();
@@ -107,5 +111,6 @@ auto move_player(const Registry registry, const State<GlobalState> global_state)
     registry->get_single<Velocity>(player_id) = velocity;
 
     Animation& animation = registry->get_single<Animation>(player_id);
-    animation            = next_animation(velocity, animation);
+    animation =
+        next_animation(velocity, animation, registry->contains_all<Weapon>(player_id));
 }

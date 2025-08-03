@@ -17,90 +17,178 @@ auto generate_id() -> unsigned
 }
 
 [[nodiscard]]
-auto idle_animation_front() noexcept -> const Animation&
+auto idle_animation_front(const bool has_gun) noexcept -> const Animation&
 {
-    static const Animation result{
-        std::array{
-                   textures::player_idle[0],
-                   textures::player_idle[0],
-                   textures::player_idle[0],
+    static const unsigned id{generate_id()};
 
-                   textures::player_idle[1],
-                   textures::player_idle[1],
-                   textures::player_idle[1],
-                   textures::player_idle[1],
-                   textures::player_idle[1],
-                   textures::player_idle[1],
-                   textures::player_idle[1],
+    if (!has_gun) {
+        static const Animation result{
+            std::array{
+                       textures::player_idle[0],
+                       textures::player_idle[0],
+                       textures::player_idle[0],
 
-                   textures::player_idle[0],
-                   textures::player_idle[0],
-                   },
-        generate_id(),
-        sf::Vector2f{ 32, 32 },
-        Animation::FaceDirection::eRight
-    };
+                       textures::player_idle[1],
+                       textures::player_idle[1],
+                       textures::player_idle[1],
+                       textures::player_idle[1],
+                       textures::player_idle[1],
+                       textures::player_idle[1],
+                       textures::player_idle[1],
 
-    return result;
+                       textures::player_idle[0],
+                       textures::player_idle[0],
+                       },
+            id,
+            sf::Vector2f{ 32, 32 },
+            Animation::FaceDirection::eRight
+        };
+
+        return result;
+    }
+    else {
+        static const Animation result{
+            std::array{
+                       textures::player_with_weapon[0],
+                       textures::player_with_weapon[0],
+                       textures::player_with_weapon[0],
+
+                       textures::player_with_weapon[1],
+                       textures::player_with_weapon[1],
+                       textures::player_with_weapon[1],
+                       textures::player_with_weapon[1],
+                       textures::player_with_weapon[1],
+                       textures::player_with_weapon[1],
+                       textures::player_with_weapon[1],
+
+                       textures::player_with_weapon[0],
+                       textures::player_with_weapon[0],
+                       },
+            id,
+            sf::Vector2f{ 32, 32 },
+            Animation::FaceDirection::eRight
+        };
+
+        return result;
+    }
 }
 
 [[nodiscard]]
-auto idle_animation_back() noexcept -> const Animation&
+auto idle_animation_back(const bool has_gun) noexcept -> const Animation&
 {
-    static const Animation result{
-        std::array{
-                   textures::player_idle_back[0],
-                   textures::player_idle_back[0],
-                   textures::player_idle_back[0],
+    static const unsigned id{generate_id()};
 
-                   textures::player_idle_back[1],
-                   textures::player_idle_back[1],
-                   textures::player_idle_back[1],
-                   textures::player_idle_back[1],
-                   textures::player_idle_back[1],
-                   textures::player_idle_back[1],
-                   textures::player_idle_back[1],
+    if (!has_gun) {
+        static const Animation result{
+            std::array{
+                       textures::player_idle_back[0],
+                       textures::player_idle_back[0],
+                       textures::player_idle_back[0],
 
-                   textures::player_idle_back[0],
-                   textures::player_idle_back[0],
-                   },
-        generate_id(),
-        sf::Vector2f{ 32, 32 },
-        Animation::FaceDirection::eRight
-    };
+                       textures::player_idle_back[1],
+                       textures::player_idle_back[1],
+                       textures::player_idle_back[1],
+                       textures::player_idle_back[1],
+                       textures::player_idle_back[1],
+                       textures::player_idle_back[1],
+                       textures::player_idle_back[1],
 
-    return result;
+                       textures::player_idle_back[0],
+                       textures::player_idle_back[0],
+                       },
+            id,
+            sf::Vector2f{ 32, 32 },
+            Animation::FaceDirection::eRight
+        };
+
+        return result;
+    }
+    else {
+        static const Animation result{
+            std::array{
+                       textures::player_back_with_weapon[0],
+                       textures::player_back_with_weapon[0],
+                       textures::player_back_with_weapon[0],
+
+                       textures::player_back_with_weapon[1],
+                       textures::player_back_with_weapon[1],
+                       textures::player_back_with_weapon[1],
+                       textures::player_back_with_weapon[1],
+                       textures::player_back_with_weapon[1],
+                       textures::player_back_with_weapon[1],
+                       textures::player_back_with_weapon[1],
+
+                       textures::player_back_with_weapon[0],
+                       textures::player_back_with_weapon[0],
+                       },
+            id,
+            sf::Vector2f{ 32, 32 },
+            Animation::FaceDirection::eRight
+        };
+
+        return result;
+    }
 }
 
-auto run_animation_front() noexcept -> const Animation&
+auto run_animation_front(const bool has_gun) noexcept -> const Animation&
 {
-    static const Animation result{
-        std::array{
-                   textures::player_idle[0],
-                   textures::player_idle[0],
-                   textures::player_idle[0],
+    static const unsigned id{generate_id()};
 
-                   textures::player_move[0],
-                   textures::player_move[0],
-                   textures::player_move[0],
+    if (!has_gun) {
+        static const Animation result{
+            std::array{
+                       textures::player_idle[0],
+                       textures::player_idle[0],
+                       textures::player_idle[0],
 
-                   textures::player_idle[0],
-                   textures::player_idle[0],
-                   textures::player_idle[0],
+                       textures::player_move[0],
+                       textures::player_move[0],
+                       textures::player_move[0],
 
-                   textures::player_move[1],
-                   textures::player_move[1],
-                   textures::player_move[1],
-                   },
-        generate_id(),
-        sf::Vector2f{ 32, 32 },
-        Animation::FaceDirection::eRight
-    };
+                       textures::player_idle[0],
+                       textures::player_idle[0],
+                       textures::player_idle[0],
 
-    return result;
+                       textures::player_move[1],
+                       textures::player_move[1],
+                       textures::player_move[1],
+                       },
+            id,
+            sf::Vector2f{ 32, 32 },
+            Animation::FaceDirection::eRight
+        };
+
+        return result;
+    }
+    else {
+        static const Animation result{
+            std::array{
+                       textures::player_with_weapon[0],
+                       textures::player_with_weapon[0],
+                       textures::player_with_weapon[0],
+
+                       textures::player_move_gun[0],
+                       textures::player_move_gun[0],
+                       textures::player_move_gun[0],
+
+                       textures::player_with_weapon[0],
+                       textures::player_with_weapon[0],
+                       textures::player_with_weapon[0],
+
+                       textures::player_move_gun[1],
+                       textures::player_move_gun[1],
+                       textures::player_move_gun[1],
+                       },
+            id,
+            sf::Vector2f{ 32, 32 },
+            Animation::FaceDirection::eRight
+        };
+
+        return result;
+    }
 }
 
-auto run_animation_back() noexcept -> const Animation&
+auto run_animation_back(const bool has_gun) noexcept -> const Animation&
 {
-    return idle_animation_back();
+    return idle_animation_back(has_gun);
 }
