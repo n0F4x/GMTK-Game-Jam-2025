@@ -61,17 +61,17 @@ auto next_animation(const Velocity velocity, const Animation& previous_animation
     const float velocity_y = velocity->y;
 
     if (velocity_y == 0) {
-        if (previous_animation.id == idle_animation_front().id
-            || previous_animation.id == idle_animation_back().id)
+        if (previous_animation.id() == idle_animation_front().id()
+            || previous_animation.id() == idle_animation_back().id())
         {
             return previous_animation;
         }
 
-        if (previous_animation.id == run_animation_front().id) {
+        if (previous_animation.id() == run_animation_front().id()) {
             return idle_animation_front();
         }
 
-        if (previous_animation.id == run_animation_back().id) {
+        if (previous_animation.id() == run_animation_back().id()) {
             return idle_animation_back();
         }
 
@@ -79,16 +79,16 @@ auto next_animation(const Velocity velocity, const Animation& previous_animation
         return idle_animation_front();
     }
 
-    if (velocity->y > 0) {
-        if (previous_animation.id == run_animation_back().id) {
+    if (velocity_y > 0) {
+        if (previous_animation.id() == run_animation_back().id()) {
             return previous_animation;
         }
 
         return run_animation_back();
     }
 
-    if (velocity->y < 0) {
-        if (previous_animation.id == run_animation_front().id) {
+    if (velocity_y < 0) {
+        if (previous_animation.id() == run_animation_front().id()) {
             return previous_animation;
         }
 

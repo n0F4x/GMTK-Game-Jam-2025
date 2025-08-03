@@ -1,8 +1,7 @@
 module;
 
-#include <array>
-
 #include <SFML/Graphics/Texture.hpp>
+#include <SFML/System/Vector2.hpp>
 
 export module states.Textures;
 

@@ -29,7 +29,7 @@ auto create_player(const Registry registry, const State<GlobalState> globalState
     const auto id = registry->create(
         Player{
     },
-        Position{ sf::Vector2f{ 0, 0 } },
+        Position{ sf::Vector2f{ 2, -3 } },
         Drawable{ textures::player_idle[0] },
         Health{ 100 },
         MovementSpeed{ 6.f },
