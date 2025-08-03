@@ -27,7 +27,7 @@ auto create_enemy(
 {
     switch (enemy_type) {
         case 'D':
-            registry->create(Enemy{}, position, Drawable {textures::demon},
+            registry->create(Enemy{}, position, Drawable {textures::demon_idle},
                 health, movement_speed, attack_attributes, Velocity{}, Hitbox{});
             break;
         default:;

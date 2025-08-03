@@ -10,8 +10,13 @@ import states.Textures;
 
 namespace textures {
 
-export inline constexpr Textures::Texture demon{
+export inline constexpr Textures::Texture demon_idle{
     { 0, 0 }
+};
+
+export inline constexpr std::array demon_move{
+    Textures::Texture{ { 8 * 32, 0 } },
+    Textures::Texture{ { 9 * 32, 0 } },
 };
 
 export inline constexpr std::array player_idle{
@@ -21,6 +26,10 @@ export inline constexpr std::array player_idle{
 
 export inline constexpr Textures::Texture projectile{
     { 3 * 32, 0 }
+};
+
+export inline constexpr Textures::Texture fireball{
+        { 10 * 32, 0 }
 };
 
 export inline constexpr std::array player_idle_back{
@@ -37,7 +46,7 @@ export constexpr Textures::Texture vertical_door{
 };
 
 export constexpr Textures::Texture vertical_door_open{
-            { 1 * 32, 32 }
+    { 1 * 32, 32 }
 };
 
 export inline constexpr Textures::Texture horizontal_door{
@@ -45,7 +54,7 @@ export inline constexpr Textures::Texture horizontal_door{
 };
 
 export constexpr Textures::Texture horizontal_door_open{
-            { 3 * 32, 32 }
+    { 3 * 32, 32 }
 };
 
 export inline constexpr Textures::Texture trapdoor{
@@ -53,11 +62,16 @@ export inline constexpr Textures::Texture trapdoor{
 };
 
 export constexpr Textures::Texture trapdoor_open{
-        { 5 * 32, 32 }
+    { 5 * 32, 32 }
 };
 
 export inline constexpr Textures::Texture nothing{
     { 127 * 32, 127 * 32 }
+};
+
+export inline constexpr std::array player_move{
+    Textures::Texture{ { 32 * 12, 0 } },
+    Textures::Texture{ { 32 * 13, 0 } },
 };
 
 export inline constexpr std::array player_with_weapon{
@@ -70,20 +84,29 @@ export inline constexpr std::array player_back_with_weapon{
     Textures::Texture{ { 586, 0 }, { 46, 46 } }
 };
 
-export inline constexpr std::array player_shoot{
-    Textures::Texture{ { 632, 0 }, { 46, 46 } },
-    Textures::Texture{ { 678, 0 }, { 46, 46 } }
+export inline constexpr Textures::Texture player_shoot{
+    { 632,  0 },
+    {  46, 46 }
 };
 
+export inline constexpr Textures::Texture player_back_shoot{
+    { 678,  0 },
+    {  46, 46 }
+};
 
 export inline constexpr std::array player_move_gun{
     Textures::Texture{ { 724, 0 }, { 46, 46 } },
     Textures::Texture{ { 770, 0 }, { 46, 46 } }
 };
 
-export inline constexpr std::array player_move{
-    Textures::Texture{ { 32 * 12, 0 } },
-    Textures::Texture{ { 32 * 13, 0 } },
+export inline constexpr Textures::Texture player_damaged{
+        { 816,  0 },
+        {  46, 46 }
+};
+
+export inline constexpr std::array boss_attack{
+    Textures::Texture{ { 1088, 0 }, { 64, 64 } },
+    Textures::Texture{ { 1152, 0 }, { 64, 64 } }
 };
 
 
