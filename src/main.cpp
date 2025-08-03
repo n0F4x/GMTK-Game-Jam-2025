@@ -17,6 +17,6 @@ auto main() -> int
         .plug_in(plugins::ecs)
         .plug_in(plugins::assets)
         .plug_in(plugins::functional)
-        .transform(setup)
+        .transform(core::setup)
         .run(run);
 }

@@ -4,8 +4,8 @@ module;
 
 export module window.update;
 
-import core.scheduler;
 import core.time.FixedTimer;
+import extensions.scheduler.accessors;
 
 import extensions.scheduler.accessors.events.Recorder;
 import extensions.scheduler.accessors.resources;

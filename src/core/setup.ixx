@@ -38,6 +38,8 @@ import spawner.SpawnerTimer;
 import window.DisplayTimer;
 import window.setup;
 
+namespace core {
+
 export inline constexpr auto setup =
     []<app::decays_to_builder_c Builder_T>(Builder_T&& builder) {
         static_assert(app::has_plugins_c<Builder_T, plugins::AssetsTag>);
@@ -68,3 +70,5 @@ export inline constexpr auto setup =
             .insert_loader(LevelLoader{})
             .insert_loader(FontLoader{});
     };
+
+}   // namespace core

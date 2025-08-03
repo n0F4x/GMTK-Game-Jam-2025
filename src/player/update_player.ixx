@@ -1,6 +1,6 @@
 export module player.update_player;
 
 import player.move_player;
-import core.scheduler;
+import extensions.scheduler;
 
-export inline constexpr auto update_player = core::scheduler::start_as(move_player);
+export inline const auto update_player = extensions::scheduler::start_as(move_player);

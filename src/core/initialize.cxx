@@ -1,6 +1,7 @@
-export module initialize;
+module initialize;
 
-import core.scheduler;
+import core.scheduler.TaskBuilder;
+import extensions.scheduler;
 
 import common.load_textures;
 import common.load_shaders;
@@ -14,8 +15,8 @@ import reset_timers;
 import level.draw_level;
 import level.place_home;
 
-export inline constexpr auto initialize =
-    core::scheduler::start_as(gl::initialize)   //
+const core::scheduler::TaskBuilder<void> initialize =
+    extensions::scheduler::start_as(gl::initialize)   //
         .then(load_textures)
         .then(load_shaders)
         .then(load_fonts)

@@ -3,7 +3,7 @@ module;
 #include <cassert>
 #include <chrono>
 
-export module update_timers;
+module update_timers;
 
 import core.time.FixedTimer;
 
@@ -17,17 +17,6 @@ import spawner.SpawnerTimer;
 import window.DisplayTimer;
 
 using namespace extensions::scheduler::accessors;
-
-export auto update_timers(
-    Resource<AnimationTimer>       animation_timer,
-    Resource<GameTimer>            game_timer,
-    Resource<window::DisplayTimer> display_timer,
-    Resource<SpawnerTimer>         spawner_timer,
-    Receiver<CurrentTimeMessage>   current_time_messages,
-    State<GamePausedState>         game_paused_state
-) -> void;
-
-module :private;
 
 auto update_timers(
     const Resource<AnimationTimer>       animation_timer,

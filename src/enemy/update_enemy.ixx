@@ -1,6 +1,6 @@
 export module enemy.update_enemy;
 
 import enemy.move_enemy;
-import core.scheduler;
+import extensions.scheduler;
 
-export inline constexpr auto update_enemy = core::scheduler::start_as(move_enemy);
+export inline const auto update_enemy = extensions::scheduler::start_as(move_enemy);

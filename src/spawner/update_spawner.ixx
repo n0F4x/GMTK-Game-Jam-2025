@@ -1,6 +1,6 @@
 export module spawner.update_spawner;
 
 import spawner.tick_spawner;
-import core.scheduler;
+import extensions.scheduler;
 
-export inline constexpr auto update_spawner = core::scheduler::start_as(tick_spawner);
+export inline const auto update_spawner = extensions::scheduler::start_as(tick_spawner);
