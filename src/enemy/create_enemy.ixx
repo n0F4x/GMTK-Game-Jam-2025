@@ -1,3 +1,7 @@
+module;
+
+#include<string>
+
 export module enemy.create_enemy;
 
 import extensions.scheduler;
@@ -5,12 +9,15 @@ import extensions.scheduler;
 import components.Health;
 import components.MovementSpeed;
 import components.Position;
+import components.AttackAttributes;
 
 using namespace extensions::scheduler::accessors;
 
 export auto create_enemy(
-    Registry      registry,
-    Position      position,
-    Health        health,
-    MovementSpeed movement_speed
+    const char enemy_type,
+    const Registry      registry,
+    const Position      position,
+    const Health        health,
+    const MovementSpeed movement_speed,
+    const AttackAttributes attack_attributes
 ) -> void;

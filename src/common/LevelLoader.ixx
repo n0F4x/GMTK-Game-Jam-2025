@@ -41,11 +41,18 @@ auto LevelLoader::operator()(const std::filesystem::path& filename) -> std::stri
 auto load_levels(State<GlobalState> global_state, CachedLevelLoader level_loader)
 {
     std::vector<core::assets::Handle<std::string>> levels;
-    levels.emplace_back(level_loader->load("level1.txt"));
+    std::vector<core::assets::Handle<std::string>> level_spawners;
+    levels.emplace_back(level_loader->load("debug"));
+    level_spawners.emplace_back(level_loader->load("debug-spawners"));
 
     if (!global_state.has_value()) {
-        global_state.emplace(GlobalState{ .levels = std::move(levels) });
-    } else {
-        global_state->levels = std::move(levels);
+        global_state.emplace(
+            GlobalState{ .levels         = std::move(levels),
+                         .level_spawners = std::move(level_spawners) }
+        );
+    }
+    else {
+        global_state->levels         = std::move(levels);
+        global_state->level_spawners = std::move(level_spawners);
     }
 }

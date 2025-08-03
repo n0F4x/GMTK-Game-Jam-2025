@@ -8,6 +8,7 @@ import components.MovementSpeed;
 import components.Position;
 import components.Spawner;
 import enemy.create_enemy;
+import components.AttackAttributes;
 
 using namespace extensions::scheduler::accessors;
 
@@ -16,12 +17,14 @@ auto tick_spawner(const Registry registry) -> void
     core::ecs::query(
         registry.get(),
         [registry](Spawner& spawner, const Position& position) {
-            if (!spawner.isActive || spawner.remainingSpawns == 0) {
+            if (!spawner.is_active || spawner.remaining_spawns == 0) {
                 return;
             }
 
-            create_enemy(registry, position, Health{ 100 }, MovementSpeed{ 0.05f });
-            spawner.remainingSpawns--;
+            create_enemy(spawner.enemy_type, registry, position,
+                Health{ spawner.health }, MovementSpeed{ spawner.movement_speed },
+                AttackAttributes{ spawner.damage, 0.0f });
+            spawner.remaining_spawns--;
         }
     );
 }
