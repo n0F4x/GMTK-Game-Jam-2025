@@ -8,6 +8,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         BASE_DIRS ${PROJECT_SOURCE_DIR}
         FILES
         Fonts.ixx
+        GamePausedState.ixx
         GlobalState.ixx
         Shaders.ixx
         Textures.ixx
