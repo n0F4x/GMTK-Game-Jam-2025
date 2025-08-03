@@ -11,3 +11,4 @@ cmake-build-*/
 build.sh
 build.bat
 CMakeUserPresets.json
+*.AppImage
