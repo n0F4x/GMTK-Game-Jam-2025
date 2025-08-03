@@ -1,3 +1,9 @@
+module;
+
+#include <array>
+
+#include <SFML/System/Vector2.hpp>
+
 module player.animations;
 
 import common.textures;
@@ -14,23 +20,25 @@ auto generate_id() -> unsigned
 auto idle_animation_front() noexcept -> const Animation&
 {
     static const Animation result{
-        .textures{
-                  textures::player_idle[0],
-                  textures::player_idle[0],
-                  textures::player_idle[0],
+        std::array{
+                   textures::player_idle[0],
+                   textures::player_idle[0],
+                   textures::player_idle[0],
 
-                  textures::player_idle[1],
-                  textures::player_idle[1],
-                  textures::player_idle[1],
-                  textures::player_idle[1],
-                  textures::player_idle[1],
-                  textures::player_idle[1],
-                  textures::player_idle[1],
+                   textures::player_idle[1],
+                   textures::player_idle[1],
+                   textures::player_idle[1],
+                   textures::player_idle[1],
+                   textures::player_idle[1],
+                   textures::player_idle[1],
+                   textures::player_idle[1],
 
-                  textures::player_idle[0],
-                  textures::player_idle[0],
-                  },
-        .id = generate_id(),
+                   textures::player_idle[0],
+                   textures::player_idle[0],
+                   },
+        generate_id(),
+        sf::Vector2f{ 32, 32 },
+        Animation::FaceDirection::eRight
     };
 
     return result;
@@ -40,23 +48,25 @@ auto idle_animation_front() noexcept -> const Animation&
 auto idle_animation_back() noexcept -> const Animation&
 {
     static const Animation result{
-        .textures{
-                  textures::player_idle_back[0],
-                  textures::player_idle_back[0],
-                  textures::player_idle_back[0],
+        std::array{
+                   textures::player_idle_back[0],
+                   textures::player_idle_back[0],
+                   textures::player_idle_back[0],
 
-                  textures::player_idle_back[1],
-                  textures::player_idle_back[1],
-                  textures::player_idle_back[1],
-                  textures::player_idle_back[1],
-                  textures::player_idle_back[1],
-                  textures::player_idle_back[1],
-                  textures::player_idle_back[1],
+                   textures::player_idle_back[1],
+                   textures::player_idle_back[1],
+                   textures::player_idle_back[1],
+                   textures::player_idle_back[1],
+                   textures::player_idle_back[1],
+                   textures::player_idle_back[1],
+                   textures::player_idle_back[1],
 
-                  textures::player_idle_back[0],
-                  textures::player_idle_back[0],
-                  },
-        .id = generate_id(),
+                   textures::player_idle_back[0],
+                   textures::player_idle_back[0],
+                   },
+        generate_id(),
+        sf::Vector2f{ 32, 32 },
+        Animation::FaceDirection::eRight
     };
 
     return result;
