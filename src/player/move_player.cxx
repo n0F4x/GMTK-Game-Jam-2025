@@ -52,13 +52,4 @@ auto move_player(const Registry registry, const State<GlobalState> global_state)
     Velocity velocity = velocity_from_input();
 
     registry->get_single<Velocity>(global_state->player_id) = velocity;
-
-    if (velocity->x != 0) {
-        velocity->y = 0;
-    }
-    else if (velocity->y == 0) {
-        velocity->x = 1;
-    }
-
-    registry->get_single<Player>(global_state->player_id).direction = velocity.underlying();
 }
