@@ -74,7 +74,30 @@ auto idle_animation_back() noexcept -> const Animation&
 
 auto run_animation_front() noexcept -> const Animation&
 {
-    return idle_animation_front();
+    static const Animation result{
+        std::array{
+                   textures::player_idle[0],
+                   textures::player_idle[0],
+                   textures::player_idle[0],
+
+                   textures::player_move[0],
+                   textures::player_move[0],
+                   textures::player_move[0],
+
+                   textures::player_idle[0],
+                   textures::player_idle[0],
+                   textures::player_idle[0],
+
+                   textures::player_move[1],
+                   textures::player_move[1],
+                   textures::player_move[1],
+                   },
+        generate_id(),
+        sf::Vector2f{ 32, 32 },
+        Animation::FaceDirection::eRight
+    };
+
+    return result;
 }
 
 auto run_animation_back() noexcept -> const Animation&
