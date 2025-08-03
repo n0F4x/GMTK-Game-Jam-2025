@@ -16,6 +16,7 @@ import weapon.fire_weapon;
 import weapon.move_projectiles;
 import player.follow_player;
 import update_timers;
+import logic.destroy_dead_enemies;
 import physics.physics;
 
 export inline constexpr auto update =           //
@@ -28,4 +29,5 @@ export inline constexpr auto update =           //
         .then(core::scheduler::at_fixed_rate<AnimationTimer>(progress_animations))
         .then(core::scheduler::at_fixed_rate<GameTimer>(physics::move_moveables))
         .then(core::scheduler::at_fixed_rate<GameTimer>(follow_player))
+        .then(core::scheduler::at_fixed_rate<GameTimer>(destroy_dead_enemies))
         .then(core::scheduler::at_fixed_rate<SpawnerTimer>(update_spawner));
