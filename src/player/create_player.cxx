@@ -32,7 +32,7 @@ auto create_player(const Registry registry, const State<GlobalState> globalState
         Position{ sf::Vector2f{ 0, 0 } },
         Drawable{ textures::player_idle[0] },
         Health{ 100 },
-        MovementSpeed{ 0.1f },
+        MovementSpeed{ 6.f },
         Weapon{},
         AttackAttributes{},
         Hitbox{},

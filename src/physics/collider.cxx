@@ -8,7 +8,7 @@ module physics.collider;
 
 using namespace sf;
 
-constexpr float ignoreDistance = 0.1f;
+constexpr float ignoreDistance = 0.15f;
 
 auto physics::collision_check(
     const Vector2f entity_pos,
@@ -37,6 +37,13 @@ auto physics::collision_check(
     }
     if (abs(delta.y) > hitSize.y) {
         offset.x = 0;
+    }
+    if (offset.x != 0 && offset.y != 0) {
+        if (abs(offset.x) > abs(offset.y)) {
+            offset.y = 0;
+        } else {
+            offset.x = 0;
+        }
     }
     return offset;
 }
