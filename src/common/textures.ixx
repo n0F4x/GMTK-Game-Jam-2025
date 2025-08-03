@@ -33,15 +33,27 @@ export inline constexpr Textures::Texture debug_tile{
 };
 
 export constexpr Textures::Texture vertical_door{
-    { 8 * 32, 0 }
+    { 0, 32 }
+};
+
+export constexpr Textures::Texture vertical_door_open{
+            { 1 * 32, 32 }
 };
 
 export inline constexpr Textures::Texture horizontal_door{
-    { 9 * 32, 0 }
+    { 2 * 32, 32 }
+};
+
+export constexpr Textures::Texture horizontal_door_open{
+            { 3 * 32, 32 }
 };
 
 export inline constexpr Textures::Texture trapdoor{
-    { 10 * 32, 0 }
+    { 4 * 32, 32 }
+};
+
+export constexpr Textures::Texture trapdoor_open{
+        { 5 * 32, 32 }
 };
 
 export inline constexpr Textures::Texture nothing{

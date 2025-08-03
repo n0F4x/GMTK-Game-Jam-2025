@@ -17,7 +17,7 @@ import components.Spawner;
 
 auto get_texture_from_char(char tile_char, int level_index)
 {
-    const int level_start_row = 1;
+    const int level_start_row = 2;
     const int level_start_texture_offset_y = (level_index + level_start_row) * 32;
 
     if (std::isdigit(tile_char)) {
