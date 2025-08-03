@@ -20,7 +20,7 @@ import components.AttackAttributes;
 
 import states.GlobalState;
 
-import player.idle_animation;
+import player.animations;
 
 using namespace extensions::scheduler::accessors;
 
@@ -37,7 +37,7 @@ auto create_player(const Registry registry, const State<GlobalState> globalState
         AttackAttributes{},
         Hitbox{},
         Velocity{},
-        idle_animation()
+        idle_animation_front()
     );
 
     if (!globalState.has_value()) {
