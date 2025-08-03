@@ -11,7 +11,7 @@ using namespace extensions::scheduler::accessors;
 auto handle_game_pause_event(
     const Reader<GamePauseEvent>       reader,
     const State<GamePausedState>       game_paused_state,
-    const Resource<AnimationTimer>     animation_timer,
+    const Resource<GameTimer>          game_timer,
     const Receiver<CurrentTimeMessage> current_time
 ) -> void
 {
@@ -23,7 +23,7 @@ auto handle_game_pause_event(
         }
         else {
             game_paused_state.reset();
-            animation_timer->reset(current_time.receive().front().value);
+            game_timer->reset(current_time.receive().front().value);
         }
     }
 }
