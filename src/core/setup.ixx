@@ -6,6 +6,8 @@ export module setup;
 
 import app;
 
+import core.time.Timer;
+
 import plugins.assets;
 import plugins.events;
 import plugins.functional;
@@ -38,8 +40,6 @@ import spawner.SpawnerTimer;
 import window.DisplayTimer;
 import window.setup;
 
-namespace core {
-
 export inline constexpr auto setup =
     []<app::decays_to_builder_c Builder_T>(Builder_T&& builder) {
         static_assert(app::has_plugins_c<Builder_T, plugins::AssetsTag>);
@@ -51,6 +51,7 @@ export inline constexpr auto setup =
 
         return std::forward<Builder_T>(builder)
             .transform(window::setup)
+            .insert_resource(core::time::Timer{})
             .insert_resource(AnimationTimer{})
             .insert_resource(GameTimer{})
             .insert_resource(window::DisplayTimer{})
@@ -70,5 +71,3 @@ export inline constexpr auto setup =
             .insert_loader(LevelLoader{})
             .insert_loader(FontLoader{});
     };
-
-}   // namespace core

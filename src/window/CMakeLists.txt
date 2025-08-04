@@ -7,6 +7,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         clear_window.ixx
         close_window.ixx
         display.ixx
+        display_fps.ixx
         DisplayTimer.ixx
         setup.ixx
         update.ixx

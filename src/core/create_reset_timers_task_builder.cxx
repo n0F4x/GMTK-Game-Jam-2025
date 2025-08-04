@@ -4,7 +4,7 @@ module;
 
 module create_reset_timers_task_builder;
 
-import core.time.FixedTimer;
+import core.time.Timer;
 import core.scheduler.TaskBuilder;
 
 import extensions.scheduler;
@@ -17,6 +17,7 @@ import window.DisplayTimer;
 using namespace extensions::scheduler::accessors;
 
 auto reset_timers(
+    const Resource<core::time::Timer>    global_timer,
     const Resource<AnimationTimer>       animation_timer,
     const Resource<GameTimer>            game_timer,
     const Resource<window::DisplayTimer> display_timer,
@@ -25,6 +26,7 @@ auto reset_timers(
 {
     const auto now = std::chrono::steady_clock::now();
 
+    global_timer->reset(now);
     animation_timer->reset(now);
     game_timer->reset(now);
     display_timer->reset(now);

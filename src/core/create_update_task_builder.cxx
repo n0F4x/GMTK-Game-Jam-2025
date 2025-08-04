@@ -14,6 +14,7 @@ import player.update_player;
 import enemy.update_enemy;
 import spawner.update_spawner;
 import window.update;
+import window.display_fps;
 import weapon.fire_weapon;
 import weapon.move_projectiles;
 import player.follow_player;
@@ -23,6 +24,7 @@ import physics.physics;
 auto create_update_task_builder() -> core::scheduler::TaskBuilder<void>
 {
     return extensions::scheduler::start_as(window::update)   //
+        .then(window::display_fps)
         .then(update_dialogs)
         .then(weapon::fire_player_weapon)
         .then(extensions::scheduler::at_fixed_rate<GameTimer>(weapon::update_projectiles))

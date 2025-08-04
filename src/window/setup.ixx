@@ -34,7 +34,6 @@ export inline constexpr auto setup = []<app::decays_to_builder_c Builder_T>(
 #ifndef NDEBUG
                                             .attributeFlags = sf::ContextSettings::Debug
 #endif
-
     };
 
     return std::forward<Builder_T>(builder)

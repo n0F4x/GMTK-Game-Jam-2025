@@ -5,7 +5,7 @@ module;
 
 module create_update_timers_task_builder;
 
-import core.time.FixedTimer;
+import core.time.Timer;
 import core.scheduler.TaskBuilder;
 
 import extensions.scheduler;
@@ -20,6 +20,7 @@ import window.DisplayTimer;
 using namespace extensions::scheduler::accessors;
 
 auto update_timers(
+    const Resource<core::time::Timer>    global_timer,
     const Resource<AnimationTimer>       animation_timer,
     const Resource<GameTimer>            game_timer,
     const Resource<window::DisplayTimer> display_timer,
@@ -36,6 +37,7 @@ auto update_timers(
         game_timer->update(now);
     }
 
+    global_timer->update(now);
     animation_timer->update(now);
     display_timer->update(now);
     spawner_timer->update(now);
