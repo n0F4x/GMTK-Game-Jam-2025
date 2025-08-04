@@ -3,11 +3,12 @@ module;
 #include <cassert>
 #include <chrono>
 
-module update_timers;
+module create_update_timers;
 
 import core.time.FixedTimer;
+import core.scheduler.TaskBuilder;
 
-import extensions.scheduler.accessors;
+import extensions.scheduler;
 
 import common.AnimationTimer;
 import common.GameTimer;
@@ -38,4 +39,9 @@ auto update_timers(
     animation_timer->update(now);
     display_timer->update(now);
     spawner_timer->update(now);
+}
+
+auto create_update_timers() -> core::scheduler::TaskBuilder<void>
+{
+    return extensions::scheduler::start_as(update_timers);
 }

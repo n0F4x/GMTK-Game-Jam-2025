@@ -9,7 +9,7 @@ import logic.handle_events;
 import create_app_is_running;
 import create_render;
 import create_update;
-import update_timers;
+import create_update_timers;
 
 using namespace extensions::scheduler::accessors;
 
@@ -41,7 +41,7 @@ auto create_loop_game() -> core::scheduler::TaskBuilder<void>
             .then(
                 extensions::scheduler::group(
                     handle_events,   //
-                    update_timers
+                    create_update_timers()
                 )
             )
             .then(create_update())

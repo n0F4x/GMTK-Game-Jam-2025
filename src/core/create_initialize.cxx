@@ -11,7 +11,7 @@ import player.create_player;
 import level.create_tiles;
 import gl.initialize;
 import ui.initialize;
-import reset_timers;
+import create_reset_timers;
 import level.draw_level;
 import level.place_home;
 
@@ -27,5 +27,5 @@ auto create_initialize() -> core::scheduler::TaskBuilder<void>
         .then(ui::initialize)
         .then(create_player)
         .then(place_home)
-        .then(reset_timers);
+        .then(create_reset_timers());
 }

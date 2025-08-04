@@ -2,11 +2,12 @@ module;
 
 #include <chrono>
 
-module reset_timers;
+module create_reset_timers;
 
 import core.time.FixedTimer;
+import core.scheduler.TaskBuilder;
 
-import extensions.scheduler.accessors.resources;
+import extensions.scheduler;
 
 import common.AnimationTimer;
 import common.GameTimer;
@@ -28,4 +29,9 @@ auto reset_timers(
     game_timer->reset(now);
     display_timer->reset(now);
     spawner_timer->reset(now);
+}
+
+auto create_reset_timers() -> core::scheduler::TaskBuilder<void>
+{
+    return extensions::scheduler::start_as(reset_timers);
 }

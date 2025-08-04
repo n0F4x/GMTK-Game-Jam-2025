@@ -3,11 +3,11 @@ target_sources(${PROJECT_NAME} PRIVATE
         create_initialize.cxx
         create_loop_game.cxx
         create_render.cxx
+        create_reset_timers.cxx
         create_run.cxx
         create_shut_down.cxx
         create_update.cxx
-        reset_timers.cxx
-        update_timers.cxx
+        create_update_timers.cxx
 )
 
 target_sources(${PROJECT_NAME} PRIVATE
@@ -19,10 +19,10 @@ target_sources(${PROJECT_NAME} PRIVATE
         create_initialize.ixx
         create_loop_game.ixx
         create_render.ixx
+        create_reset_timers.ixx
         create_run.ixx
         create_shut_down.ixx
         create_update.ixx
-        reset_timers.ixx
-        update_timers.ixx
+        create_update_timers.ixx
         setup.ixx
 )
