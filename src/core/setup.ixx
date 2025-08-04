@@ -15,6 +15,7 @@ import plugins.states;
 
 import common.AnimationTimer;
 import common.GameTimer;
+import common.GlobalTimer;
 import common.SoundBufferLoader;
 import common.TextureLoader;
 import common.ShaderLoader;
@@ -53,6 +54,7 @@ export inline constexpr auto setup =
             .transform(window::setup)
             .insert_resource(AnimationTimer{})
             .insert_resource(GameTimer{})
+            .insert_resource(GlobalTimer{  })
             .insert_resource(window::DisplayTimer{})
             .insert_resource(SpawnerTimer{})
             .template register_event<GamePauseEvent>()

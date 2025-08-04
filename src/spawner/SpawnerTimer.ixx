@@ -11,5 +11,7 @@ using namespace std::chrono_literals;
 
 inline constexpr std::chrono::duration spawn_interval{ 5s };
 
-export using SpawnerTimer = core::time::
-    FixedTimer<std::remove_cvref_t<decltype(spawn_interval)>, spawn_interval.count()>;
+export class SpawnerTimer
+    : public core::time::
+          FixedTimer<std::remove_cvref_t<decltype(spawn_interval)>, spawn_interval.count()> {
+};
