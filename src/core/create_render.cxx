@@ -1,4 +1,4 @@
-module render;
+module create_render;
 
 import core.scheduler.TaskBuilder;
 import extensions.scheduler;
@@ -9,12 +9,14 @@ import window.display;
 import gl.render;
 import gl.render_extra;
 
-const core::scheduler::TaskBuilder<void> render =                 //
-    extensions::scheduler::at_fixed_rate<window::DisplayTimer>(   //
-        extensions::scheduler::start_as(window::clear_window)     //
-                                                                  //.then(draw)
+auto create_render() -> core::scheduler::TaskBuilder<void>
+{
+    return extensions::scheduler::at_fixed_rate<window::DisplayTimer>(   //
+        extensions::scheduler::start_as(window::clear_window)            //
+                                                                         //.then(draw)
             .then(gl::init_draw)
             .then(gl::draw_world)
             .then(gl::render_extra)
             .then(window::display)
     );
+}

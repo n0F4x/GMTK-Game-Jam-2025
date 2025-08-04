@@ -1,12 +1,12 @@
 target_sources(${PROJECT_NAME} PRIVATE
-        app_is_running.cxx
-        initialize.cxx
-        loop_game.cxx
-        render.cxx
+        create_app_is_running.cxx
+        create_initialize.cxx
+        create_loop_game.cxx
+        create_render.cxx
+        create_run.cxx
+        create_shut_down.cxx
+        create_update.cxx
         reset_timers.cxx
-        run.cxx
-        shut_down.cxx
-        update.cxx
         update_timers.cxx
 )
 
@@ -15,14 +15,14 @@ target_sources(${PROJECT_NAME} PRIVATE
         TYPE CXX_MODULES
         BASE_DIRS ${PROJECT_SOURCE_DIR}
         FILES
-        app_is_running.ixx
-        initialize.ixx
-        loop_game.ixx
-        render.ixx
+        create_app_is_running.ixx
+        create_initialize.ixx
+        create_loop_game.ixx
+        create_render.ixx
+        create_run.ixx
+        create_shut_down.ixx
+        create_update.ixx
         reset_timers.ixx
-        run.ixx
-        setup.ixx
-        shut_down.ixx
-        update.ixx
         update_timers.ixx
+        setup.ixx
 )

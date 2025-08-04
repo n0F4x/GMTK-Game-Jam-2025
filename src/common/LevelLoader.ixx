@@ -20,7 +20,7 @@ using namespace extensions::scheduler::accessors;
 export auto load_levels(
     State<GlobalState> global_state,   //
     CachedLevelLoader  level_loader
-);
+) -> void;
 
 module :private;
 
@@ -38,7 +38,7 @@ auto LevelLoader::operator()(const std::filesystem::path& filename) -> std::stri
     return contents.str();
 }
 
-auto load_levels(State<GlobalState> global_state, CachedLevelLoader level_loader)
+auto load_levels(State<GlobalState> global_state, CachedLevelLoader level_loader) -> void
 {
     std::vector<core::assets::Handle<std::string>> levels;
     std::vector<core::assets::Handle<std::string>> level_spawners;

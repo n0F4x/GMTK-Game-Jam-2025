@@ -1,4 +1,4 @@
-module update;
+module create_update;
 
 import core.scheduler.TaskBuilder;
 import extensions.scheduler;
@@ -17,12 +17,12 @@ import window.update;
 import weapon.fire_weapon;
 import weapon.move_projectiles;
 import player.follow_player;
-import update_timers;
 import logic.destroy_dead_enemies;
 import physics.physics;
 
-const core::scheduler::TaskBuilder<void> update =     //
-    extensions::scheduler::start_as(window::update)   //
+auto create_update() -> core::scheduler::TaskBuilder<void>
+{
+    return extensions::scheduler::start_as(window::update)   //
         .then(update_dialogs)
         .then(weapon::fire_player_weapon)
         .then(extensions::scheduler::at_fixed_rate<GameTimer>(weapon::update_projectiles))
@@ -33,3 +33,4 @@ const core::scheduler::TaskBuilder<void> update =     //
         .then(extensions::scheduler::at_fixed_rate<GameTimer>(follow_player))
         .then(extensions::scheduler::at_fixed_rate<GameTimer>(destroy_dead_enemies))
         .then(extensions::scheduler::at_fixed_rate<SpawnerTimer>(update_spawner));
+}
