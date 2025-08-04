@@ -1,13 +1,8 @@
-module;
-
-#include <thread>
-
 module create_loop_game_task_builder;
 
 import core.scheduler.TaskBuilder;
 import extensions.scheduler;
 
-import common.GlobalTimer;
 import messages.CurrentTimeMessage;
 import logic.handle_events;
 
@@ -33,17 +28,6 @@ auto clear_messages(const Mailbox& mailbox) -> void
     mailbox.clear_messages();
 }
 
-auto sleep_until_next_iteration(const Resource<GlobalTimer> global_timer) -> void
-{
-    const auto now{ GlobalTimer::Clock::now() };
-    const auto frame_duration{ global_timer->tick_duration() };
-    const auto elapsed_frame_time{ now - global_timer->current() };
-
-    std::this_thread::sleep_for(frame_duration - elapsed_frame_time);
-
-    global_timer->reset();
-}
-
 auto create_loop_game_task_builder() -> core::scheduler::TaskBuilder<void>
 {
     return extensions::scheduler::loop_until(
@@ -61,8 +45,7 @@ auto create_loop_game_task_builder() -> core::scheduler::TaskBuilder<void>
                 )
             )
             .then(create_update_task_builder())
-            .then(create_render_task_builder())
-            .then(sleep_until_next_iteration),
+            .then(create_render_task_builder()),
         create_app_is_running_task_builder()
     );
 }

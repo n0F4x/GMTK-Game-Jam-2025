@@ -11,7 +11,6 @@ import extensions.scheduler;
 
 import common.AnimationTimer;
 import common.GameTimer;
-import common.GlobalTimer;
 import spawner.SpawnerTimer;
 import window.DisplayTimer;
 
@@ -20,7 +19,6 @@ using namespace extensions::scheduler::accessors;
 auto reset_timers(
     const Resource<AnimationTimer>       animation_timer,
     const Resource<GameTimer>            game_timer,
-    const Resource<GlobalTimer>          global_timer,
     const Resource<window::DisplayTimer> display_timer,
     const Resource<SpawnerTimer>         spawner_timer
 ) -> void
@@ -29,7 +27,6 @@ auto reset_timers(
 
     animation_timer->reset(now);
     game_timer->reset(now);
-    global_timer->reset(now);
     display_timer->reset(now);
     spawner_timer->reset(now);
 }

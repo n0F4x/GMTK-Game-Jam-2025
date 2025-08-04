@@ -5,7 +5,6 @@ target_sources(${PROJECT_NAME} PRIVATE
         FILES
         AnimationTimer.ixx
         GameTimer.ixx
-        GlobalTimer.ixx
         FontLoader.ixx
         load_fonts.ixx
         load_textures.ixx
