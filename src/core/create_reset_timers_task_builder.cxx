@@ -2,7 +2,7 @@ module;
 
 #include <chrono>
 
-module create_reset_timers;
+module create_reset_timers_task_builder;
 
 import core.time.FixedTimer;
 import core.scheduler.TaskBuilder;
@@ -31,7 +31,7 @@ auto reset_timers(
     spawner_timer->reset(now);
 }
 
-auto create_reset_timers() -> core::scheduler::TaskBuilder<void>
+auto create_reset_timers_task_builder() -> core::scheduler::TaskBuilder<void>
 {
     return extensions::scheduler::start_as(reset_timers);
 }

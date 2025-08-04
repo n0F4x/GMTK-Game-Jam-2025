@@ -2,7 +2,7 @@ import app;
 
 import plugins;
 import setup;
-import create_run;
+import create_run_task_builder;
 import states.GlobalState;
 import core.ecs;
 
@@ -18,5 +18,5 @@ auto main() -> int
         .plug_in(plugins::assets)
         .plug_in(plugins::functional)
         .transform(core::setup)
-        .run(create_run());
+        .run(create_run_task_builder());
 }

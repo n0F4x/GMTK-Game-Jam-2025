@@ -1,4 +1,4 @@
-module create_initialize;
+module create_initialize_task_builder;
 
 import core.scheduler.TaskBuilder;
 import extensions.scheduler;
@@ -11,11 +11,11 @@ import player.create_player;
 import level.create_tiles;
 import gl.initialize;
 import ui.initialize;
-import create_reset_timers;
+import create_reset_timers_task_builder;
 import level.draw_level;
 import level.place_home;
 
-auto create_initialize() -> core::scheduler::TaskBuilder<void>
+auto create_initialize_task_builder() -> core::scheduler::TaskBuilder<void>
 {
     return extensions::scheduler::start_as(gl::initialize)   //
         .then(load_textures)
@@ -27,5 +27,5 @@ auto create_initialize() -> core::scheduler::TaskBuilder<void>
         .then(ui::initialize)
         .then(create_player)
         .then(place_home)
-        .then(create_reset_timers());
+        .then(create_reset_timers_task_builder());
 }

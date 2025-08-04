@@ -1,4 +1,4 @@
-module create_update;
+module create_update_task_builder;
 
 import core.scheduler.TaskBuilder;
 import extensions.scheduler;
@@ -20,7 +20,7 @@ import player.follow_player;
 import logic.destroy_dead_enemies;
 import physics.physics;
 
-auto create_update() -> core::scheduler::TaskBuilder<void>
+auto create_update_task_builder() -> core::scheduler::TaskBuilder<void>
 {
     return extensions::scheduler::start_as(window::update)   //
         .then(update_dialogs)

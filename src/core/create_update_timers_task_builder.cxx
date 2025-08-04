@@ -3,7 +3,7 @@ module;
 #include <cassert>
 #include <chrono>
 
-module create_update_timers;
+module create_update_timers_task_builder;
 
 import core.time.FixedTimer;
 import core.scheduler.TaskBuilder;
@@ -41,7 +41,7 @@ auto update_timers(
     spawner_timer->update(now);
 }
 
-auto create_update_timers() -> core::scheduler::TaskBuilder<void>
+auto create_update_timers_task_builder() -> core::scheduler::TaskBuilder<void>
 {
     return extensions::scheduler::start_as(update_timers);
 }
