@@ -62,9 +62,7 @@ auto next_animation(
     const bool       has_gun
 ) -> const Animation&
 {
-    const float velocity_y = velocity->y;
-
-    if (velocity_y == 0) {
+    if (velocity == Velocity{}) {
         if (previous_animation.id() == idle_animation_front(has_gun).id()
             || previous_animation.id() == idle_animation_back(has_gun).id())
         {
@@ -83,7 +81,7 @@ auto next_animation(
         return idle_animation_front(has_gun);
     }
 
-    if (velocity_y > 0) {
+    if (velocity->y > 0) {
         if (previous_animation.id() == run_animation_back(has_gun).id()) {
             return previous_animation;
         }
@@ -91,12 +89,26 @@ auto next_animation(
         return run_animation_back(has_gun);
     }
 
-    if (velocity_y < 0) {
+    if (velocity->y < 0) {
         if (previous_animation.id() == run_animation_front(has_gun).id()) {
             return previous_animation;
         }
 
         return run_animation_front(has_gun);
+    }
+
+    if (previous_animation.id() == run_animation_front(has_gun).id()
+        || previous_animation.id() == run_animation_back(has_gun).id())
+    {
+        return previous_animation;
+    }
+
+    if (previous_animation.id() == idle_animation_front(has_gun).id()) {
+        return run_animation_front(has_gun);
+    }
+
+    if (previous_animation.id() == idle_animation_back(has_gun).id()) {
+        return run_animation_back(has_gun);
     }
 
     std::unreachable();
