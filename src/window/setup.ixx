@@ -22,11 +22,11 @@ import gl.VertexBufs;
 
 namespace window {
 
-export inline constexpr auto setup = []<app::decays_to_builder_c Builder_T>(
-                                         Builder_T&& builder
-                                     ) {
-    static_assert(app::has_plugins_c<Builder_T, plugins::ResourcesTag>);
-    static_assert(app::has_plugins_c<Builder_T, plugins::EventsTag>);
+export inline constexpr auto setup =                                           //
+    []<app::decays_to_builder_c Builder_T>(Builder_T&& builder) -> Builder_T   //
+{
+    static_assert(app::has_plugins_c<Builder_T, plugins::Resources>);
+    static_assert(app::has_plugins_c<Builder_T, plugins::Events>);
 
     constexpr sf::ContextSettings settings{ .depthBits    = 24,
                                             .majorVersion = 4,
@@ -37,7 +37,9 @@ export inline constexpr auto setup = []<app::decays_to_builder_c Builder_T>(
     };
 
     return std::forward<Builder_T>(builder)
-        .insert_resource(Window{ sf::VideoMode::getDesktopMode(), "Fred's Hell", {}, settings })
+        .insert_resource(
+            Window{ sf::VideoMode::getDesktopMode(), "Fred's Hell", {}, settings }
+        )
         .insert_resource(gl::VertexBuffers{})
         .template register_event<WindowEvent>();
 };

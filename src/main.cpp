@@ -9,14 +9,14 @@ import core.ecs;
 auto main() -> int
 {
     app::create()
-        .plug_in(plugins::scheduler)
-        .plug_in(plugins::resources)
-        .plug_in(plugins::states)
-        .plug_in(plugins::events)
-        .plug_in(plugins::messages)
-        .plug_in(plugins::ecs)
-        .plug_in(plugins::assets)
-        .plug_in(plugins::functional)
+        .plug_in(plugins::Scheduler{})
+        .plug_in(plugins::Resources{})
+        .plug_in(plugins::States{})
+        .plug_in(plugins::Events{})
+        .plug_in(plugins::Messages{})
+        .plug_in(plugins::ECS{})
+        .plug_in(plugins::Assets{})
+        .plug_in(plugins::Functional{})
         .transform(setup)
         .run(create_run_task_builder());
 }
