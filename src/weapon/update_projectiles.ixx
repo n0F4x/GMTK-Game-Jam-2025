@@ -15,9 +15,11 @@ import components.Solid;
 using namespace extensions::scheduler::accessors;
 
 namespace weapon {
+
 export auto update_projectiles(
-    Registry                                                            registry,
-    Query<core::ecs::ID, Position, AttackAttributes, WeaponProjectile>  projectiles,
-    Query<core::ecs::ID, Position, Hitbox, core::ecs::Optional<Health>> other_entities
+    Registry                                                             registry,
+    Query<core::ecs::ID, Position, AttackAttributes, WeaponProjectile>&  projectiles,
+    Query<core::ecs::ID, Position, Hitbox, core::ecs::Optional<Health>>& other_entities
 ) -> void;
+
 }   // namespace weapon

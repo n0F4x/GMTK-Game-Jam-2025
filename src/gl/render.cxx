@@ -52,12 +52,12 @@ sf::Vector3f operator<<(const sf::Vector2f& lhs, float rhs)
 }
 
 auto gl::draw_world(
-    const Query<Position, Drawable> drawable_query,
-    const Resource<Window>          window,
-    const State<GlobalState>        global_state,
-    const State<Shaders>            shaders,
-    const State<Textures>           textures,
-    const Resource<VertexBuffers>&  vertexBufs
+    Query<Position, Drawable>&     drawable_query,
+    const Resource<Window>         window,
+    const State<GlobalState>       global_state,
+    const State<Shaders>           shaders,
+    const State<Textures>          textures,
+    const Resource<VertexBuffers>& vertexBufs
 ) -> void
 {
     if (!global_state.has_value()) {

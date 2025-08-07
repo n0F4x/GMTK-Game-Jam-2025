@@ -10,7 +10,10 @@ import core.ecs;
 
 using namespace extensions::scheduler::accessors;
 
-export auto destroy_dead_enemies(Registry registry, Query<core::ecs::ID, core::ecs::With<Enemy>, Health> enemies)
+export auto destroy_dead_enemies(
+    const Registry                                        registry,
+    Query<core::ecs::ID, core::ecs::With<Enemy>, Health>& enemies
+) -> void
 {
     std::vector<core::ecs::ID> dead_enemies;
     enemies.for_each([&dead_enemies](core::ecs::ID id, Health health) {

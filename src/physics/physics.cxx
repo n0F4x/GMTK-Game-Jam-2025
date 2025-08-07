@@ -17,13 +17,13 @@ import common.GameTimer;
 constexpr auto tick_length = 1 / 120.f;
 
 auto physics::move_moveables(
-    Registry                       registry,
-    Query<Position, Hitbox, Solid> solids_query
+    const Registry                  registry,
+    Query<Position, Hitbox, Solid>& solids_query
 ) -> void
 {
     core::ecs::query(
         registry.get(),
-        [solids_query](
+        [&solids_query](
             Position&                                position,
             const core::ecs::Optional<Hitbox>        hitbox,
             Velocity                                 velocity,
@@ -35,6 +35,7 @@ auto physics::move_moveables(
 
             if (max_speed.has_value()) {
                 const float square = max_speed->underlying() * max_speed->underlying();
+                // TODO: remove magic constant `0.03f`
                 if (velocity->lengthSquared() > 0.03f) {
                     velocity = Velocity{ velocity->normalized()
                                          * max_speed->underlying() };

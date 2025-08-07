@@ -7,4 +7,4 @@ import components.Drawable;
 
 using namespace extensions::scheduler::accessors;
 
-export auto progress_animations(Query<Animation, Drawable>) -> void;
+export auto progress_animations(Query<Animation, Drawable>&) -> void;

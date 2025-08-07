@@ -12,7 +12,7 @@ using namespace extensions::scheduler::accessors::ecs;
 
 namespace physics {
 
-export auto move_moveables(Registry registry, Query<Position, Hitbox, Solid> solids_query)
+export auto move_moveables(Registry registry, Query<Position, Hitbox, Solid>& solids_query)
     -> void;
 
 }   // namespace physics

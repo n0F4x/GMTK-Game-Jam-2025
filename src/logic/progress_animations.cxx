@@ -10,7 +10,7 @@ import components.Animation;
 
 using namespace extensions::scheduler::accessors;
 
-auto progress_animations(Query<Animation, Drawable> entities) -> void
+auto progress_animations(Query<Animation, Drawable>& entities) -> void
 {
     entities.for_each([](Animation& animation, Drawable& drawable) -> void {
         animation.update();

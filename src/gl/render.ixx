@@ -24,7 +24,7 @@ namespace gl {
 export auto init_draw(const Resource<VertexBuffers>& vertex_buffers) -> void;
 
 export auto draw_world(
-    Query<Position, Drawable>      drawable_query,
+    Query<Position, Drawable>&     drawable_query,
     Resource<Window>               window,
     State<GlobalState>             global_state,
     State<Shaders>                 shaders,
