@@ -8,6 +8,7 @@ target_sources(${PROJECT_NAME} PRIVATE
         create_shut_down_task_builder.cxx
         create_update_task_builder.cxx
         create_update_timers_task_builder.cxx
+        setup.cxx
 )
 
 target_sources(${PROJECT_NAME} PRIVATE

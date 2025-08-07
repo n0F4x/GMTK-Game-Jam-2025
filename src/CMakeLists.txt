@@ -16,5 +16,13 @@ add_subdirectory(window)
 add_subdirectory(level)
 
 target_sources(${PROJECT_NAME} PRIVATE
+        FILE_SET private_cxx_modules
+        TYPE CXX_MODULES
+        BASE_DIRS ${PROJECT_SOURCE_DIR}
+        FILES
+        AppBuilder.ixx
+)
+
+target_sources(${PROJECT_NAME} PRIVATE
         main.cpp
 )
