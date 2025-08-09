@@ -4,11 +4,11 @@ module;
 
 module logic.progress_animations;
 
-import extensions.scheduler.accessors;
+import modules.scheduler.accessors;
 
 import components.Animation;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 auto progress_animations(Query<Animation, Drawable>& entities) -> void
 {

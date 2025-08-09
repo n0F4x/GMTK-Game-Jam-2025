@@ -8,8 +8,8 @@ module;
 
 export module states.Shaders;
 
-import core.assets;
+import modules.assets;
 
 export struct Shaders {
-    core::assets::Handle<sf::Shader> generic_draw;
+    modules::assets::Handle<sf::Shader> generic_draw;
 };

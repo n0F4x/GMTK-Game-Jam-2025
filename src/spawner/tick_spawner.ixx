@@ -1,7 +1,7 @@
 export module spawner.tick_spawner;
 
-import extensions.scheduler;
+import modules.scheduler;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 export auto tick_spawner(Registry registry) -> void;

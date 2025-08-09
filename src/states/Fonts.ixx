@@ -4,8 +4,8 @@ module;
 
 export module states.Fonts;
 
-import core.assets;
+import modules.assets;
 
 export struct Fonts {
-    core::assets::Handle<sf::Font> std_font;
+    modules::assets::Handle<sf::Font> std_font;
 };

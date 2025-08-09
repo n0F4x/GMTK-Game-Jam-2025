@@ -1,8 +1,7 @@
 export module weapon.move_projectiles;
 
-import extensions.scheduler;
-
-import core.ecs;
+import modules.ecs;
+import modules.scheduler;
 
 import components.Position;
 import components.MovementSpeed;
@@ -12,14 +11,14 @@ import components.AttackAttributes;
 import components.Health;
 import components.Solid;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 namespace weapon {
 
 export auto update_projectiles(
     Registry                                                             registry,
-    Query<core::ecs::ID, Position, AttackAttributes, WeaponProjectile>&  projectiles,
-    Query<core::ecs::ID, Position, Hitbox, core::ecs::Optional<Health>>& other_entities
+    Query<modules::ecs::ID, Position, AttackAttributes, WeaponProjectile>&  projectiles,
+    Query<modules::ecs::ID, Position, Hitbox, modules::ecs::Optional<Health>>& other_entities
 ) -> void;
 
 }   // namespace weapon

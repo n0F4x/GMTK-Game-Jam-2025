@@ -4,14 +4,15 @@ module;
 
 export module weapon.fire_weapon;
 
-import extensions.scheduler;
+import modules.ecs;
+import modules.scheduler;
+
 import states.GlobalState;
 import window.Window;
 import components.Weapon;
 import components.Position;
-import core.ecs;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 namespace weapon {
 
@@ -33,7 +34,7 @@ bool check_weapon(Weapon& weapon);
 export auto fire_weapon(
     Registry      registry,
     sf::Vector2f  direction,
-    core::ecs::ID owner_id,
+    modules::ecs::ID owner_id,
     bool          override_check = false
 ) -> bool;
 

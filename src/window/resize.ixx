@@ -8,13 +8,13 @@ module;
 
 export module window.resize;
 
-import extensions.scheduler.accessors.resources.Resource;
+import modules.scheduler.accessors.resources.Resource;
 import events.WindowEvent;
-import extensions.scheduler.accessors.events.Reader;
+import modules.scheduler.accessors.events.Reader;
 import window.Window;
 
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 namespace window {
 

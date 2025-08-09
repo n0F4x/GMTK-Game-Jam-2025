@@ -11,9 +11,9 @@ module;
 
 module gl.render;
 
-import extensions.scheduler.accessors.ecs.Query;
-import extensions.scheduler.accessors.resources.Resource;
-import extensions.scheduler.accessors.states.State;
+import modules.scheduler.accessors.ecs.Query;
+import modules.scheduler.accessors.resources.Resource;
+import modules.scheduler.accessors.states.State;
 import components.Drawable;
 import components.Position;
 import window.Window;
@@ -22,7 +22,7 @@ import states.Shaders;
 import states.Textures;
 import gl.VertexBufs;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 using namespace window;
 
 auto gl::init_draw(const Resource<VertexBuffers>& vertex_buffers) -> void

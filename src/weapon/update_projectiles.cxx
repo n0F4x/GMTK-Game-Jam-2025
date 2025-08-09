@@ -6,27 +6,26 @@ module;
 
 module weapon.move_projectiles;
 
-import core.ecs;
-
-import extensions.scheduler;
+import modules.ecs;
+import modules.scheduler;
 
 import components.Position;
 import components.WeaponProjectile;
 import physics.collider;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 auto weapon::update_projectiles(
     Registry                                                             registry,
-    Query<core::ecs::ID, Position, AttackAttributes, WeaponProjectile>&  projectiles,
-    Query<core::ecs::ID, Position, Hitbox, core::ecs::Optional<Health>>& other_entities
+    Query<modules::ecs::ID, Position, AttackAttributes, WeaponProjectile>&  projectiles,
+    Query<modules::ecs::ID, Position, Hitbox, modules::ecs::Optional<Health>>& other_entities
 ) -> void
 {
-    std::vector<core::ecs::ID> toRemove;
+    std::vector<modules::ecs::ID> toRemove;
 
     projectiles.for_each(
         [&toRemove, &other_entities](
-            const core::ecs::ID id,
+            const modules::ecs::ID id,
             Position&           position,
             AttackAttributes&   attributes,
             WeaponProjectile&   projectile
@@ -34,10 +33,10 @@ auto weapon::update_projectiles(
             bool remove = false;
 
             other_entities.for_each([&remove, id, &attributes, projectile, position](
-                                        core::ecs::ID               entity_ID,
+                                        modules::ecs::ID               entity_ID,
                                         Position                    entity_pos,
                                         Hitbox                      entity_hitbox,
-                                        core::ecs::Optional<Health> maybe_health
+                                        modules::ecs::Optional<Health> maybe_health
                                     ) {
                 auto collision = physics::collision_check(
                     position.underlying(),

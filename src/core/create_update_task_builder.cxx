@@ -1,7 +1,6 @@
 module create_update_task_builder;
 
-import core.scheduler.TaskBuilder;
-import extensions.scheduler;
+import modules.scheduler;
 
 import common.AnimationTimer;
 import common.GameTimer;
@@ -21,18 +20,18 @@ import player.follow_player;
 import logic.destroy_dead_enemies;
 import physics.physics;
 
-auto create_update_task_builder() -> core::scheduler::TaskBuilder<void>
+auto create_update_task_builder() -> modules::scheduler::TaskBuilder<void>
 {
-    return extensions::scheduler::start_as(window::update)   //
+    return modules::scheduler::start_as(window::update)   //
         .then(window::display_fps)
         .then(update_dialogs)
         .then(weapon::fire_player_weapon)
-        .then(extensions::scheduler::at_fixed_rate<GameTimer>(weapon::update_projectiles))
-        .then(extensions::scheduler::at_fixed_rate<GameTimer>(update_player))
-        .then(extensions::scheduler::at_fixed_rate<GameTimer>(update_enemy))
-        .then(extensions::scheduler::at_fixed_rate<AnimationTimer>(progress_animations))
-        .then(extensions::scheduler::at_fixed_rate<GameTimer>(physics::move_moveables))
-        .then(extensions::scheduler::at_fixed_rate<GameTimer>(follow_player))
-        .then(extensions::scheduler::at_fixed_rate<GameTimer>(destroy_dead_enemies))
-        .then(extensions::scheduler::at_fixed_rate<SpawnerTimer>(update_spawner));
+        .then(modules::scheduler::at_fixed_rate<GameTimer>(weapon::update_projectiles))
+        .then(modules::scheduler::at_fixed_rate<GameTimer>(update_player))
+        .then(modules::scheduler::at_fixed_rate<GameTimer>(update_enemy))
+        .then(modules::scheduler::at_fixed_rate<AnimationTimer>(progress_animations))
+        .then(modules::scheduler::at_fixed_rate<GameTimer>(physics::move_moveables))
+        .then(modules::scheduler::at_fixed_rate<GameTimer>(follow_player))
+        .then(modules::scheduler::at_fixed_rate<GameTimer>(destroy_dead_enemies))
+        .then(modules::scheduler::at_fixed_rate<SpawnerTimer>(update_spawner));
 }

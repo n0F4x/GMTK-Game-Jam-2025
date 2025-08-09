@@ -5,7 +5,7 @@ module;
 
 export module level.draw_level;
 
-import extensions.scheduler.accessors;
+import modules.scheduler.accessors;
 
 import common.textures;
 import components.Drawable;
@@ -98,8 +98,8 @@ std::optional<Spawner> find_spawner_by_tile_char(const std::vector<Spawner>& spa
     return std::nullopt;
 }
 
-export auto draw_level(const extensions::scheduler::accessors::Registry& registry,
-    extensions::scheduler::accessors::State<GlobalState> global_state)
+export auto draw_level(const modules::scheduler::accessors::Registry& registry,
+    modules::scheduler::accessors::State<GlobalState> global_state)
 {
     auto level = global_state->levels[global_state->current_level_index];
     auto& tile_array = global_state->tile_array;

@@ -6,16 +6,16 @@ module;
 export module common.LevelLoader;
 
 import states.GlobalState;
-import extensions.scheduler;
-import core.assets.Handle;
+import modules.scheduler;
+import modules.assets.Handle;
 
 export struct LevelLoader {
     static auto operator()(const std::filesystem::path& filename) -> std::string;
 };
 
-using CachedLevelLoader = extensions::scheduler::accessors::assets::Cached<LevelLoader>;
+using CachedLevelLoader = modules::scheduler::accessors::assets::Cached<LevelLoader>;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 export auto load_levels(
     State<GlobalState> global_state,   //
@@ -40,8 +40,8 @@ auto LevelLoader::operator()(const std::filesystem::path& filename) -> std::stri
 
 auto load_levels(State<GlobalState> global_state, CachedLevelLoader level_loader) -> void
 {
-    std::vector<core::assets::Handle<std::string>> levels;
-    std::vector<core::assets::Handle<std::string>> level_spawners;
+    std::vector<modules::assets::Handle<std::string>> levels;
+    std::vector<modules::assets::Handle<std::string>> level_spawners;
     levels.emplace_back(level_loader->load("debug"));
     level_spawners.emplace_back(level_loader->load("debug-spawners"));
 

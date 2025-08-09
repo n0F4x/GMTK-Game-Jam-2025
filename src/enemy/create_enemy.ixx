@@ -4,14 +4,14 @@ module;
 
 export module enemy.create_enemy;
 
-import extensions.scheduler;
+import modules.scheduler;
 
 import components.Health;
 import components.MovementSpeed;
 import components.Position;
 import components.AttackAttributes;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 export auto create_enemy(
     const char enemy_type,

@@ -2,9 +2,9 @@ export module common.load_fonts;
 
 import states.Fonts;
 import common.FontLoader;
-import extensions.scheduler;
+import modules.scheduler;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 using CachedFontLoader = Cached<FontLoader>;
 

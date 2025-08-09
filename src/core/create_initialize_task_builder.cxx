@@ -1,7 +1,6 @@
 module create_initialize_task_builder;
 
-import core.scheduler.TaskBuilder;
-import extensions.scheduler;
+import modules.scheduler;
 
 import common.load_textures;
 import common.load_shaders;
@@ -15,9 +14,9 @@ import create_reset_timers_task_builder;
 import level.draw_level;
 import level.place_home;
 
-auto create_initialize_task_builder() -> core::scheduler::TaskBuilder<void>
+auto create_initialize_task_builder() -> modules::scheduler::TaskBuilder<void>
 {
-    return extensions::scheduler::start_as(gl::initialize)   //
+    return modules::scheduler::start_as(gl::initialize)   //
         .then(load_textures)
         .then(load_shaders)
         .then(load_fonts)

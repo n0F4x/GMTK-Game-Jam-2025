@@ -2,13 +2,13 @@ module;
 
 export module physics.physics;
 
-import core.ecs;
-import extensions.scheduler.accessors.ecs;
+import modules.ecs;
+import modules.scheduler.accessors.ecs;
 import components.Position;
 import components.Hitbox;
 import components.Solid;
 
-using namespace extensions::scheduler::accessors::ecs;
+using namespace modules::scheduler::accessors::ecs;
 
 namespace physics {
 

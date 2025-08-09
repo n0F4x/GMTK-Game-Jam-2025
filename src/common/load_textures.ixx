@@ -2,9 +2,9 @@ export module common.load_textures;
 
 import states.Textures;
 import common.TextureLoader;
-import extensions.scheduler;
+import modules.scheduler;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 using CachedTextureLoader = Cached<TextureLoader>;
 

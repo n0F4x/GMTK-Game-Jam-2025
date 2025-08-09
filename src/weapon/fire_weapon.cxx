@@ -8,9 +8,8 @@ module;
 
 module weapon.fire_weapon;
 
-import core.ecs;
-
-import extensions.scheduler;
+import modules.ecs;
+import modules.scheduler;
 
 import common.textures;
 
@@ -24,9 +23,9 @@ import components.Velocity;
 import states.GlobalState;
 import components.AttackAttributes;
 import window.Window;
-import core.ecs;
+import modules.ecs;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 bool weapon::check_weapon(Weapon& weapon)
 {
@@ -41,7 +40,7 @@ bool weapon::check_weapon(Weapon& weapon)
 auto weapon::fire_weapon(
     Registry      registry,
     sf::Vector2f  direction,
-    core::ecs::ID owner_id,
+    modules::ecs::ID owner_id,
     bool          override_check
 ) -> bool
 {
@@ -90,11 +89,11 @@ auto weapon::fire_player_weapon(
         }
 
         sf::Vector2f cursor_pos = maybe_cursor_pos.value();
-        std::vector<std::tuple<core::ecs::ID, Position>> toFire{};
+        std::vector<std::tuple<modules::ecs::ID, Position>> toFire{};
 
-        core::ecs::query(
+        modules::ecs::query(
             registry.get(),
-            [&](const core::ecs::ID owner_id, const Position playerPos, Weapon weapon) {
+            [&](const modules::ecs::ID owner_id, const Position playerPos, Weapon weapon) {
                 if (check_weapon(weapon)) {
                     toFire.emplace_back(owner_id, playerPos);
                 }

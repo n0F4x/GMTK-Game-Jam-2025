@@ -8,9 +8,9 @@ export module common.load_shaders;
 
 import states.Shaders;
 import common.ShaderLoader;
-import extensions.scheduler;
+import modules.scheduler;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 using CachedShaderLoader = Cached<ShaderLoader>;
 

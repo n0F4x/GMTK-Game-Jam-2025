@@ -2,7 +2,7 @@ module;
 
 module enemy.create_enemy;
 
-import extensions.scheduler;
+import modules.scheduler;
 
 import common.textures;
 import components.Drawable;
@@ -14,7 +14,7 @@ import components.Position;
 import components.Velocity;
 import components.AttackAttributes;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 auto create_enemy(
     const char enemy_type,

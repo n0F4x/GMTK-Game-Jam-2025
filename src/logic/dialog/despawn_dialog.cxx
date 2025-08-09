@@ -8,19 +8,19 @@ module;
 
 module logic.dialog.despawn_dialog;
 
-import core.ecs;
-import extensions.scheduler.accessors;
+import modules.ecs;
+import modules.scheduler.accessors;
 
 import events.GamePauseEvent;
 import events.WindowEvent;
 
 import states.DialogState;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
-auto pop_dialog(core::ecs::Registry& registry, DialogState& dialog_state) -> void
+auto pop_dialog(modules::ecs::Registry& registry, DialogState& dialog_state) -> void
 {
-    const core::ecs::ID id{ dialog_state.dialog_ids.top() };
+    const modules::ecs::ID id{ dialog_state.dialog_ids.top() };
     registry.destroy(id);
     dialog_state.dialog_ids.pop();
 }

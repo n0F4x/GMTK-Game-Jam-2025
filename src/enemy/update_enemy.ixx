@@ -1,6 +1,7 @@
 export module enemy.update_enemy;
 
-import enemy.move_enemy;
-import extensions.scheduler;
+import modules.scheduler;
 
-export inline const auto update_enemy = extensions::scheduler::start_as(move_enemy);
+import enemy.move_enemy;
+
+export inline const auto update_enemy = modules::scheduler::start_as(move_enemy);

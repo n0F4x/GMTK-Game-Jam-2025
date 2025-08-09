@@ -4,7 +4,7 @@ module;
 
 export module level.create_tiles;
 
-import extensions.scheduler.accessors;
+import modules.scheduler.accessors;
 
 import common.textures;
 import components.Position;
@@ -13,8 +13,8 @@ import components.Drawable;
 import states.GlobalState;
 
 export auto create_tiles(
-    const extensions::scheduler::accessors::Registry&    registry,
-    extensions::scheduler::accessors::State<GlobalState> global_state
+    const modules::scheduler::accessors::Registry&    registry,
+    modules::scheduler::accessors::State<GlobalState> global_state
 ) -> void
 {
     for (int i = 0; i < 40; ++i) {

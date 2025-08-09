@@ -1,10 +1,10 @@
 module ui.initialize;
 
-import extensions.scheduler.accessors;
+import modules.scheduler.accessors;
 
 import events.SpawnDialogEvent;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 auto ui::initialize(
     const Recorder<SpawnDialogEvent> dialog_recorder,

@@ -1,9 +1,9 @@
 export module player.create_player;
 
-import extensions.scheduler;
+import modules.scheduler;
 
 import states.GlobalState;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 export auto create_player(Registry registry, State<GlobalState> globalState) -> void;

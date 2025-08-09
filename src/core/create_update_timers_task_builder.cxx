@@ -5,10 +5,8 @@ module;
 
 module create_update_timers_task_builder;
 
-import core.time.Timer;
-import core.scheduler.TaskBuilder;
-
-import extensions.scheduler;
+import modules.time.Timer;
+import modules.scheduler;
 
 import common.AnimationTimer;
 import common.GameTimer;
@@ -17,10 +15,10 @@ import states.GamePausedState;
 import spawner.SpawnerTimer;
 import window.DisplayTimer;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 auto update_timers(
-    const Resource<core::time::Timer>    global_timer,
+    const Resource<modules::time::Timer>    global_timer,
     const Resource<AnimationTimer>       animation_timer,
     const Resource<GameTimer>            game_timer,
     const Resource<window::DisplayTimer> display_timer,
@@ -43,7 +41,7 @@ auto update_timers(
     spawner_timer->update(now);
 }
 
-auto create_update_timers_task_builder() -> core::scheduler::TaskBuilder<void>
+auto create_update_timers_task_builder() -> modules::scheduler::TaskBuilder<void>
 {
-    return extensions::scheduler::start_as(update_timers);
+    return modules::scheduler::start_as(update_timers);
 }

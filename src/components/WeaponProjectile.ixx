@@ -1,7 +1,7 @@
 export module components.WeaponProjectile;
 
-import core.ecs;
+import modules.ecs;
 
 export struct WeaponProjectile {
-    core::ecs::ID owner_id;
+    modules::ecs::ID owner_id;
 };

@@ -4,7 +4,7 @@ module;
 
 module player.create_player;
 
-import extensions.scheduler;
+import modules.scheduler;
 
 import common.textures;
 
@@ -22,7 +22,7 @@ import states.GlobalState;
 
 import player.animations;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 auto create_player(
     const Registry             registry,

@@ -5,7 +5,7 @@ module;
 
 export module states.Textures;
 
-import core.assets;
+import modules.assets;
 
 export struct Textures {
     struct Texture {
@@ -23,7 +23,7 @@ export struct Textures {
         }
     };
 
-    core::assets::Handle<sf::Texture> atlas;
-    core::assets::Handle<sf::Texture> overworld_dialog;
-    core::assets::Handle<sf::Texture> hell_dialog;
+    modules::assets::Handle<sf::Texture> atlas;
+    modules::assets::Handle<sf::Texture> overworld_dialog;
+    modules::assets::Handle<sf::Texture> hell_dialog;
 };

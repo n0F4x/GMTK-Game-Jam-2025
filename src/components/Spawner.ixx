@@ -4,7 +4,7 @@ module;
 
 export module components.Spawner;
 
-import extensions.scheduler.accessors;
+import modules.scheduler.accessors;
 
 export struct Spawner {
     bool is_active;

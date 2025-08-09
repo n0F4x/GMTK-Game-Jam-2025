@@ -1,12 +1,12 @@
 module logic.event_handlers.handle_game_pause_event;
 
-import extensions.scheduler.accessors;
+import modules.scheduler.accessors;
 
 import events.GamePauseEvent;
 import common.AnimationTimer;
 import states.GamePausedState;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 auto handle_game_pause_event(
     const Reader<GamePauseEvent>       reader,

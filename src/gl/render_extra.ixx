@@ -5,18 +5,16 @@ module;
 
 export module gl.render_extra;
 
-import extensions.scheduler.accessors.ecs.Query;
-import extensions.scheduler.accessors.resources.Resource;
-import extensions.scheduler.accessors.states.State;
-import extensions.scheduler;
+import modules.scheduler;
+
 import window.Window;
 import states.GlobalState;
 import states.Shaders;
 import states.Textures;
 import gl.VertexBufs;
-import core.ecs;
+import modules.ecs;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 using namespace window;
 
 namespace gl {

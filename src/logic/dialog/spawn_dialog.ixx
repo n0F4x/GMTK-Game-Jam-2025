@@ -1,6 +1,6 @@
 export module logic.dialog.spawn_dialog;
 
-import extensions.scheduler.accessors;
+import modules.scheduler.accessors;
 
 import events.SpawnDialogEvent;
 
@@ -10,7 +10,7 @@ import states.Textures;
 
 import window.Window;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 export auto spawn_dialog(
     Reader<SpawnDialogEvent> reader,

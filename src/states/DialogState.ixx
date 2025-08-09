@@ -4,8 +4,8 @@ module;
 
 export module states.DialogState;
 
-import core.ecs;
+import modules.ecs;
 
 export struct DialogState {
-    std::stack<core::ecs::ID> dialog_ids;
+    std::stack<modules::ecs::ID> dialog_ids;
 };

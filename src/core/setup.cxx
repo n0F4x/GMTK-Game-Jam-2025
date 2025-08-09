@@ -6,7 +6,7 @@ module setup;
 
 import app;
 
-import core.time.Timer;
+import modules.time.Timer;
 
 import plugins.assets;
 import plugins.events;
@@ -53,7 +53,7 @@ auto setup(AppBuilder&& builder) -> AppBuilder   //
 
     return std::move(builder)
         .transform(window::setup)
-        .insert_resource(core::time::Timer{})
+        .insert_resource(modules::time::Timer{})
         .insert_resource(AnimationTimer{})
         .insert_resource(GameTimer{})
         .insert_resource(window::DisplayTimer{})

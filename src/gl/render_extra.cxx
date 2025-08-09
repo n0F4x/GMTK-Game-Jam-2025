@@ -12,10 +12,7 @@ module;
 
 module gl.render_extra;
 
-import extensions.scheduler.accessors.ecs.Query;
-import extensions.scheduler.accessors.resources.Resource;
-import extensions.scheduler.accessors.states.State;
-import extensions.scheduler;
+import modules.scheduler;
 import window.Window;
 import states.GlobalState;
 import states.Shaders;
@@ -24,7 +21,7 @@ import gl.VertexBufs;
 import components.SFMLComponent;
 
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 using namespace window;
 
 auto gl::render_extra(const Registry registry, const Resource<Window> window) -> void
@@ -34,7 +31,7 @@ auto gl::render_extra(const Registry registry, const Resource<Window> window) ->
         glDisable(GL_DEPTH_TEST);
         window->pushGLStates();
 
-        core::ecs::query(registry.get(), [&window](SFMLComponent& component) {
+        modules::ecs::query(registry.get(), [&window](SFMLComponent& component) {
             component.component->draw(window.get());
         });
 

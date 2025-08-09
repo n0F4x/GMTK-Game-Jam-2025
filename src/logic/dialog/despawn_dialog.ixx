@@ -1,13 +1,13 @@
 export module logic.dialog.despawn_dialog;
 
-import extensions.scheduler.accessors;
+import modules.scheduler.accessors;
 
 import events.GamePauseEvent;
 import events.WindowEvent;
 
 import states.DialogState;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 export auto despawn_dialog(
     Reader<WindowEvent>      window_event_reader,

@@ -1,10 +1,10 @@
 export module window.display;
 
-import extensions.scheduler.accessors.resources;
+import modules.scheduler.accessors.resources;
 
 import window.Window;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 namespace window {
 

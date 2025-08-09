@@ -6,11 +6,11 @@ module;
 
 export module gl.initialize;
 
-import extensions.scheduler.accessors.resources.Resource;
+import modules.scheduler.accessors.resources.Resource;
 import window.Window;
 import gl.VertexBufs;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 using namespace window;
 
 namespace gl {

@@ -8,7 +8,7 @@ module;
 
 module player.move_player;
 
-import core.ecs;
+import modules.ecs;
 
 import components.Animation;
 import components.MovementSpeed;
@@ -21,7 +21,7 @@ import player.animations;
 
 import states.GlobalState;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 [[nodiscard]]
 auto velocity_from_input() -> Velocity
@@ -116,7 +116,7 @@ auto next_animation(
 
 auto move_player(const Registry registry, const State<GlobalState> global_state) -> void
 {
-    const core::ecs::ID player_id{ global_state->player_id };
+    const modules::ecs::ID player_id{ global_state->player_id };
 
     Velocity velocity = velocity_from_input();
 

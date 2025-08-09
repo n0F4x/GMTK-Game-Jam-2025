@@ -1,11 +1,11 @@
 export module ui.initialize;
 
-import extensions.scheduler.accessors;
+import modules.scheduler.accessors;
 
 import events.GamePauseEvent;
 import events.SpawnDialogEvent;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 namespace ui {
 

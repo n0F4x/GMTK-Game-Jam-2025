@@ -4,7 +4,7 @@ module;
 
 export module components.Drawable;
 
-import core.assets.Handle;
+import modules.assets.Handle;
 import states.Textures;
 
 export struct Drawable {

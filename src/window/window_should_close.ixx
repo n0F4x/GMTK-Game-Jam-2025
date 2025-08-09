@@ -5,11 +5,11 @@ module;
 
 export module window.window_should_close;
 
-import extensions.scheduler.accessors.events.Reader;
+import modules.scheduler.accessors.events.Reader;
 
 import events.WindowEvent;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 namespace window {
 

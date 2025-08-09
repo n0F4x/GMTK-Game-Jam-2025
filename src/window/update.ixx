@@ -4,17 +4,17 @@ module;
 
 export module window.update;
 
-import core.time.FixedTimer;
-import extensions.scheduler.accessors;
+import modules.time.FixedTimer;
+import modules.scheduler.accessors;
 
-import extensions.scheduler.accessors.events.Recorder;
-import extensions.scheduler.accessors.resources;
+import modules.scheduler.accessors.events.Recorder;
+import modules.scheduler.accessors.resources;
 
 import window.Window;
 
 import events.WindowEvent;
 
-using namespace extensions::scheduler::accessors;
+using namespace modules::scheduler::accessors;
 
 namespace window {
 
