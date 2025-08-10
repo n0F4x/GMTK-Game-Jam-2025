@@ -4,16 +4,8 @@ module;
 
 module setup;
 
-import app;
-
+import prelude;
 import modules.time.Timer;
-
-import plugins.assets;
-import plugins.events;
-import plugins.functional;
-import plugins.messages;
-import plugins.resources;
-import plugins.states;
 
 import AppBuilder;
 

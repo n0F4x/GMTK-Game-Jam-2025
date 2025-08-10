@@ -7,13 +7,8 @@ module;
 
 module window.setup;
 
-import app.decays_to_builder_c;
-import app.has_plugins_c;
-
+import prelude;
 import modules.time.FixedTimer;
-
-import plugins.events;
-import plugins.resources;
 
 import AppBuilder;
 

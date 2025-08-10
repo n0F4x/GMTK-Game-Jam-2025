@@ -1,9 +1,9 @@
 export module AppBuilder;
 
-import app;
-import plugins;
+import prelude;
+import modules.app;
 
-export using AppBuilder = app::Builder<
+export using AppBuilder = modules::app::Builder<
     plugins::Assets,
     plugins::ECS,
     plugins::Events,
