@@ -1,7 +1,7 @@
 export module components.Health;
 
-import utility.Strong;
+import ddge.utility.Strong;
 
-export struct Health : util::Strong<int, Health> {
+export struct Health : ddge::util::Strong<int, Health> {
     using Strong::Strong;
 };

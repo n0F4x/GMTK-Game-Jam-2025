@@ -7,11 +7,11 @@ module;
 
 module states.GlobalState;
 
-import modules.scheduler.accessors.resources.Resource;
+import ddge.modules.scheduler.accessors.resources.Resource;
 import window.Window;
 import gl.render;
 
-import modules.ecs;
+import ddge.modules.ecs;
 
 auto GlobalState::worldSpaceCursor(const Resource<Window> window) const
     -> std::optional<sf::Vector2f>

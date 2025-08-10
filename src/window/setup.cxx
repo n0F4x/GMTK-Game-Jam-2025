@@ -7,8 +7,8 @@ module;
 
 module window.setup;
 
-import prelude;
-import modules.time.FixedTimer;
+import ddge.prelude;
+import ddge.modules.time.FixedTimer;
 
 import AppBuilder;
 
@@ -19,8 +19,8 @@ import gl.VertexBufs;
 
 auto window::setup(AppBuilder&& builder) -> AppBuilder   //
 {
-    static_assert(app::has_plugins_c<AppBuilder, plugins::Resources>);
-    static_assert(app::has_plugins_c<AppBuilder, plugins::Events>);
+    static_assert(ddge::app::has_plugins_c<AppBuilder, ddge::plugins::Resources>);
+    static_assert(ddge::app::has_plugins_c<AppBuilder, ddge::plugins::Events>);
 
     constexpr sf::ContextSettings settings{ .depthBits    = 24,
                                             .majorVersion = 4,

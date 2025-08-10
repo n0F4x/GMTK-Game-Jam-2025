@@ -8,11 +8,11 @@ module;
 
 export module window.clear_window;
 
-import modules.scheduler.accessors.resources;
+import ddge.modules.scheduler.accessors.resources;
 
 import window.Window;
 
-using namespace modules::scheduler::accessors;
+using namespace ddge::scheduler::accessors;
 
 namespace window {
 

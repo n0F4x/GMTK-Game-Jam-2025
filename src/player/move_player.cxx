@@ -8,7 +8,7 @@ module;
 
 module player.move_player;
 
-import modules.ecs;
+import ddge.modules.ecs;
 
 import components.Animation;
 import components.MovementSpeed;
@@ -21,7 +21,7 @@ import player.animations;
 
 import states.GlobalState;
 
-using namespace modules::scheduler::accessors;
+using namespace ddge::scheduler::accessors;
 
 [[nodiscard]]
 auto velocity_from_input() -> Velocity
@@ -116,7 +116,7 @@ auto next_animation(
 
 auto move_player(const Registry registry, const State<GlobalState> global_state) -> void
 {
-    const modules::ecs::ID player_id{ global_state->player_id };
+    const ddge::ecs::ID player_id{ global_state->player_id };
 
     Velocity velocity = velocity_from_input();
 

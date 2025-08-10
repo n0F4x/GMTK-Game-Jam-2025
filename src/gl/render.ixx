@@ -5,9 +5,9 @@ module;
 
 export module gl.render;
 
-import modules.scheduler.accessors.ecs.Query;
-import modules.scheduler.accessors.resources.Resource;
-import modules.scheduler.accessors.states.State;
+import ddge.modules.scheduler.accessors.ecs.Query;
+import ddge.modules.scheduler.accessors.resources.Resource;
+import ddge.modules.scheduler.accessors.states.State;
 import components.Drawable;
 import components.Position;
 import window.Window;
@@ -16,7 +16,7 @@ import states.Shaders;
 import states.Textures;
 import gl.VertexBufs;
 
-using namespace modules::scheduler::accessors;
+using namespace ddge::scheduler::accessors;
 using namespace window;
 
 namespace gl {

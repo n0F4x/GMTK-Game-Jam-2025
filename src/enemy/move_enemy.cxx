@@ -6,11 +6,8 @@ module;
 
 module enemy.move_enemy;
 
-import modules.events;
-import modules.ecs;
-import modules.resources;
-import modules.scheduler;
-import utility.containers;
+import ddge.modules.ecs;
+import ddge.modules.scheduler;
 
 import components.Enemy;
 import components.MovementSpeed;
@@ -18,17 +15,17 @@ import components.Player;
 import components.Position;
 import components.Velocity;
 
-using namespace modules::scheduler::accessors;
+using namespace ddge::scheduler::accessors;
 
 auto move_enemy(const Registry registry, const State<GlobalState> global_state) -> void
 {
     const Position player_position =
         registry->get_single<Position>(global_state->player_id);
 
-    modules::ecs::query(
+    ddge::ecs::query(
         registry.get(),
         [player_position](
-            modules::ecs::With<Enemy>, Velocity& velocity, const Position enemy_position
+            ddge::ecs::With<Enemy>, Velocity& velocity, const Position enemy_position
         ) {
             constexpr static auto stop_radius = 0.5f;
 

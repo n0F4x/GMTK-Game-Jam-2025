@@ -1,7 +1,7 @@
 export module spawner.tick_spawner;
 
-import modules.scheduler;
+import ddge.modules.scheduler;
 
-using namespace modules::scheduler::accessors;
+using namespace ddge::scheduler::accessors;
 
 export auto tick_spawner(Registry registry) -> void;

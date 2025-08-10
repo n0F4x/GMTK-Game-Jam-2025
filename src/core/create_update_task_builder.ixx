@@ -1,6 +1,6 @@
 export module create_update_task_builder;
 
-import modules.scheduler.TaskBuilder;
+import ddge.modules.scheduler.TaskBuilder;
 
 export [[nodiscard]]
-auto create_update_task_builder() -> modules::scheduler::TaskBuilder<void>;
+auto create_update_task_builder() -> ddge::scheduler::TaskBuilder<void>;

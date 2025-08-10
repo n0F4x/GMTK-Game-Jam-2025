@@ -7,7 +7,7 @@ module;
 
 export module components.Animation;
 
-import utility.Strong;
+import ddge.utility.Strong;
 
 import states.Textures;
 

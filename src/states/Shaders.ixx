@@ -8,8 +8,8 @@ module;
 
 export module states.Shaders;
 
-import modules.assets;
+import ddge.modules.assets;
 
 export struct Shaders {
-    modules::assets::Handle<sf::Shader> generic_draw;
+    ddge::assets::Handle<sf::Shader> generic_draw;
 };

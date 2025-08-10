@@ -6,26 +6,26 @@ module;
 
 module weapon.move_projectiles;
 
-import modules.ecs;
-import modules.scheduler;
+import ddge.modules.ecs;
+import ddge.modules.scheduler;
 
 import components.Position;
 import components.WeaponProjectile;
 import physics.collider;
 
-using namespace modules::scheduler::accessors;
+using namespace ddge::scheduler::accessors;
 
 auto weapon::update_projectiles(
     Registry                                                             registry,
-    Query<modules::ecs::ID, Position, AttackAttributes, WeaponProjectile>&  projectiles,
-    Query<modules::ecs::ID, Position, Hitbox, modules::ecs::Optional<Health>>& other_entities
+    Query<ddge::ecs::ID, Position, AttackAttributes, WeaponProjectile>&  projectiles,
+    Query<ddge::ecs::ID, Position, Hitbox, ddge::ecs::Optional<Health>>& other_entities
 ) -> void
 {
-    std::vector<modules::ecs::ID> toRemove;
+    std::vector<ddge::ecs::ID> toRemove;
 
     projectiles.for_each(
         [&toRemove, &other_entities](
-            const modules::ecs::ID id,
+            const ddge::ecs::ID id,
             Position&           position,
             AttackAttributes&   attributes,
             WeaponProjectile&   projectile
@@ -33,10 +33,10 @@ auto weapon::update_projectiles(
             bool remove = false;
 
             other_entities.for_each([&remove, id, &attributes, projectile, position](
-                                        modules::ecs::ID               entity_ID,
+                                        ddge::ecs::ID               entity_ID,
                                         Position                    entity_pos,
                                         Hitbox                      entity_hitbox,
-                                        modules::ecs::Optional<Health> maybe_health
+                                        ddge::ecs::Optional<Health> maybe_health
                                     ) {
                 auto collision = physics::collision_check(
                     position.underlying(),

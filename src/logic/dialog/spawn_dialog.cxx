@@ -9,8 +9,8 @@ module;
 
 module logic.dialog.spawn_dialog;
 
-import modules.ecs;
-import modules.scheduler.accessors;
+import ddge.modules.ecs;
+import ddge.modules.scheduler.accessors;
 
 import components.SFMLComponent;
 
@@ -24,7 +24,7 @@ import states.Textures;
 
 import window.Window;
 
-using namespace modules::scheduler::accessors;
+using namespace ddge::scheduler::accessors;
 
 auto spawn_dialog(
     const Reader<SpawnDialogEvent> reader,
@@ -41,7 +41,7 @@ auto spawn_dialog(
 
     for (const SpawnDialogEvent& spawn_dialog_event : std::views::reverse(reader.read()))
     {
-        const modules::ecs::ID id = registry->create(
+        const ddge::ecs::ID id = registry->create(
             SFMLComponent{ std::make_shared<Dialog>(
                 font,
                 spawn_dialog_event.text,

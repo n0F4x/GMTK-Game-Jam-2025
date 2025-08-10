@@ -7,16 +7,16 @@ module;
 
 export module states.GlobalState;
 
-import modules.scheduler.accessors.resources.Resource;
+import ddge.modules.scheduler.accessors.resources.Resource;
 import window.Window;
-import modules.ecs;
-import modules.assets;
+import ddge.modules.ecs;
+import ddge.modules.assets;
 
-using namespace modules::scheduler::accessors;
+using namespace ddge::scheduler::accessors;
 using namespace window;
 
 export struct GlobalState {
-    modules::ecs::ID player_id{};
+    ddge::ecs::ID player_id{};
     sf::Vector2f  camera_position{};
 
     // smaller value more you see, larger value more zooom
@@ -25,8 +25,8 @@ export struct GlobalState {
 
     auto worldSpaceCursor(Resource<Window> window) const -> std::optional<sf::Vector2f>;
 
-    std::vector<modules::assets::Handle<std::string>> levels;
-    std::vector<modules::assets::Handle<std::string>> level_spawners;
+    std::vector<ddge::assets::Handle<std::string>> levels;
+    std::vector<ddge::assets::Handle<std::string>> level_spawners;
     int                                            current_level_index = 0;
-    modules::ecs::ID                                  tile_array[40][40];
+    ddge::ecs::ID                                  tile_array[40][40];
 };

@@ -5,18 +5,18 @@ module;
 
 export module window.display_fps;
 
-import modules.scheduler.accessors.resources;
+import ddge.modules.scheduler.accessors.resources;
 
-import modules.time.Timer;
+import ddge.modules.time.Timer;
 
 import window.Window;
 
 using namespace std::chrono_literals;
-using namespace modules::scheduler::accessors;
+using namespace ddge::scheduler::accessors;
 
 namespace window {
 
-export auto display_fps(Resource<modules::time::Timer> global_timer, Resource<Window> window)
+export auto display_fps(Resource<ddge::time::Timer> global_timer, Resource<Window> window)
     -> void;
 
 }   // namespace window
@@ -24,7 +24,7 @@ export auto display_fps(Resource<modules::time::Timer> global_timer, Resource<Wi
 module :private;
 
 auto window::display_fps(
-    const Resource<modules::time::Timer> global_timer,
+    const Resource<ddge::time::Timer> global_timer,
     const Resource<Window>            window
 ) -> void
 {

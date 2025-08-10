@@ -4,17 +4,17 @@ module;
 
 export module window.update;
 
-import modules.time.FixedTimer;
-import modules.scheduler.accessors;
+import ddge.modules.time.FixedTimer;
+import ddge.modules.scheduler.accessors;
 
-import modules.scheduler.accessors.events.Recorder;
-import modules.scheduler.accessors.resources;
+import ddge.modules.scheduler.accessors.events.Recorder;
+import ddge.modules.scheduler.accessors.resources;
 
 import window.Window;
 
 import events.WindowEvent;
 
-using namespace modules::scheduler::accessors;
+using namespace ddge::scheduler::accessors;
 
 namespace window {
 

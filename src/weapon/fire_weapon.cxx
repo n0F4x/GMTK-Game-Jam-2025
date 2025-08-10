@@ -8,8 +8,8 @@ module;
 
 module weapon.fire_weapon;
 
-import modules.ecs;
-import modules.scheduler;
+import ddge.modules.ecs;
+import ddge.modules.scheduler;
 
 import common.textures;
 
@@ -23,9 +23,9 @@ import components.Velocity;
 import states.GlobalState;
 import components.AttackAttributes;
 import window.Window;
-import modules.ecs;
+import ddge.modules.ecs;
 
-using namespace modules::scheduler::accessors;
+using namespace ddge::scheduler::accessors;
 
 bool weapon::check_weapon(Weapon& weapon)
 {
@@ -40,7 +40,7 @@ bool weapon::check_weapon(Weapon& weapon)
 auto weapon::fire_weapon(
     Registry      registry,
     sf::Vector2f  direction,
-    modules::ecs::ID owner_id,
+    ddge::ecs::ID owner_id,
     bool          override_check
 ) -> bool
 {
@@ -89,11 +89,11 @@ auto weapon::fire_player_weapon(
         }
 
         sf::Vector2f cursor_pos = maybe_cursor_pos.value();
-        std::vector<std::tuple<modules::ecs::ID, Position>> toFire{};
+        std::vector<std::tuple<ddge::ecs::ID, Position>> toFire{};
 
-        modules::ecs::query(
+        ddge::ecs::query(
             registry.get(),
-            [&](const modules::ecs::ID owner_id, const Position playerPos, Weapon weapon) {
+            [&](const ddge::ecs::ID owner_id, const Position playerPos, Weapon weapon) {
                 if (check_weapon(weapon)) {
                     toFire.emplace_back(owner_id, playerPos);
                 }

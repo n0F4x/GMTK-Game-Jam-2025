@@ -6,9 +6,9 @@ module;
 
 export module components.Position;
 
-import utility.meta.type_traits.const_like;
-import utility.meta.type_traits.forward_like;
-import utility.Strong;
+import ddge.utility.meta.type_traits.const_like;
+import ddge.utility.meta.type_traits.forward_like;
+import ddge.utility.Strong;
 
 /**
  * Entity's position in world-space. A unit {1, 0} is as long as the player is tall.
@@ -16,12 +16,12 @@ import utility.Strong;
  * will "teleport" ignore all collision checks/etc to move, update Moveable::velocity
  * components
  */
-export struct Position : util::Strong<sf::Vector2f, Position> {
+export struct Position : ddge::util::Strong<sf::Vector2f, Position> {
     using Strong::Strong;
 
     template <typename Self_T>
     constexpr auto operator->(this Self_T& self) noexcept
-        -> util::meta::const_like_t<sf::Vector2f, Self_T>*
+        -> ddge::util::meta::const_like_t<sf::Vector2f, Self_T>*
     {
         return std::addressof(self.underlying());
     }

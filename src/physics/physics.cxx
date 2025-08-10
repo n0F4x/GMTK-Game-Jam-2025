@@ -21,13 +21,13 @@ auto physics::move_moveables(
     Query<Position, Hitbox, Solid>& solids_query
 ) -> void
 {
-    modules::ecs::query(
+    ddge::ecs::query(
         registry.get(),
         [&solids_query](
             Position&                                position,
-            const modules::ecs::Optional<Hitbox>        hitbox,
+            const ddge::ecs::Optional<Hitbox>        hitbox,
             Velocity                                 velocity,
-            const modules::ecs::Optional<MovementSpeed> max_speed
+            const ddge::ecs::Optional<MovementSpeed> max_speed
         ) {
             if (velocity == Velocity{}) {
                 return;

@@ -1,7 +1,7 @@
 export module components.MovementSpeed;
 
-import utility.Strong;
+import ddge.utility.Strong;
 
-export struct MovementSpeed : util::Strong<float, MovementSpeed> {
+export struct MovementSpeed : ddge::util::Strong<float, MovementSpeed> {
     using Strong::Strong;
 };

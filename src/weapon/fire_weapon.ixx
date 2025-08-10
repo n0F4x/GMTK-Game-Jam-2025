@@ -4,15 +4,15 @@ module;
 
 export module weapon.fire_weapon;
 
-import modules.ecs;
-import modules.scheduler;
+import ddge.modules.ecs;
+import ddge.modules.scheduler;
 
 import states.GlobalState;
 import window.Window;
 import components.Weapon;
 import components.Position;
 
-using namespace modules::scheduler::accessors;
+using namespace ddge::scheduler::accessors;
 
 namespace weapon {
 
@@ -34,7 +34,7 @@ bool check_weapon(Weapon& weapon);
 export auto fire_weapon(
     Registry      registry,
     sf::Vector2f  direction,
-    modules::ecs::ID owner_id,
+    ddge::ecs::ID owner_id,
     bool          override_check = false
 ) -> bool;
 

@@ -4,8 +4,8 @@ module;
 
 export module states.Fonts;
 
-import modules.assets;
+import ddge.modules.assets;
 
 export struct Fonts {
-    modules::assets::Handle<sf::Font> std_font;
+    ddge::assets::Handle<sf::Font> std_font;
 };

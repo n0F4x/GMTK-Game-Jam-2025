@@ -4,15 +4,15 @@ module;
 
 export module player.follow_player;
 
-import modules.scheduler.accessors.ecs.Registry;
-import modules.scheduler.accessors.states.State;
+import ddge.modules.scheduler.accessors.ecs.Registry;
+import ddge.modules.scheduler.accessors.states.State;
 
 import components.Position;
 import components.Player;
 import states.GlobalState;
 
-export auto follow_player(const modules::scheduler::accessors::Registry& registry,
-    modules::scheduler::accessors::State<GlobalState> global_state) -> void
+export auto follow_player(const ddge::scheduler::accessors::Registry& registry,
+    ddge::scheduler::accessors::State<GlobalState> global_state) -> void
 {
     if (!global_state.has_value()) {
         return;

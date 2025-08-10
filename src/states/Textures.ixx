@@ -5,7 +5,7 @@ module;
 
 export module states.Textures;
 
-import modules.assets;
+import ddge.modules.assets;
 
 export struct Textures {
     struct Texture {
@@ -23,7 +23,7 @@ export struct Textures {
         }
     };
 
-    modules::assets::Handle<sf::Texture> atlas;
-    modules::assets::Handle<sf::Texture> overworld_dialog;
-    modules::assets::Handle<sf::Texture> hell_dialog;
+    ddge::assets::Handle<sf::Texture> atlas;
+    ddge::assets::Handle<sf::Texture> overworld_dialog;
+    ddge::assets::Handle<sf::Texture> hell_dialog;
 };

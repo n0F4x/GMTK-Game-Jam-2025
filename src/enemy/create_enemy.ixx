@@ -4,14 +4,14 @@ module;
 
 export module enemy.create_enemy;
 
-import modules.scheduler;
+import ddge.modules.scheduler;
 
 import components.Health;
 import components.MovementSpeed;
 import components.Position;
 import components.AttackAttributes;
 
-using namespace modules::scheduler::accessors;
+using namespace ddge::scheduler::accessors;
 
 export auto create_enemy(
     const char enemy_type,

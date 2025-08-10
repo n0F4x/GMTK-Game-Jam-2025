@@ -4,8 +4,8 @@ module;
 
 module setup;
 
-import prelude;
-import modules.time.Timer;
+import ddge.prelude;
+import ddge.modules.time.Timer;
 
 import AppBuilder;
 
@@ -36,16 +36,16 @@ import window.setup;
 
 auto setup(AppBuilder&& builder) -> AppBuilder   //
 {
-    static_assert(app::has_plugins_c<AppBuilder, plugins::Assets>);
-    static_assert(app::has_plugins_c<AppBuilder, plugins::Events>);
-    static_assert(app::has_plugins_c<AppBuilder, plugins::Functional>);
-    static_assert(app::has_plugins_c<AppBuilder, plugins::Messages>);
-    static_assert(app::has_plugins_c<AppBuilder, plugins::Resources>);
-    static_assert(app::has_plugins_c<AppBuilder, plugins::States>);
+    static_assert(ddge::app::has_plugins_c<AppBuilder, ddge::plugins::Assets>);
+    static_assert(ddge::app::has_plugins_c<AppBuilder, ddge::plugins::Events>);
+    static_assert(ddge::app::has_plugins_c<AppBuilder, ddge::plugins::Functional>);
+    static_assert(ddge::app::has_plugins_c<AppBuilder, ddge::plugins::Messages>);
+    static_assert(ddge::app::has_plugins_c<AppBuilder, ddge::plugins::Resources>);
+    static_assert(ddge::app::has_plugins_c<AppBuilder, ddge::plugins::States>);
 
     return std::move(builder)
         .transform(window::setup)
-        .insert_resource(modules::time::Timer{})
+        .insert_resource(ddge::time::Timer{})
         .insert_resource(AnimationTimer{})
         .insert_resource(GameTimer{})
         .insert_resource(window::DisplayTimer{})

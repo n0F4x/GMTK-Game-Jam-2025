@@ -5,8 +5,8 @@ module;
 
 module create_update_timers_task_builder;
 
-import modules.time.Timer;
-import modules.scheduler;
+import ddge.modules.time.Timer;
+import ddge.modules.scheduler;
 
 import common.AnimationTimer;
 import common.GameTimer;
@@ -15,10 +15,10 @@ import states.GamePausedState;
 import spawner.SpawnerTimer;
 import window.DisplayTimer;
 
-using namespace modules::scheduler::accessors;
+using namespace ddge::scheduler::accessors;
 
 auto update_timers(
-    const Resource<modules::time::Timer>    global_timer,
+    const Resource<ddge::time::Timer>    global_timer,
     const Resource<AnimationTimer>       animation_timer,
     const Resource<GameTimer>            game_timer,
     const Resource<window::DisplayTimer> display_timer,
@@ -41,7 +41,7 @@ auto update_timers(
     spawner_timer->update(now);
 }
 
-auto create_update_timers_task_builder() -> modules::scheduler::TaskBuilder<void>
+auto create_update_timers_task_builder() -> ddge::scheduler::TaskBuilder<void>
 {
-    return modules::scheduler::start_as(update_timers);
+    return ddge::scheduler::start_as(update_timers);
 }

@@ -4,7 +4,7 @@ module;
 
 export module components.Drawable;
 
-import modules.assets.Handle;
+import ddge.modules.assets.Handle;
 import states.Textures;
 
 export struct Drawable {

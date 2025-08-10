@@ -6,16 +6,16 @@ module;
 export module common.LevelLoader;
 
 import states.GlobalState;
-import modules.scheduler;
-import modules.assets.Handle;
+import ddge.modules.scheduler;
+import ddge.modules.assets.Handle;
 
 export struct LevelLoader {
     static auto operator()(const std::filesystem::path& filename) -> std::string;
 };
 
-using CachedLevelLoader = modules::scheduler::accessors::assets::Cached<LevelLoader>;
+using CachedLevelLoader = ddge::scheduler::accessors::assets::Cached<LevelLoader>;
 
-using namespace modules::scheduler::accessors;
+using namespace ddge::scheduler::accessors;
 
 export auto load_levels(
     State<GlobalState> global_state,   //
@@ -40,8 +40,8 @@ auto LevelLoader::operator()(const std::filesystem::path& filename) -> std::stri
 
 auto load_levels(State<GlobalState> global_state, CachedLevelLoader level_loader) -> void
 {
-    std::vector<modules::assets::Handle<std::string>> levels;
-    std::vector<modules::assets::Handle<std::string>> level_spawners;
+    std::vector<ddge::assets::Handle<std::string>> levels;
+    std::vector<ddge::assets::Handle<std::string>> level_spawners;
     levels.emplace_back(level_loader->load("debug"));
     level_spawners.emplace_back(level_loader->load("debug-spawners"));
 

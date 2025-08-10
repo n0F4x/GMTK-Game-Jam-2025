@@ -4,8 +4,8 @@ module;
 
 export module states.DialogState;
 
-import modules.ecs;
+import ddge.modules.ecs;
 
 export struct DialogState {
-    std::stack<modules::ecs::ID> dialog_ids;
+    std::stack<ddge::ecs::ID> dialog_ids;
 };

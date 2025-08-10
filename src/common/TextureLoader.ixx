@@ -6,7 +6,7 @@ module;
 
 export module common.TextureLoader;
 
-import modules.assets.asset_c;
+import ddge.modules.assets.asset_c;
 
 export struct TextureLoader {
     static auto operator()(const std::filesystem::path& filename) -> sf::Texture;

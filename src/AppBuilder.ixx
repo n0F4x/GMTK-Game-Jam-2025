@@ -1,14 +1,14 @@
 export module AppBuilder;
 
-import prelude;
-import modules.app;
+import ddge.prelude;
+import ddge.modules.app;
 
-export using AppBuilder = modules::app::Builder<
-    plugins::Assets,
-    plugins::ECS,
-    plugins::Events,
-    plugins::Functional,
-    plugins::Messages,
-    plugins::Resources,
-    plugins::Scheduler,
-    plugins::States>;
+export using AppBuilder = ddge::app::Builder<
+    ddge::plugins::Assets,
+    ddge::plugins::ECS,
+    ddge::plugins::Events,
+    ddge::plugins::Functional,
+    ddge::plugins::Messages,
+    ddge::plugins::Resources,
+    ddge::plugins::Scheduler,
+    ddge::plugins::States>;

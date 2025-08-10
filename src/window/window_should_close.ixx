@@ -5,11 +5,11 @@ module;
 
 export module window.window_should_close;
 
-import modules.scheduler.accessors.events.Reader;
+import ddge.modules.scheduler.accessors.events.Reader;
 
 import events.WindowEvent;
 
-using namespace modules::scheduler::accessors;
+using namespace ddge::scheduler::accessors;
 
 namespace window {
 

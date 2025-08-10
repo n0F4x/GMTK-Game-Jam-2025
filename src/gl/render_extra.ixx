@@ -5,16 +5,16 @@ module;
 
 export module gl.render_extra;
 
-import modules.scheduler;
+import ddge.modules.scheduler;
 
 import window.Window;
 import states.GlobalState;
 import states.Shaders;
 import states.Textures;
 import gl.VertexBufs;
-import modules.ecs;
+import ddge.modules.ecs;
 
-using namespace modules::scheduler::accessors;
+using namespace ddge::scheduler::accessors;
 using namespace window;
 
 namespace gl {
