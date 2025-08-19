@@ -4,7 +4,7 @@ module;
 
 export module components.Spawner;
 
-import ddge.modules.scheduler.accessors;
+import ddge.modules.execution.accessors;
 
 export struct Spawner {
     bool is_active;

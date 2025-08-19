@@ -4,7 +4,7 @@ module;
 
 module player.create_player;
 
-import ddge.modules.scheduler;
+import ddge.modules.execution;
 
 import common.textures;
 
@@ -22,7 +22,7 @@ import states.GlobalState;
 
 import player.animations;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 auto create_player(
     const Registry             registry,

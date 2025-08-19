@@ -7,7 +7,7 @@ module;
 module enemy.move_enemy;
 
 import ddge.modules.ecs;
-import ddge.modules.scheduler;
+import ddge.modules.execution;
 
 import components.Enemy;
 import components.MovementSpeed;
@@ -15,7 +15,7 @@ import components.Player;
 import components.Position;
 import components.Velocity;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 auto move_enemy(const Registry registry, const State<GlobalState> global_state) -> void
 {

@@ -5,14 +5,14 @@ module;
 module create_reset_timers_task_builder;
 
 import ddge.modules.time.Timer;
-import ddge.modules.scheduler;
+import ddge.modules.execution;
 
 import common.AnimationTimer;
 import common.GameTimer;
 import spawner.SpawnerTimer;
 import window.DisplayTimer;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 auto reset_timers(
     const Resource<ddge::time::Timer>    global_timer,
@@ -31,7 +31,7 @@ auto reset_timers(
     spawner_timer->reset(now);
 }
 
-auto create_reset_timers_task_builder() -> ddge::scheduler::TaskBuilder<void>
+auto create_reset_timers_task_builder() -> ddge::exec::TaskBuilder<void>
 {
-    return ddge::scheduler::start_as(reset_timers);
+    return ddge::exec::start_as(reset_timers);
 }

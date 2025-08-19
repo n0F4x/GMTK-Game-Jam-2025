@@ -5,14 +5,14 @@ module;
 export module weapon.fire_weapon;
 
 import ddge.modules.ecs;
-import ddge.modules.scheduler;
+import ddge.modules.execution;
 
 import states.GlobalState;
 import window.Window;
 import components.Weapon;
 import components.Position;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 namespace weapon {
 

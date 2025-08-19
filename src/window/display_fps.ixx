@@ -5,14 +5,14 @@ module;
 
 export module window.display_fps;
 
-import ddge.modules.scheduler.accessors.resources;
+import ddge.modules.execution.accessors.resources;
 
 import ddge.modules.time.Timer;
 
 import window.Window;
 
 using namespace std::chrono_literals;
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 namespace window {
 

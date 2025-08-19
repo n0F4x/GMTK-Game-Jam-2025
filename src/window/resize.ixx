@@ -8,13 +8,13 @@ module;
 
 export module window.resize;
 
-import ddge.modules.scheduler.accessors.resources.Resource;
+import ddge.modules.execution.accessors.resources.Resource;
 import events.WindowEvent;
-import ddge.modules.scheduler.accessors.events.Reader;
+import ddge.modules.execution.accessors.events.Reader;
 import window.Window;
 
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 namespace window {
 

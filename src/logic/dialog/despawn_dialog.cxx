@@ -9,14 +9,14 @@ module;
 module logic.dialog.despawn_dialog;
 
 import ddge.modules.ecs;
-import ddge.modules.scheduler.accessors;
+import ddge.modules.execution.accessors;
 
 import events.GamePauseEvent;
 import events.WindowEvent;
 
 import states.DialogState;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 auto pop_dialog(ddge::ecs::Registry& registry, DialogState& dialog_state) -> void
 {

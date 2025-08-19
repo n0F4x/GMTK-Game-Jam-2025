@@ -5,7 +5,7 @@ module;
 
 export module level.draw_level;
 
-import ddge.modules.scheduler.accessors;
+import ddge.modules.execution.accessors;
 
 import common.textures;
 import components.Drawable;
@@ -98,8 +98,8 @@ std::optional<Spawner> find_spawner_by_tile_char(const std::vector<Spawner>& spa
     return std::nullopt;
 }
 
-export auto draw_level(const ddge::scheduler::accessors::Registry& registry,
-    ddge::scheduler::accessors::State<GlobalState> global_state)
+export auto draw_level(const ddge::exec::accessors::Registry& registry,
+    ddge::exec::accessors::State<GlobalState> global_state)
 {
     auto level = global_state->levels[global_state->current_level_index];
     auto& tile_array = global_state->tile_array;

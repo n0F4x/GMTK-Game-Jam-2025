@@ -1,10 +1,10 @@
 export module window.display;
 
-import ddge.modules.scheduler.accessors.resources;
+import ddge.modules.execution.accessors.resources;
 
 import window.Window;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 namespace window {
 

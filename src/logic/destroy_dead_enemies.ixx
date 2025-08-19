@@ -5,10 +5,10 @@ export module logic.destroy_dead_enemies;
 
 import components.Enemy;
 import components.Health;
-import ddge.modules.scheduler.accessors;
+import ddge.modules.execution.accessors;
 import ddge.modules.ecs;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 export auto destroy_dead_enemies(
     const Registry                                        registry,

@@ -21,7 +21,7 @@ import player.animations;
 
 import states.GlobalState;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 [[nodiscard]]
 auto velocity_from_input() -> Velocity

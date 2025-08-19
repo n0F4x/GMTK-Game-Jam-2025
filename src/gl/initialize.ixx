@@ -6,11 +6,11 @@ module;
 
 export module gl.initialize;
 
-import ddge.modules.scheduler.accessors.resources.Resource;
+import ddge.modules.execution.accessors.resources.Resource;
 import window.Window;
 import gl.VertexBufs;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 using namespace window;
 
 namespace gl {

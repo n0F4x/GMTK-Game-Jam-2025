@@ -3,12 +3,12 @@ module;
 export module physics.physics;
 
 import ddge.modules.ecs;
-import ddge.modules.scheduler.accessors.ecs;
+import ddge.modules.execution.accessors.ecs;
 import components.Position;
 import components.Hitbox;
 import components.Solid;
 
-using namespace ddge::scheduler::accessors::ecs;
+using namespace ddge::exec::accessors::ecs;
 
 namespace physics {
 

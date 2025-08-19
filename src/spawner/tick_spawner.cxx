@@ -1,7 +1,7 @@
 module spawner.tick_spawner;
 
 import ddge.modules.ecs;
-import ddge.modules.scheduler;
+import ddge.modules.execution;
 
 import components.Health;
 import components.MovementSpeed;
@@ -10,7 +10,7 @@ import components.Spawner;
 import enemy.create_enemy;
 import components.AttackAttributes;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 auto tick_spawner(const Registry registry) -> void
 {

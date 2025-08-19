@@ -1,12 +1,12 @@
 module logic.event_handlers.handle_game_pause_event;
 
-import ddge.modules.scheduler.accessors;
+import ddge.modules.execution.accessors;
 
 import events.GamePauseEvent;
 import common.AnimationTimer;
 import states.GamePausedState;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 auto handle_game_pause_event(
     const Reader<GamePauseEvent>       reader,

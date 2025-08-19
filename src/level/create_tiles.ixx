@@ -4,7 +4,7 @@ module;
 
 export module level.create_tiles;
 
-import ddge.modules.scheduler.accessors;
+import ddge.modules.execution.accessors;
 
 import common.textures;
 import components.Position;
@@ -13,8 +13,8 @@ import components.Drawable;
 import states.GlobalState;
 
 export auto create_tiles(
-    const ddge::scheduler::accessors::Registry&    registry,
-    ddge::scheduler::accessors::State<GlobalState> global_state
+    const ddge::exec::accessors::Registry&    registry,
+    ddge::exec::accessors::State<GlobalState> global_state
 ) -> void
 {
     for (int i = 0; i < 40; ++i) {

@@ -2,9 +2,9 @@ export module common.load_textures;
 
 import states.Textures;
 import common.TextureLoader;
-import ddge.modules.scheduler;
+import ddge.modules.execution;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 using CachedTextureLoader = Cached<TextureLoader>;
 

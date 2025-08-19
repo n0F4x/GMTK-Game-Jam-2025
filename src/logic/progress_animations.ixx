@@ -1,10 +1,10 @@
 export module logic.progress_animations;
 
-import ddge.modules.scheduler.accessors;
+import ddge.modules.execution.accessors;
 
 import components.Animation;
 import components.Drawable;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 export auto progress_animations(Query<Animation, Drawable>&) -> void;

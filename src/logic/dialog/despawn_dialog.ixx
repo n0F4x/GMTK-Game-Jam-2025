@@ -1,13 +1,13 @@
 export module logic.dialog.despawn_dialog;
 
-import ddge.modules.scheduler.accessors;
+import ddge.modules.execution.accessors;
 
 import events.GamePauseEvent;
 import events.WindowEvent;
 
 import states.DialogState;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 export auto despawn_dialog(
     Reader<WindowEvent>      window_event_reader,

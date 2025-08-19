@@ -5,16 +5,16 @@ module;
 export module window.update;
 
 import ddge.modules.time.FixedTimer;
-import ddge.modules.scheduler.accessors;
+import ddge.modules.execution.accessors;
 
-import ddge.modules.scheduler.accessors.events.Recorder;
-import ddge.modules.scheduler.accessors.resources;
+import ddge.modules.execution.accessors.events.Recorder;
+import ddge.modules.execution.accessors.resources;
 
 import window.Window;
 
 import events.WindowEvent;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 namespace window {
 

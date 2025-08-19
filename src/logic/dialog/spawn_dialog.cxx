@@ -10,7 +10,7 @@ module;
 module logic.dialog.spawn_dialog;
 
 import ddge.modules.ecs;
-import ddge.modules.scheduler.accessors;
+import ddge.modules.execution.accessors;
 
 import components.SFMLComponent;
 
@@ -24,7 +24,7 @@ import states.Textures;
 
 import window.Window;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 auto spawn_dialog(
     const Reader<SpawnDialogEvent> reader,

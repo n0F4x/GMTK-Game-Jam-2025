@@ -7,12 +7,12 @@ module;
 
 export module states.GlobalState;
 
-import ddge.modules.scheduler.accessors.resources.Resource;
+import ddge.modules.execution.accessors.resources.Resource;
 import window.Window;
 import ddge.modules.ecs;
 import ddge.modules.assets;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 using namespace window;
 
 export struct GlobalState {

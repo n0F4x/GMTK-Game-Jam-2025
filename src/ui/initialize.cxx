@@ -1,10 +1,10 @@
 module ui.initialize;
 
-import ddge.modules.scheduler.accessors;
+import ddge.modules.execution.accessors;
 
 import events.SpawnDialogEvent;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 auto ui::initialize(
     const Recorder<SpawnDialogEvent> dialog_recorder,

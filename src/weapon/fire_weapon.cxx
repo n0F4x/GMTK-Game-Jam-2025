@@ -9,7 +9,7 @@ module;
 module weapon.fire_weapon;
 
 import ddge.modules.ecs;
-import ddge.modules.scheduler;
+import ddge.modules.execution;
 
 import common.textures;
 
@@ -25,7 +25,7 @@ import components.AttackAttributes;
 import window.Window;
 import ddge.modules.ecs;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 bool weapon::check_weapon(Weapon& weapon)
 {

@@ -7,13 +7,13 @@ module;
 module weapon.move_projectiles;
 
 import ddge.modules.ecs;
-import ddge.modules.scheduler;
+import ddge.modules.execution;
 
 import components.Position;
 import components.WeaponProjectile;
 import physics.collider;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 auto weapon::update_projectiles(
     Registry                                                             registry,

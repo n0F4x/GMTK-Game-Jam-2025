@@ -8,9 +8,9 @@ export module common.load_shaders;
 
 import states.Shaders;
 import common.ShaderLoader;
-import ddge.modules.scheduler;
+import ddge.modules.execution;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 using CachedShaderLoader = Cached<ShaderLoader>;
 

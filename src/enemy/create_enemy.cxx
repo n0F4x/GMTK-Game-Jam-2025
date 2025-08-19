@@ -2,7 +2,7 @@ module;
 
 module enemy.create_enemy;
 
-import ddge.modules.scheduler;
+import ddge.modules.execution;
 
 import common.textures;
 import components.Drawable;
@@ -14,7 +14,7 @@ import components.Position;
 import components.Velocity;
 import components.AttackAttributes;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 auto create_enemy(
     const char enemy_type,

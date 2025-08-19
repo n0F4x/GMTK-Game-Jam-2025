@@ -12,7 +12,7 @@ module;
 
 module gl.render_extra;
 
-import ddge.modules.scheduler;
+import ddge.modules.execution;
 import window.Window;
 import states.GlobalState;
 import states.Shaders;
@@ -21,7 +21,7 @@ import gl.VertexBufs;
 import components.SFMLComponent;
 
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 using namespace window;
 
 auto gl::render_extra(const Registry registry, const Resource<Window> window) -> void

@@ -1,6 +1,6 @@
 export module logic.dialog.spawn_dialog;
 
-import ddge.modules.scheduler.accessors;
+import ddge.modules.execution.accessors;
 
 import events.SpawnDialogEvent;
 
@@ -10,7 +10,7 @@ import states.Textures;
 
 import window.Window;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 export auto spawn_dialog(
     Reader<SpawnDialogEvent> reader,

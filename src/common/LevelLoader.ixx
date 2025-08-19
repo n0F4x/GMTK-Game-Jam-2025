@@ -6,16 +6,16 @@ module;
 export module common.LevelLoader;
 
 import states.GlobalState;
-import ddge.modules.scheduler;
+import ddge.modules.execution;
 import ddge.modules.assets.Handle;
 
 export struct LevelLoader {
     static auto operator()(const std::filesystem::path& filename) -> std::string;
 };
 
-using CachedLevelLoader = ddge::scheduler::accessors::assets::Cached<LevelLoader>;
+using CachedLevelLoader = ddge::exec::accessors::assets::Cached<LevelLoader>;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 export auto load_levels(
     State<GlobalState> global_state,   //

@@ -5,7 +5,7 @@ module;
 
 export module gl.render_extra;
 
-import ddge.modules.scheduler;
+import ddge.modules.execution;
 
 import window.Window;
 import states.GlobalState;
@@ -14,7 +14,7 @@ import states.Textures;
 import gl.VertexBufs;
 import ddge.modules.ecs;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 using namespace window;
 
 namespace gl {

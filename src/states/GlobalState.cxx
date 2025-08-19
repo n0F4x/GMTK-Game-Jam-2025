@@ -7,7 +7,7 @@ module;
 
 module states.GlobalState;
 
-import ddge.modules.scheduler.accessors.resources.Resource;
+import ddge.modules.execution.accessors.resources.Resource;
 import window.Window;
 import gl.render;
 

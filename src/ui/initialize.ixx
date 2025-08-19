@@ -1,11 +1,11 @@
 export module ui.initialize;
 
-import ddge.modules.scheduler.accessors;
+import ddge.modules.execution.accessors;
 
 import events.GamePauseEvent;
 import events.SpawnDialogEvent;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 namespace ui {
 

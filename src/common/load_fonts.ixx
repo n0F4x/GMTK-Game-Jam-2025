@@ -2,9 +2,9 @@ export module common.load_fonts;
 
 import states.Fonts;
 import common.FontLoader;
-import ddge.modules.scheduler;
+import ddge.modules.execution;
 
-using namespace ddge::scheduler::accessors;
+using namespace ddge::exec::accessors;
 
 using CachedFontLoader = Cached<FontLoader>;
 
